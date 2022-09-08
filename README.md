@@ -2,7 +2,7 @@
 
 Tiimi: Anne Pellin, Elia Ahonen, Pertti Korhonen, Taina Kankainen
 
-cPohja dokumentaatiota varten: [https://github.com/mruonavaara/projektikurssi/blob/master/README.md](https://github.com/mruonavaara/projektikurssi/blob/master/README.md)
+Lähde dokumentaatiopohjalle: [https://github.com/mruonavaara/projektikurssi/blob/master/README.md](https://github.com/mruonavaara/projektikurssi/blob/master/README.md)
 
 ## Johdanto
 
