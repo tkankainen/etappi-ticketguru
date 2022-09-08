@@ -2,7 +2,7 @@
 
 Tiimi: Anne Pellin, Elia Ahonen, Pertti Korhonen, Taina Kankainen
 
-Pohja dokumentaatiota varten: [https://github.com/mruonavaara/projektikurssi/blob/master/README.md](https://github.com/mruonavaara/projektikurssi/blob/master/README.md)
+cPohja dokumentaatiota varten: [https://github.com/mruonavaara/projektikurssi/blob/master/README.md](https://github.com/mruonavaara/projektikurssi/blob/master/README.md)
 
 ## Johdanto
 
@@ -32,9 +32,7 @@ tietoa ja keskittyä siihen.
 
 ## Käyttöliittymä
 
-Esitetään käyttöliittymän tärkeimmät (vain ne!) näkymät sekä niiden väliset siirtymät käyttöliittymäkaaviona. 
-
-Jos näkymän tarkoitus ei ole itsestään selvä, se pitää kuvata lyhyesti.
+[Wireframe-malli](https://github.com/tkankainen/etappi-ticketguru/blob/development/Kuvat/TicketGuru%20UI.pdf) kuvaa alustavasti käyttöliittymän toimintoja.
 
 ## Tietokanta
 
