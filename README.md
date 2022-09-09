@@ -29,6 +29,14 @@ käyttäjäryhmät.
 
 Kuvauksissa kannattaa harkita, mikä on toteuttajalle ja asiakkaalle oleellista
 tietoa ja keskittyä siihen.
+# Roolit
+- lipputoimiston työntekijä
+- lipunmyyntipisteen lipunmyyjä
+
+##Käyttötapauskaavip
+-Pertti liitätkö kaavion tähän
+
+##Käyttäjätarinat
 
 ## Käyttöliittymä
 
