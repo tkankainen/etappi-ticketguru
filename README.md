@@ -36,7 +36,7 @@ tietoa ja keskittyä siihen.
 ### Käyttötapauskaavio
 -Pertti liitätkö kaavion tähän
 
-## Käyttäjätarinat
+### Käyttäjätarinat
 
 ## Käyttöliittymä
 
