@@ -1,6 +1,6 @@
 # TicketGuru - Team Etappi
 
-Tiimi: Anne Pellin, Elia Ahonen, Pertti Korhonen, Taina Kankainen
+Tiimi: Anne Pelin, Elia Ahonen, Pertti Korhonen, Taina Kankainen
 
 Lähde dokumentaatiopohjalle: [https://github.com/mruonavaara/projektikurssi/blob/master/README.md](https://github.com/mruonavaara/projektikurssi/blob/master/README.md)
 
