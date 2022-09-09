@@ -41,6 +41,39 @@ tietoa ja keskittyä siihen.
 Lipputoimiston työntekijänä haluan, että voin luoda myynnissä olevat tapahtumat,
 koska lipunmyyntipisteen myyjän pitää pystyä myymään lippuja tiettyyn tapahtumaan.
 prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K2
+Lipputoimiston työntekijänä haluan pystyä muuttamaan tapahtuman tietoja, koska on mahdollista, että ohjelmassa olevaa tietoa pitää ajantasaistaa
+prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K3 
+Lipputoimiston työntekijänä haluan, että voin määritellä tapahtuman lipputyypit, 
+koska tapahtumaan pitää pystyä myymään lippuja eri asiakastyypeille.
+prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K4 
+Lipputoimiston työntekijänä haluan, että voin määritellä lipputyyppien hinnan tapahtumittain, 
+koska pitää pystyä myymään eri hintaisia lippuja eri asiakastyypeille.
+prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K5
+Lipunmyyjänä haluan, että voin hakea tapahtumia eri hakusanoilla, koska asiakkaalle pitää voida myydä lippu hänen haluamaansa tapahtumaan
+prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K6
+Lipunmyyjänä haluan, että voin myydä lipun tiettyyn tapahtumaan, koska asiakkaalle pitää voida myydä lippu hänen haluamaansa tapahtumaan
+prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K7
+Lipunmyyjänä haluan nähdä tapahtuman jäljellä olevien lippujen määrän, jotta lippuja ei myydä tapahtumaan liikaa
+prioriteetti = 1, tyyppi: toiminnallinen
+###### Tunnus: K8
+Lipunmyyjänä haluan pystyä myymään useita lippuja samalla tilauksella, jotta jokaista lippua ei tarvitse myydä erikseen
+prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K9
+Lipunmyyjänä haluan, että voin tulostaa lippuja, koska asiakkaalle pitää tulostaa ostettu lippu 
+prioriteetti = 1, Tyyppi: toiminnallinen
+##### Tunnus: K10
+Lipunmyyjänä haluan, että voin tulostaa myymättä jääneet liput, koska liput pitää olla myytävissä tapahtuman ovella.
+prioriteetti = 1, tyyppi: toiminnallinen
+##### Tunnus: K11
+Käyttäjätarina:
+Lipputoimiston työntekijänä haluan nähdä raportin tapahtumaan myydyistä ja myymättömistä lipuista, jotta voin seurata myyntiä
+prioriteetti = 2, tyyppi: toiminnallinen
 
 
 ## Käyttöliittymä
