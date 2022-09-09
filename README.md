@@ -37,6 +37,11 @@ tietoa ja keskittyä siihen.
 -Pertti liitätkö kaavion tähän
 
 ### Käyttäjätarinat
+##### Tunnus: K1
+Lipputoimiston työntekijänä haluan, että voin luoda myynnissä olevat tapahtumat,
+koska lipunmyyntipisteen myyjän pitää pystyä myymään lippuja tiettyyn tapahtumaan.
+prioriteetti = 1, tyyppi: toiminnallinen
+
 
 ## Käyttöliittymä
 
