@@ -15,7 +15,8 @@ public class TicketController {
 	}*/
 	
 	public String Hello(){
-		return "TicketGuru aloitus Team Etappi : Elia, Taina, Pertti, Anne(feat1) 8.9.2022 ";//selaimessa http://localhost:8080/hello
+		return "TicketGuru aloitus Team Etappi : Elia, Taina, Pertti, Anne(feat1) 8.9.2022 Terve vaan T. Pertti 10.9.2022"; //selaimessa http://localhost:8080/hello
+			    
 	}
 
 }
