@@ -34,7 +34,8 @@ tietoa ja keskittyä siihen.
 - lipunmyyntipisteen lipunmyyjä
 
 ### Käyttötapauskaavio
--Pertti liitätkö kaavion tähän
+
+![Käyttötapauskaavio](https://user-images.githubusercontent.com/26714675/189474583-b87517c1-8dac-44b6-a1ca-30b5f6401ed8.jpg)
 
 ### Käyttäjätarinat
 ##### Tunnus: K1
