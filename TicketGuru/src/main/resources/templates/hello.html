@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>TicketGuru</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+	<h1>TICKETGURU </h1> 
+	<form class= "form" th:action="@{/hello}" method=post>
+		<div><label> Käyttäjätunnus: <input class="form-control" type="text" name="username"/></label></div>
+		<div><label> Salasana: <input class="form-control" type="password" name="password"/></label></div>
+		<div> <input type="submit" value="Sign in"/></div>
+	</form>
+	
+</div>
+</div>	
+</body>
+</html>
