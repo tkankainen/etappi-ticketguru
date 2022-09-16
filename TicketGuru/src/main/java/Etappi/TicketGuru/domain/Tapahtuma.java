@@ -12,12 +12,6 @@ import javax.persistence.OneToMany;
 
 import javax.persistence.CascadeType;
 
-//import javax.persistence.JoinColumn;
-//import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
-//import javax.persistence.ManyToOne;
-
-
 
 @Entity
 public class Tapahtuma {
@@ -37,17 +31,7 @@ public class Tapahtuma {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="tapahtuma")
 	
 	private List <Tapahtumalipputyyppi> tapahtumalipputyypit;  //monta lipputyyppiä/tapahtuma*/
-	/*@ManyToOne
-	@JoinColumn(name="lipputyyppiid")
-	private Tapahtumalipputyyppi tapahtumalipputyyppi;  //monta lipputyyppiä/tapahtuma/*
-	/*@ManyToMany
-	@JoinTable(
-			name="tapahtuma_lipputyyppi",
-			joinColumns = @JoinColumn(name="tapahtumaid"),
-			inverseJoinColumns = @JoinColumn(name="lipputyyppiid")
-			)*/
-	
-//	private Set<Tapahtumalipputyyppi> lipputyypit =new HashSet<>();//pitää määritellä set elementti että voi määriettlä get
+
 	
 	public Tapahtuma() {}
 	
