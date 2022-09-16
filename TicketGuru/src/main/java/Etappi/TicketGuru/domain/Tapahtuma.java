@@ -1,9 +1,23 @@
 package Etappi.TicketGuru.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import javax.persistence.OneToMany;
+
+
+import javax.persistence.CascadeType;
+
+//import javax.persistence.JoinColumn;
+//import javax.persistence.JoinTable;
+//import javax.persistence.ManyToMany;
+//import javax.persistence.ManyToOne;
+
+
 
 @Entity
 public class Tapahtuma {
@@ -19,6 +33,21 @@ public class Tapahtuma {
 	private String kaupunki;
 	private long kpl;
 	private String loppupvm;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="tapahtuma")
+	
+	private List <Tapahtumalipputyyppi> tapahtumalipputyypit;  //monta lipputyyppiä/tapahtuma*/
+	/*@ManyToOne
+	@JoinColumn(name="lipputyyppiid")
+	private Tapahtumalipputyyppi tapahtumalipputyyppi;  //monta lipputyyppiä/tapahtuma/*
+	/*@ManyToMany
+	@JoinTable(
+			name="tapahtuma_lipputyyppi",
+			joinColumns = @JoinColumn(name="tapahtumaid"),
+			inverseJoinColumns = @JoinColumn(name="lipputyyppiid")
+			)*/
+	
+//	private Set<Tapahtumalipputyyppi> lipputyypit =new HashSet<>();//pitää määritellä set elementti että voi määriettlä get
 	
 	public Tapahtuma() {}
 	
@@ -80,7 +109,19 @@ public class Tapahtuma {
 		this.loppupvm = loppupvm;
 	}
 
+	public List<Tapahtumalipputyyppi> getTapahtumalipputyypit(){
+		return tapahtumalipputyypit;
+	}
+		
+	public void setTapahtumalipputyypit(List<Tapahtumalipputyyppi> tapahtumalipputyypit) {
+			this.tapahtumalipputyypit = tapahtumalipputyypit;
+		}
 
+	
+	/*@Override
+	public String toString() {
+		return "[ lipputyypit ]";
+	}*/
 
 	@Override
 	public String toString() {
