@@ -25,10 +25,9 @@ public class Tapahtumalipputyyppi {
 	@JoinColumn(name="tapahtumaid")
 	private Tapahtuma tapahtuma;  //monta lipputyyppiä/tapahtuma
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name="tyyppiid")
 	private Lipputyyppi lipputyyppi; //viiteavain lipputyyppi
-	*/
 
 	public Tapahtumalipputyyppi(){}
 	
@@ -38,14 +37,14 @@ public class Tapahtumalipputyyppi {
 		this.hinta=hinta;
 		
 	}	
-	/*public long getLipputyyppiid() {
+	public long getLipputyyppiid() {
 		return lipputyyppiid;
 	}
 
 	public void setLipputyyppiid(long lipputyyppiid) {
 		this.lipputyyppiid = lipputyyppiid;
 	}
-*/
+
 	public long getHinta() {
 		return hinta;
 	}
