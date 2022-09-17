@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 
+
 @Entity
 public class Tapahtumalipputyyppi {
 
@@ -17,31 +18,34 @@ public class Tapahtumalipputyyppi {
 	
 	private long lipputyyppiid;
 	
-	private String nimi;
+	
 	private long hinta;
 	
 	@ManyToOne
 	@JoinColumn(name="tapahtumaid")
 	private Tapahtuma tapahtuma;  //monta lipputyyppiä/tapahtuma
 	
-
+	/*@ManyToOne
+	@JoinColumn(name="tyyppiid")
+	private Lipputyyppi lipputyyppi; //viiteavain lipputyyppi
+	*/
 
 	public Tapahtumalipputyyppi(){}
 	
-	public Tapahtumalipputyyppi( String nimi, long hinta) {
+	public Tapahtumalipputyyppi( long hinta) {
 		super();
-		this.nimi = nimi;
+	
 		this.hinta=hinta;
 		
 	}	
-	public long getLipputyyppiid() {
+	/*public long getLipputyyppiid() {
 		return lipputyyppiid;
 	}
 
 	public void setLipputyyppiid(long lipputyyppiid) {
 		this.lipputyyppiid = lipputyyppiid;
 	}
-
+*/
 	public long getHinta() {
 		return hinta;
 	}
@@ -50,18 +54,12 @@ public class Tapahtumalipputyyppi {
 		this.hinta = hinta;
 	}
 
-	public String getNimi() {
-		return nimi;
-	}
-
-	public void setNimi(String nimi) {
-		this.nimi = nimi;
-	}
+	
 
 	
 	@Override
 	public String toString() {
-		return "Lipputyyppi [lipputyyppiid= "+ lipputyyppiid+ ", "+ nimi+ ",  "+ hinta+"]";
+		return "Lipputyyppi [lipputyyppiid= "+ lipputyyppiid+ ", "+ ",  "+ hinta+"]";
 	}
 	
 	
