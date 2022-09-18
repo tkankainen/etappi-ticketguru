@@ -1,7 +1,5 @@
 package Etappi.TicketGuru.domain;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,11 +19,11 @@ public class Myyntitapahtuma {
 	@JoinColumn(name = "userid")
 	private User user;
 	
-	private Timestamp timestamp;
+	private String timestamp;
 	
 	public Myyntitapahtuma() {}
 	
-	public Myyntitapahtuma(User user, Timestamp timestamp) {
+	public Myyntitapahtuma(long myyntiid, User user, String timestamp) {
 		
 		super();
 		this.user = user;
@@ -48,11 +46,11 @@ public class Myyntitapahtuma {
 		this.user = user;
 	}
 
-	public Timestamp getTimestamp() {
+	public String getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(Timestamp timestamp) {
+	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
 
