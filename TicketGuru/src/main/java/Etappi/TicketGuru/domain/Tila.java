@@ -27,8 +27,7 @@ public class Tila {
 	public Tila() {
 	}
 
-	public Tila(long tilaid, String nimi) {
-		this.tilaid = tilaid;
+	public Tila(String nimi) {
 		this.nimi = nimi;
 	}
 

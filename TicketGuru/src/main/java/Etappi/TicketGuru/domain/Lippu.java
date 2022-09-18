@@ -26,11 +26,9 @@ public class Lippu {
 	@JoinColumn(name="tilaid")
 	private Tila tila;
 	
-//	@ManyToOne
-//	@JoinColumn(name="myyntiid")
-//	private Myyntitapahtuma myyntitapahtuma;
-	
-//	lisää myyntitapahtuma getterit ja setterit
+	@ManyToOne
+	@JoinColumn(name="myyntiid")
+	private Myyntitapahtuma myyntitapahtuma;
 	
 	private String lippukoodi;
 	private long hinta;
@@ -43,6 +41,13 @@ public class Lippu {
 		this.lippuid = lippuid;
 		this.tapahtuma = tapahtuma;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
+		this.tila = tila;
+		this.lippukoodi = lippukoodi;
+		this.hinta = hinta;
+	}
+	
+	public Lippu(Tapahtuma tapahtuma, Tila tila, String lippukoodi, long hinta) {
+		this.tapahtuma = tapahtuma;
 		this.tila = tila;
 		this.lippukoodi = lippukoodi;
 		this.hinta = hinta;
@@ -94,6 +99,14 @@ public class Lippu {
 
 	public void setHinta(long hinta) {
 		this.hinta = hinta;
+	}
+
+	public Myyntitapahtuma getMyyntitapahtuma() {
+		return myyntitapahtuma;
+	}
+
+	public void setMyyntitapahtuma(Myyntitapahtuma myyntitapahtuma) {
+		this.myyntitapahtuma = myyntitapahtuma;
 	}
 
 	@Override
