@@ -9,6 +9,7 @@ import javax.persistence.Id;
 
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.CascadeType;
 
@@ -28,6 +29,7 @@ public class Tapahtuma {
 	private long kpl;
 	private String loppupvm;
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="tapahtuma")
 	
 	private List <Tapahtumalipputyyppi> tapahtumalipputyypit;  //monta lipputyyppiä/tapahtuma*/

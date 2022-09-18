@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface TapahtumalipputyyppiRepository extends CrudRepository<Tapahtumalipputyyppi, Long>{
 	
-		List<Tapahtumalipputyyppi> findByNimi(String nimi);
+		List<Tapahtumalipputyyppi> findByHinta(long hinta);
 		
 	
 }
