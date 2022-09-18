@@ -10,13 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Table;
+
 
 @Entity
+@Table(name = "\"user\"")
 public class User {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	private long userid;
 	
 	private String etunimi;

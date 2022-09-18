@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface MyyntitapahtumaRepository extends CrudRepository<User, Long> {
 
-	List<User> findByName(String etunimi);
+//	List<User> findByName(String etunimi);
 
 }
