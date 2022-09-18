@@ -1,9 +1,15 @@
 package Etappi.TicketGuru.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class User {
@@ -18,6 +24,11 @@ public class User {
 	private String tunnus;
 	private String salasana;
 	private String rooli;
+	
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	
+	private List <Myyntitapahtuma> myyntitapahtumat;
 	
 	public User() {}
 	
@@ -79,6 +90,15 @@ public class User {
 	public void setRooli(String rooli) {
 		this.rooli = rooli;
 	}
+	
+	public List<Myyntitapahtuma> getMyyntitapahtumat(){
+		return myyntitapahtumat;
+	}
+		
+	public void setMyyntitapahtumat(List<Myyntitapahtuma> myyntitapahtumat) {
+			this.myyntitapahtumat = myyntitapahtumat;
+		}
+
 
 	@Override
 	public String toString() {
