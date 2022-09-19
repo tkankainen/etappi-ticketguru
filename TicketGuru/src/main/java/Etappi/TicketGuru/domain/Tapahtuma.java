@@ -1,5 +1,6 @@
 package Etappi.TicketGuru.domain;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -22,7 +23,8 @@ public class Tapahtuma {
 	
 	private long tapahtumaid;
 	
-	private String aika;
+	private LocalDateTime aika;
+	
 	private String nimi;
 	private String osoite;
 	private String kaupunki;
@@ -38,8 +40,7 @@ public class Tapahtuma {
 	public Tapahtuma() {}
 	
 	
-	
-	public Tapahtuma(String aika, String nimi, String osoite, String kaupunki, long kpl,
+	public Tapahtuma(LocalDateTime aika, String nimi, String osoite, String kaupunki, long kpl,
 			String loppupvm) {
 		super();
 		this.aika = aika;
@@ -50,18 +51,16 @@ public class Tapahtuma {
 		this.loppupvm = loppupvm;
 	}
 
-
-
 	public long getTapahtumaid() {
 		return tapahtumaid;
 	}
 	public void setTapahtumaid(long tapahtumaid) {
 		this.tapahtumaid = tapahtumaid;
 	}
-	public String getAika() {
+	public LocalDateTime getAika() {
 		return aika;
 	}
-	public void setAika(String aika) {
+	public void setAika(LocalDateTime aika) {
 		this.aika = aika;
 	}
 	public String getNimi() {
