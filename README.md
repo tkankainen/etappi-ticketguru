@@ -73,15 +73,18 @@ Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
 tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
 attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän tyyliin:
 
-> ### _Tilit_
-> _Tilit-taulu sisältää käyttäjätilit. Käyttäjällä voi olla monta tiliä. Tili kuuluu aina vain yhdelle käyttäjälle._
+> ### _Tapahtuma_
+> _Tapahtuma-taulu sisältää tapahtumat. Tapahtumia voi olla monia._
 >
 > Kenttä | Tyyppi | Kuvaus
 > ------ | ------ | ------
-> id | int PK | Tilin id
-> nimimerkki | varchar(30) |  Tilin nimimerkki
-> avatar | int FK | Tilin avatar, viittaus [avatar](#Avatar)-tauluun
-> kayttaja | int FK | Viittaus käyttäjään [käyttäjä](#Kayttaja)-taulussa
+> tapahtumaid | AN PK | Tapahtuman id
+> aika | varchar(100) | 
+> nimi | varchar(100) | Tapahtuman nimi
+> osoite | varchar(100) | Tapahtuman osoite
+> kaupunki | varchar(100) | Tapahtuman kaupunki
+> kpl | int | Myytävien lippujen määrä
+> loppupvm | date | Tapahtuman päättymisajankohta
 
 ## Tekninen kuvaus
 
