@@ -1,5 +1,7 @@
 package Etappi.TicketGuru;
 
+import java.time.LocalDateTime;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -35,12 +37,18 @@ public class TicketGuruApplication {
 		
 //		lrepository.save(new Lipputyyppi("Aikuinen"));
 //		lrepository.save(new Lipputyyppi("Lapsi"));
+		
+		LocalDateTime aika1 = LocalDateTime.of(2022,12,21,18,00); //int (vuosi,kk,pv,tunnit,minuutit(,sekunnit)
+		LocalDateTime aika2 = LocalDateTime.of(2022,10,8,20,00);
+		LocalDateTime aikanyt = LocalDateTime.now();
 						
-		Tapahtuma tapahtuma1= new Tapahtuma("1.9.2022", "Tapahtuma1", "os1","HKI",5,"15.9.2022");
-		Tapahtuma tapahtuma2= new Tapahtuma("1.9.2023", "Tapahtuma2", "os1","HKI",5,"15.9.2023");
+		Tapahtuma tapahtuma1= new Tapahtuma(aika1, "Tapahtuma1", "os1","HKI", 5, "15.9.2022");
+		Tapahtuma tapahtuma2= new Tapahtuma(aika2, "Tapahtuma2", "os1","HKI",5,"15.9.2023");
+		Tapahtuma tapahtuma3= new Tapahtuma(aikanyt, "Tapahtuma3", "Kulttuuritalo", "Helsinki", 500, "31.12.2022");
 				
 		brepository.save(tapahtuma1);
 		brepository.save(tapahtuma2);
+		brepository.save(tapahtuma3);
 		
 		Tila vapaa = new Tila("vapaa");
 		Tila kaytetty = new Tila("käytetty");
@@ -49,7 +57,7 @@ public class TicketGuruApplication {
 		tilarepository.save(kaytetty);
 		
 		Lippu lippu1 = new Lippu(tapahtuma1, vapaa, "abc234", 25);
-		Lippu lippu2 = new Lippu(tapahtuma2, kaytetty, "iopp453f", 12);
+		Lippu lippu2 = new Lippu(tapahtuma3, kaytetty, "iopp453f", 12);
 		
 		lrepository.save(lippu1);
 		lrepository.save(lippu2);
