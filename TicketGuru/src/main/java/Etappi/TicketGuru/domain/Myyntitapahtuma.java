@@ -16,17 +16,17 @@ public class Myyntitapahtuma {
 	private long myyntiid;
 	
 	@ManyToOne
-	@JoinColumn(name = "userid")
-	private User user;
+	@JoinColumn(name = "kayttajaid")
+	private Kayttaja kayttaja;
 	
 	private String timestamp;
 	
 	public Myyntitapahtuma() {}
 	
-	public Myyntitapahtuma(long myyntiid, User user, String timestamp) {
+	public Myyntitapahtuma(long myyntiid, Kayttaja kayttaja, String timestamp) {
 		
 		super();
-		this.user = user;
+		this.kayttaja = kayttaja;
 		this.timestamp = timestamp;
 	}
 
@@ -38,12 +38,12 @@ public class Myyntitapahtuma {
 		this.myyntiid = myyntiid;
 	}
 
-	public User getUser() {
-		return user;
+	public User getKayttaja() {
+		return kayttaja;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setKayttaja(Kayttaja kayttaja) {
+		this.kayttaja = kayttaja;
 	}
 
 	public String getTimestamp() {
@@ -56,7 +56,7 @@ public class Myyntitapahtuma {
 
 	@Override
 	public String toString() {
-		return "Myyntitapahtuma [myyntiid=" + myyntiid + ", user=" + this.getUser() + ", timestamp=" + timestamp + "]";
+		return "Myyntitapahtuma [myyntiid=" + myyntiid + ", kayttaja=" + this.getKayttaja() + ", timestamp=" + timestamp + "]";
 	}
 	
 	
