@@ -3,7 +3,7 @@ package Etappi.TicketGuru.domain;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<Kayttaja, Long> {
+public interface KayttajaRepository extends CrudRepository<Kayttaja, Long> {
 
 //	List<User> findByName(String etunimi);
 
