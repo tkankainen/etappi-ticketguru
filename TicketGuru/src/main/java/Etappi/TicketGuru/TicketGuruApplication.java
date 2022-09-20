@@ -40,7 +40,7 @@ public class TicketGuruApplication {
 		
 		LocalDateTime aika1 = LocalDateTime.of(2022,12,21,18,00); //int (vuosi,kk,pv,tunnit,minuutit(,sekunnit)
 		LocalDateTime aika2 = LocalDateTime.of(2022,10,8,20,00);
-		LocalDateTime aikanyt = LocalDateTime.now();
+		LocalDateTime aikanyt = LocalDateTime.now(); 
 						
 		Tapahtuma tapahtuma1= new Tapahtuma(aika1, "Tapahtuma1", "os1","HKI", 5, "15.9.2022");
 		Tapahtuma tapahtuma2= new Tapahtuma(aika2, "Tapahtuma2", "os1","HKI",5,"15.9.2023");
