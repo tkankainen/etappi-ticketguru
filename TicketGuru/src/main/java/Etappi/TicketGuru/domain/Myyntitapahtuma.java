@@ -38,7 +38,7 @@ public class Myyntitapahtuma {
 		this.myyntiid = myyntiid;
 	}
 
-	public User getKayttaja() {
+	public Kayttaja getKayttaja() {
 		return kayttaja;
 	}
 
