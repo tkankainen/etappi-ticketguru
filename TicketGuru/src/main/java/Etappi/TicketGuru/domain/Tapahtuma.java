@@ -1,6 +1,7 @@
 package Etappi.TicketGuru.domain;
 
 import java.time.LocalDateTime;
+//import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -30,6 +31,7 @@ public class Tapahtuma {
 	private String kaupunki;
 	private long kpl;
 	private String loppupvm;
+	
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="tapahtuma")

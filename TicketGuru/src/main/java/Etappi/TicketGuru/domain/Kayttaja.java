@@ -10,16 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javax.persistence.Table;
+//import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "\"user\"")
-public class User {
+//@Table(name = "\"kayttaja\"")
+public class Kayttaja {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long userid;
+	private long kayttajaid;
 	
 	private String etunimi;
 	private String sukunimi;
@@ -28,13 +28,13 @@ public class User {
 	private String rooli;
 	
 	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="kayttaja")
 	
 	private List <Myyntitapahtuma> myyntitapahtumat;
 	
-	public User() {}
+	public Kayttaja() {}
 	
-	public User(String etunimi, String sukunimi,
+	public Kayttaja(String etunimi, String sukunimi,
 				String tunnus, String salasana, String rooli) {
 		
 		super();
@@ -45,12 +45,12 @@ public class User {
 		this.rooli = rooli;
 	}
 
-	public long getUserid() {
-		return userid;
+	public long getKayttajaid() {
+		return kayttajaid;
 	}
 
-	public void setUserid(long userid) {
-		this.userid = userid;
+	public void setKayttajaid(long kayttajaid) {
+		this.kayttajaid = kayttajaid;
 	}
 
 	public String getEtunimi() {
@@ -104,7 +104,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userid=" + userid + ", etunimi=" + etunimi + ", sukunimi=" + sukunimi + ", tunnus=" + tunnus
+		return "Kayttaja [kayttajaid=" + kayttajaid + ", etunimi=" + etunimi + ", sukunimi=" + sukunimi + ", tunnus=" + tunnus
 				+ ", salasana=" + salasana + ", rooli=" + rooli + "]";
 	}
 	
