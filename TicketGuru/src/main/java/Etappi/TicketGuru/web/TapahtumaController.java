@@ -47,5 +47,7 @@ public class TapahtumaController {
 	void deleteTapahtuma(@PathVariable Long id) {
 		tapahtumaRepository.deleteById(id);
 	}
+	
+	//PATCH
 
 }
