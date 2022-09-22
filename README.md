@@ -78,13 +78,25 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 >
 > Kenttä | Tyyppi | Kuvaus
 > ------ | ------ | ------
-> tapahtumaid | AN PK | Tapahtuman id
-> aika | varchar(100) | 
+> tapahtumaid | auto PK | Tapahtuman id
+> aika | date | Tapahtuman ajankohta (date & time)
 > nimi | varchar(100) | Tapahtuman nimi
 > osoite | varchar(100) | Tapahtuman osoite
 > kaupunki | varchar(100) | Tapahtuman kaupunki
 > kpl | int | Myytävien lippujen määrä
-> loppupvm | date | Tapahtuman päättymisajankohta
+> loppupvm | date | Ajankohta, jolloin lippujen ennakkomyynti päättyy
+
+> ### _Tapahtumalipputyyppi_
+> _Tapahtumalipputyyppi-taulu sisältää lippujen hinnat ja yhdistää tapahtuman, lipun ja lipputyypin._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> lipputyyppiid | auto PK | Taulun oma id
+> tapahtumaid | FK | Tapahtuma-taulun id
+> tyyppiid | FK | Lipputyyppi-taulun id
+> hinta | int | Lipun hinta
+
+
 
 ## Tekninen kuvaus
 
