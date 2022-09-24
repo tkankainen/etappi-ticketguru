@@ -33,7 +33,6 @@ Näyttää kaikki tapahtumat
         "kaupunki" :"HKI",
         "kpl" :5,
         "loppupvm": "15.9.2022",
-        "url": "api/tapahtumat/1"
         },
     "tapahtuma": {
         "tapahtumaID" :2,
@@ -43,7 +42,6 @@ Näyttää kaikki tapahtumat
         "kaupunki" :"HKI",
         "kpl" :5,
         "loppupvm": "15.9.2023",
-        "url": "api/tapahtumat/2"
         }
       }
 ]
