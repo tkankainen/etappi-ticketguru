@@ -51,7 +51,7 @@ Päivitä olemassa oleva tapahtuma
 
 **Ehto** : Tapahtumaa ei löydy.
 
-**Code** ´404 NOT FOUND´
+**Code** `404 NOT FOUND`
 
 **Sisältö** : `{}`
 
