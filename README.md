@@ -144,7 +144,7 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 > sukunimi | varchar(50) | Käyttäjän sukunimi
 > kayttajatunnus | varchar(25) | Käyttäjätunnus
 > salasana | varchar(100) | Salasana
-> rooli | Käyttäjän rooli (lipunmyyjä/lipputoimiston työntekijä)
+> rooli | varchar(50) | Käyttäjän rooli (lipunmyyjä/lipputoimiston työntekijä)
 
 
 
