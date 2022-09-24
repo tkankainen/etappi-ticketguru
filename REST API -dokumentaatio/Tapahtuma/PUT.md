@@ -33,7 +33,7 @@ Päivitä olemassa oleva tapahtuma
 
 **Code** : `200 OK`
 
-**Esimerkki** : "aika" kenttä on päivitetty ja lisätty kohteeseen ´/api/tapahtumat/1/´
+**Esimerkki** : "aika" kenttä on päivitetty ja lisätty kohteeseen `/api/tapahtumat/1/`
 
 ```json
 {
@@ -53,7 +53,7 @@ Päivitä olemassa oleva tapahtuma
 
 **Code** ´404 NOT FOUND´
 
-**Sisältö** : ´{}´
+**Sisältö** : `{}`
 
 
   
