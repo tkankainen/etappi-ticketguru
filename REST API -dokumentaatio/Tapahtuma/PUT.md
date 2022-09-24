@@ -23,7 +23,12 @@ Päivitä olemassa oleva tapahtuma
 
 ```json
 {
-    "aika": "aika120",
+"aika": "aika120",
+"nimi" :"Tapahtuma1",
+"osoite" :"os1",
+"kaupunki" :"HKI",
+"kpl" :5,
+"loppupvm": "15.9.2022",
 }
 ```
 
