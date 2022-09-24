@@ -26,7 +26,7 @@ Näyttää kaikki tapahtumat
 [
   {
     "tapahtuma": {
-        "tapahtumaID" :1,
+        "id" :1,
         "aika" :"aika1",
         "nimi" :"Tapahtuma1",
         "osoite" :"os1",
@@ -35,7 +35,7 @@ Näyttää kaikki tapahtumat
         "loppupvm": "15.9.2022",
         },
     "tapahtuma": {
-        "tapahtumaID" :2,
+        "id" :2,
         "aika" :"aika2",
         "nimi" :"Tapahtuma2",
         "osoite" :"os1",
