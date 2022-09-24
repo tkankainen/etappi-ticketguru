@@ -24,7 +24,7 @@ Päivitä tapahtuman yksittäistä tietoa
 
 ## Onnistunut vastaus
 
-**Ehto** Osa tapahtuman dataa muutettu
+**Ehto** : Osa tapahtuman dataa muutettu
 
 **Code** : `200 OK`
 
