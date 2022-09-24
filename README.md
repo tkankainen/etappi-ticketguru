@@ -67,7 +67,7 @@ prioriteetti = 2, tyyppi: toiminnallinen
 
 ## Tietokanta
 
-![Tietokantakaavio](Kuvat/tietokantakaavio3.jpeg)
+![Tietokantakaavio](Kuvat/tietokantakaavio4.jpeg)
 
 Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
 tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
