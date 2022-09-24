@@ -67,7 +67,7 @@ prioriteetti = 2, tyyppi: toiminnallinen
 
 ## Tietokanta
 
-![Tietokantakaavio](Kuvat/tietokantakaavio.jpeg)
+![Tietokantakaavio](Kuvat/tietokantakaavio3.jpeg)
 
 Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
 tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
@@ -94,7 +94,57 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 > lipputyyppiid | auto PK | Taulun oma id
 > tapahtumaid | FK | Tapahtuma-taulun id
 > tyyppiid | FK | Lipputyyppi-taulun id
+> hinta | int | Lipun hinta (perustuu lipputyyppiin)
+
+> ### _Lipputyyppi_
+> _Lipputyyppi-taulu sisältää tapahtumien lipputyyppien nimet._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> tyyppiid | auto PK | Taulun oma id
+> nimi | varchar(50) | Lipputyypi nimi (esim. aikuinen/eläkeläinen/opiskelija)
+
+> ### _Lippu_
+> _Lippu-taulu sisältää tapahtumien lippujen tiedot. Lippuja voi olla monia._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> lippuid | auto PK | Taulun oma id
+> tapahtumaid | FK | Tapahtuma-taulun id
+> lipputyyppiid | FK | Tapahtumalipputyyppi-taulun id
+> tilaid | FK | Tila-taulun id
+> myyntiid | FK | Myyntitapahtuma-taulun id
+> lippukoodi | varchar(50) | Lipun luettava myyntikoodi
 > hinta | int | Lipun hinta
+
+> ### _Tila_
+> _Tila-taulu sisältää lippujen mahdolliset tilat, esim. käytetty._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> tilaid | auto PK | Taulun oma id
+> nimi | varchar(50) | Tilan nimi
+
+> ### _Myyntitapahtuma_
+> _Myyntitapahtuma-taulu sisältää tiedot tehdyistä myyntitapahtumista._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> myyntiid | auto PK | Taulun oma id
+> kayttajaid | FK | Kayttaja-taulun id
+> timestamp | timestamp | Myyntitapahtuman kellonaika ja päiväys
+
+> ### _Kayttaja_
+> _Kayttaja-taulu sisältää kaikkien järjestelmää käyttävien henkilöiden tiedot (lipunmyyjät/lipputoimiston työntekijät)._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> kayttajaid | auto PK | Taulun oma id
+> etunimi | varchar(50) | Käyttäjän etunimi
+> sukunimi | varchar(50) | Käyttäjän sukunimi
+> kayttajatunnus | varchar(25) | Käyttäjätunnus
+> salasana | varchar(100) | Salasana
+> rooli | Käyttäjän rooli (lipunmyyjä/lipputoimiston työntekijä)
 
 
 
