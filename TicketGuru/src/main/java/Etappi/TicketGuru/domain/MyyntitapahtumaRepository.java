@@ -3,8 +3,8 @@ package Etappi.TicketGuru.domain;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
-public interface MyyntitapahtumaRepository extends CrudRepository<Kayttaja, Long> {
+public interface MyyntitapahtumaRepository extends CrudRepository<Myyntitapahtuma, Long> {
 
-//	List<User> findByName(String etunimi);
+	List<Myyntitapahtuma> findByMyyntiid(Long myyntiid);
 
 }
