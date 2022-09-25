@@ -11,14 +11,14 @@ Päivitä tapahtuman yksittäistä tietoa
 ```json
 
 {
-"aika": "[unicode 100 chars max]",
+"nimi": "[unicode 100 chars max]",
 }
 ```
 **Esimerkki** Muutetaan "aika" kenttää.
 
 ```json
 {
-"aika": "aika120"
+"nimi": "VehnäRock"
 }
 ```
 
@@ -33,12 +33,12 @@ Päivitä tapahtuman yksittäistä tietoa
 ```json
 {
 "id" :1,
-"aika" :"aika120",
-"nimi" :"Tapahtuma1",
+"aika" :"2022-10-10T15:00:00",
+"nimi" :"VehnäRock",
 "osoite" :"os1",
 "kaupunki" :"HKI",
 "kpl" :5,
-"loppupvm": "15.9.2022"
+"loppupvm": "12.10.2022"
 }
 ```
 
