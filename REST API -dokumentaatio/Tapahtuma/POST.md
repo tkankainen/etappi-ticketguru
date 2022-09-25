@@ -12,24 +12,24 @@ Syötä tapahtuman tiedot
 
 ```json
 {
-"aika": "[unicode 100 chars max]",
+"aika": "[unicode date]",
 "nimi": "[unicode 100 chars max]",
 "osoite": "[unicode 100 chars max]",
 "kaupunki": "[unicode 100 chars max]",
 "kpl": "[unicode numerical]",
-"loppupvm": "[unicode date]"
+"loppupvm": "[unicode 100 chars max]"
 }
 ```
 **Esimerkki** Kaikki kentät täytetty
 
 ```json
 {
-"aika" :"aika1",
+"aika" :"2022-10-10T15:00:00",
 "nimi" :"Tapahtuma1",
 "osoite" :"os1",
 "kaupunki" :"HKI",
 "kpl" :5,
-"loppupvm": "15.9.2022",
+"loppupvm": "12.10.2022",
 }
 ```
 
@@ -42,12 +42,12 @@ Syötä tapahtuman tiedot
 ```json
 {
 "id" :1,
-"aika" :"aika1",
+"aika" :"2022-10-10T15:00:00",
 "nimi" :"Tapahtuma1",
 "osoite" :"os1",
 "kaupunki" :"HKI",
 "kpl" :5,
-"loppupvm": "15.9.2022"
+"loppupvm": "12.10.2022",
 }
 ```
 
