@@ -2,6 +2,7 @@ package Etappi.TicketGuru.web;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +17,8 @@ import Etappi.TicketGuru.domain.TapahtumaRepository;
 @RestController
 public class TapahtumaController {
 	
+	@Autowired
 	private TapahtumaRepository tapahtumaRepository;
-	
-	TapahtumaController(TapahtumaRepository tapahtumaRepository) {
-		this.tapahtumaRepository = tapahtumaRepository;
-	}
 	
 	@GetMapping("tapahtumat")
 	Iterable<Tapahtuma> getAll() {
