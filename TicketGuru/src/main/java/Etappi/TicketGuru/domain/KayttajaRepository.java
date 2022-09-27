@@ -6,5 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface KayttajaRepository extends CrudRepository<Kayttaja, Long> {
 
 	List<Kayttaja> findByTunnus(String tunnus);
+	
+	
 
 }
