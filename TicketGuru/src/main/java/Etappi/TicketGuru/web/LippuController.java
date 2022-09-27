@@ -30,6 +30,8 @@ public class LippuController {
 		return lippurepository.findAll();
 	}
 	
+	//GET hae yksittäinen lippu
+	
 	@PostMapping("liput")
 	Lippu newLippu(@RequestBody Lippu newLippu) {
 		return lippurepository.save(newLippu);

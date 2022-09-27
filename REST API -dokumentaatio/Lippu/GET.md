@@ -1,6 +1,6 @@
 # Näytä kaikki liput
 
-Näyttää kaikki liputt
+Näyttää kaikki liput
 
 **URL** : `/liput/`
 
@@ -8,7 +8,7 @@ Näyttää kaikki liputt
 
 # Onnistunut pyyntö
 
-**Vaatimus** : Ei näytä yhtään tapahtumaa.
+**Vaatimus** : Ei näytä yhtään lippua.
 
 **Koodi** : `200 OK`
 
@@ -16,7 +16,7 @@ Näyttää kaikki liputt
 
 ### TAI
 
-**Vaatimus** : Näyttää yhden tai useamman tapahtuman
+**Vaatimus** : Näyttää yhden tai useamman lipun
 
 **Koodi** : `200 OK`
 
@@ -68,3 +68,18 @@ Näyttää kaikki liputt
 ]
 ]
 ```
+# Näytä kaikki liput
+
+Näyttää yhden lipun tiedot
+
+**URL** : `/liput/{id}`
+
+**Metodi** : `GET`
+
+# Onnistunut pyyntö
+
+**Vaatimus** : Näyttää yhden lipun
+
+**Koodi** : `200 OK`
+
+**Sisältö** : Haettu yhden lipun (id=x) tiedot
