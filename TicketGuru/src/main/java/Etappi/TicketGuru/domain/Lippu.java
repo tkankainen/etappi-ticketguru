@@ -38,7 +38,6 @@ public class Lippu {
 
 	public Lippu(long lippuid, Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
 			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta) {
-		super();
 		this.lippuid = lippuid;
 		this.tapahtuma = tapahtuma;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
@@ -58,7 +57,7 @@ public class Lippu {
 		this.hinta = hinta;
 	}
 	
-	//poista kun myyntitapahtuma ok
+	//konstruktori ilman myyntitapahtumaa testailua varten, poisto myöhemmin
 	public Lippu(Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
 			String lippukoodi, long hinta) {
 		this.tapahtuma = tapahtuma;
@@ -68,6 +67,7 @@ public class Lippu {
 		this.hinta = hinta;
 	}
 	
+	//konstruktori ilman tapahtumalipputyyppiä ja myyntitapahtumaa testailua varten, poisto myöhemmin
 	public Lippu(Tapahtuma tapahtuma, Tila tila, String lippukoodi, long hinta) {
 		this.tapahtuma = tapahtuma;
 		this.tila = tila;

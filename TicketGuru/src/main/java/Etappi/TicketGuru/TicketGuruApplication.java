@@ -48,18 +48,20 @@ public class TicketGuruApplication {
 		LocalDateTime aikanyt = LocalDateTime.now(); 
 		
 		//lisätään muutama käyttäjä
-				// Create kayttajat: admin/admin user/user
-				Kayttaja kayttaja1 = new Kayttaja("User1", "Snimi", "u1", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
-				Kayttaja kayttaja2 = new Kayttaja("User2", "Snimi", "a2", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "ADMIN");
-				krepository.save(kayttaja1);
-				krepository.save(kayttaja2);
-		
-				// lisätään muutama myyntitapahtuma
+		// Create kayttajat: admin/admin user/user
+		Kayttaja kayttaja1 = new Kayttaja("User1", "Snimi", "u1", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
+		Kayttaja kayttaja2 = new Kayttaja("User2", "Snimi", "a2", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "ADMIN");
+		krepository.save(kayttaja1);
+		krepository.save(kayttaja2);
 
-//				//jrepository.save( new Jasen("Jasen","Ykkönen", "os1","00520","09123456","jasen@ykkonen.fi",yrepository.findByName("Y").get(0),arepository.findByName("J").get(0)));
-			myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("u1").get(0), "1.1.2022"));
-			myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "1.1.2023"));
-				
+		// lisätään muutama myyntitapahtuma
+
+		//jrepository.save( new Jasen("Jasen","Ykkönen", "os1","00520","09123456","jasen@ykkonen.fi",yrepository.findByName("Y").get(0),arepository.findByName("J").get(0)));
+		myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("u1").get(0), "1.1.2022"));
+		myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "1.1.2023"));
+		
+		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "31.12.2022");
+		myrepository.save(myynti1);
 		
 		Tapahtuma tapahtuma1= new Tapahtuma(aika1, "Tapahtuma1", "os1","HKI", 5, "15.9.2022");
 		Tapahtuma tapahtuma2= new Tapahtuma(aika2, "Tapahtuma2", "os1","HKI",5,"15.9.2023");
@@ -70,8 +72,10 @@ public class TicketGuruApplication {
 		brepository.save(tapahtuma3);
 		
 		Tapahtumalipputyyppi tyyppi1 = new Tapahtumalipputyyppi(15, tapahtuma1); //hinta, tapahtuma
-				
+		Tapahtumalipputyyppi tyyppi2 = new Tapahtumalipputyyppi(20, tapahtuma3);
+		
 		trepository.save(tyyppi1);
+		trepository.save(tyyppi2);
 		
 		Tila vapaa = new Tila("vapaa");
 		Tila kaytetty = new Tila("käytetty");
@@ -80,10 +84,12 @@ public class TicketGuruApplication {
 		tilarepository.save(kaytetty);
 		
 		Lippu lippu1 = new Lippu(tapahtuma1, tyyppi1, vapaa, "abc234", 25);
-		Lippu lippu2 = new Lippu(tapahtuma3, kaytetty, "iopp453f", 12);
+		Lippu lippu2 = new Lippu(tapahtuma3, tyyppi2, kaytetty, "iopp453f", 12);
+		Lippu lippu3 = new Lippu(tapahtuma1, tyyppi2, vapaa, myynti1,"koo4d234", 34); //tapahtuma, tapahtumalipputyyppi, tila, myyntitapahtuma, koodi, hinta
 		
 		lrepository.save(lippu1);
 		lrepository.save(lippu2);
+		lrepository.save(lippu3);
 		
 		log.info("fetch all tapahtuma");
 		for (Tapahtuma tapahtuma : brepository.findAll()) {
