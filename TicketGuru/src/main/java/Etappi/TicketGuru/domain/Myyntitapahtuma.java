@@ -37,7 +37,7 @@ public class Myyntitapahtuma {
 	
 	public Myyntitapahtuma() {}
 	
-	public Myyntitapahtuma(long myyntiid, Kayttaja kayttaja, String timestamp) {
+	public Myyntitapahtuma( Kayttaja kayttaja, String timestamp) {
 		
 		super();
 		this.kayttaja = kayttaja;
