@@ -37,8 +37,30 @@ public class Lippu {
 	}
 
 	public Lippu(long lippuid, Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
-			String lippukoodi, long hinta) {
+			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta) {
+		super();
 		this.lippuid = lippuid;
+		this.tapahtuma = tapahtuma;
+		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
+		this.tila = tila;
+		this.myyntitapahtuma = myyntitapahtuma;
+		this.lippukoodi = lippukoodi;
+		this.hinta = hinta;
+	}
+	
+	public Lippu(Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
+			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta) {
+		this.tapahtuma = tapahtuma;
+		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
+		this.tila = tila;
+		this.myyntitapahtuma = myyntitapahtuma;
+		this.lippukoodi = lippukoodi;
+		this.hinta = hinta;
+	}
+	
+	//poista kun myyntitapahtuma ok
+	public Lippu(Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
+			String lippukoodi, long hinta) {
 		this.tapahtuma = tapahtuma;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.tila = tila;

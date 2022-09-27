@@ -15,16 +15,16 @@ Syötä tapahtuman tiedot
 {
 {
     "tapahtuma": {
-        "tapahtumaid": 1
+        "tapahtumaid": {tapahtumaid}
     },
     "tapahtumalipputyyppi": {
-        "lipputyyppiid": 1
+        "lipputyyppiid": {lipputyyppiid}
     },
     "tila": {
-        "tilaid": 1
+        "tilaid": {tilaid}
     },
     "myyntitapahtuma": {
-        "myyntiid": 1
+        "myyntiid": {myyntiid}
     },
     "lippukoodi": "[unicode 50 chars max]",
     "hinta": "[unicode numerical]",
@@ -38,13 +38,17 @@ Syötä tapahtuman tiedot
     "tapahtuma": {
         "tapahtumaid": 1
     },
-    "tapahtumalipputyyppi": null,
+    "tapahtumalipputyyppi": {
+        "lipputyyppiid": 1
+    },
     "tila": {
         "tilaid": 1
     },
-    "myyntitapahtuma": null,
-    "lippukoodi": "xcvg567s",
-    "hinta": 40
+    "myyntitapahtuma": {
+        "myyntiid": 1
+    },
+    "lippukoodi": "234ty5tg6",
+    "hinta": 37
 }
 ```
 
@@ -53,30 +57,3 @@ Syötä tapahtuman tiedot
 **Ehto** Kaikki kentät sisältävät oikeaa dataa
 
 **Code** : `201 CREATED`
-
-```json
-{
-"id" :1,
-"aika" :"2022-10-10T15:00:00",
-"nimi" :"Tapahtuma1",
-"osoite" :"os1",
-"kaupunki" :"HKI",
-"kpl" :5,
-"loppupvm": "12.10.2022",
-}
-```
-
-## Virhe vastauksia
-
-**Ehto** : Kenttä on tyhjä, puutteeliinen tai sisältää väärä dataa.
-
-**Code** : `400 BAD REQUEST`
-
-**Esimerkki**
- 
- ```json
- 
- {
- "aika": ["Vaadittu kenttä"]
- }
-```

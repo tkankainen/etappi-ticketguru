@@ -69,13 +69,17 @@ public class TicketGuruApplication {
 		brepository.save(tapahtuma2);
 		brepository.save(tapahtuma3);
 		
+		Tapahtumalipputyyppi tyyppi1 = new Tapahtumalipputyyppi(15, tapahtuma1); //hinta, tapahtuma
+				
+		trepository.save(tyyppi1);
+		
 		Tila vapaa = new Tila("vapaa");
 		Tila kaytetty = new Tila("käytetty");
 		
 		tilarepository.save(vapaa);
 		tilarepository.save(kaytetty);
 		
-		Lippu lippu1 = new Lippu(tapahtuma1, vapaa, "abc234", 25);
+		Lippu lippu1 = new Lippu(tapahtuma1, tyyppi1, vapaa, "abc234", 25);
 		Lippu lippu2 = new Lippu(tapahtuma3, kaytetty, "iopp453f", 12);
 		
 		lrepository.save(lippu1);
