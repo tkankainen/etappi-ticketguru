@@ -35,6 +35,7 @@ public class Tapahtumalipputyyppi {
 		this.lipputyyppi = lipputyyppi;
 	}
 
+	
 	public Tapahtumalipputyyppi(long hinta, Tapahtuma tapahtuma) {
 		this.hinta=hinta;
 		this.tapahtuma = tapahtuma;

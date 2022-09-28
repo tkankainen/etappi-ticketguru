@@ -73,11 +73,21 @@ public class TicketGuruApplication {
 		brepository.save(tapahtuma2);
 		brepository.save(tapahtuma3);
 		
-		Tapahtumalipputyyppi tyyppi1 = new Tapahtumalipputyyppi(15, tapahtuma1); //hinta, tapahtuma
-		Tapahtumalipputyyppi tyyppi2 = new Tapahtumalipputyyppi(20, tapahtuma3);
+		Lipputyyppi lt1 = new Lipputyyppi("Aikuinen");
+		Lipputyyppi lt2 = new Lipputyyppi("Lapsi");
+		
+		ltrepository.save(lt1);
+		ltrepository.save(lt2);
+		
+		Tapahtumalipputyyppi tyyppi1 = new Tapahtumalipputyyppi(15, tapahtuma1,lt1); //hinta, tapahtuma
+		Tapahtumalipputyyppi tyyppi2 = new Tapahtumalipputyyppi(20, tapahtuma3, lt2);
 		
 		trepository.save(tyyppi1);
 		trepository.save(tyyppi2);
+		
+		//trepository.save( new Tapahtumalipputyyppi(30, brepository.findByNimi("Tapahtuma1").get(0),ltrepository.findByNimi("Aikuinen").get(0)));
+		
+		
 		
 		Tila vapaa = new Tila("vapaa");
 		Tila kaytetty = new Tila("käytetty");
@@ -85,15 +95,12 @@ public class TicketGuruApplication {
 		tilarepository.save(vapaa);
 		tilarepository.save(kaytetty);
 		
-		Lipputyyppi lt1 = new Lipputyyppi("Aikuinen");
-		Lipputyyppi lt2 = new Lipputyyppi("Lapsi");
 		
-		ltrepository.save(lt1);
-		ltrepository.save(lt2);
 		
 		Lippu lippu1 = new Lippu(tapahtuma1, tyyppi1, vapaa, "abc234", 25);
 		Lippu lippu2 = new Lippu(tapahtuma3, tyyppi2, kaytetty, "iopp453f", 12);
 		Lippu lippu3 = new Lippu(tapahtuma1, tyyppi2, vapaa, myynti1,"koo4d234", 34); //tapahtuma, tapahtumalipputyyppi, tila, myyntitapahtuma, koodi, hinta
+		//Lippu lippu3 = new Lippu(tapahtuma1, tyyppi2, vapaa, myrepository.findByTimestamp("1.1.2022").get(0),"koo4d234", 34); //tapahtuma, tapahtumalipputyyppi, tila, myyntitapahtuma, koodi, hinta
 		
 		lrepository.save(lippu1);
 		lrepository.save(lippu2);
