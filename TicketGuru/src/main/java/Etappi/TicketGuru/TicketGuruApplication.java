@@ -11,6 +11,8 @@ import Etappi.TicketGuru.domain.Kayttaja;
 import Etappi.TicketGuru.domain.KayttajaRepository;
 import Etappi.TicketGuru.domain.Lippu;
 import Etappi.TicketGuru.domain.LippuRepository;
+import Etappi.TicketGuru.domain.Lipputyyppi;
+import Etappi.TicketGuru.domain.LipputyyppiRepository;
 //import Etappi.TicketGuru.domain.Lipputyyppi;
 //import Etappi.TicketGuru.domain.LipputyyppiRepository;
 import Etappi.TicketGuru.domain.Myyntitapahtuma;
@@ -36,7 +38,7 @@ public class TicketGuruApplication {
 	}
 	@Bean //jos testiä
 	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository, 
-			LippuRepository lrepository, TilaRepository tilarepository, KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
+			LippuRepository lrepository, LipputyyppiRepository ltrepository, TilaRepository tilarepository, KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
 		return (args) -> {
 		log.info("save a couple of tapahtuma");
 		
@@ -83,6 +85,12 @@ public class TicketGuruApplication {
 		tilarepository.save(vapaa);
 		tilarepository.save(kaytetty);
 		
+		Lipputyyppi lt1 = new Lipputyyppi("Aikuinen");
+		Lipputyyppi lt2 = new Lipputyyppi("Lapsi");
+		
+		ltrepository.save(lt1);
+		ltrepository.save(lt2);
+		
 		Lippu lippu1 = new Lippu(tapahtuma1, tyyppi1, vapaa, "abc234", 25);
 		Lippu lippu2 = new Lippu(tapahtuma3, tyyppi2, kaytetty, "iopp453f", 12);
 		Lippu lippu3 = new Lippu(tapahtuma1, tyyppi2, vapaa, myynti1,"koo4d234", 34); //tapahtuma, tapahtumalipputyyppi, tila, myyntitapahtuma, koodi, hinta
@@ -90,6 +98,8 @@ public class TicketGuruApplication {
 		lrepository.save(lippu1);
 		lrepository.save(lippu2);
 		lrepository.save(lippu3);
+		
+		
 		
 		log.info("fetch all tapahtuma");
 		for (Tapahtuma tapahtuma : brepository.findAll()) {
