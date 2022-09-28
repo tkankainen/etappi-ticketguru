@@ -59,8 +59,8 @@ public class TicketGuruApplication {
 		// lisätään muutama myyntitapahtuma
 
 		//jrepository.save( new Jasen("Jasen","Ykkönen", "os1","00520","09123456","jasen@ykkonen.fi",yrepository.findByName("Y").get(0),arepository.findByName("J").get(0)));
-		myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("u1").get(0), "1.1.2022"));
-		myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "1.1.2023"));
+		//myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("u1").get(0), "1.1.2022"));
+		//myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "1.1.2023"));
 		
 		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "31.12.2022");
 		myrepository.save(myynti1);
@@ -97,8 +97,8 @@ public class TicketGuruApplication {
 		
 		
 		
-		Lippu lippu1 = new Lippu(tapahtuma1, tyyppi1, vapaa, "abc234", 25);
-		Lippu lippu2 = new Lippu(tapahtuma3, tyyppi2, kaytetty, "iopp453f", 12);
+		Lippu lippu1 = new Lippu(tapahtuma1, tyyppi1, vapaa, myynti1,"abc234", 25);
+		Lippu lippu2 = new Lippu(tapahtuma3, tyyppi2, kaytetty,myynti1, "iopp453f", 12);
 		Lippu lippu3 = new Lippu(tapahtuma1, tyyppi2, vapaa, myynti1,"koo4d234", 34); //tapahtuma, tapahtumalipputyyppi, tila, myyntitapahtuma, koodi, hinta
 		//Lippu lippu3 = new Lippu(tapahtuma1, tyyppi2, vapaa, myrepository.findByTimestamp("1.1.2022").get(0),"koo4d234", 34); //tapahtuma, tapahtumalipputyyppi, tila, myyntitapahtuma, koodi, hinta
 		
