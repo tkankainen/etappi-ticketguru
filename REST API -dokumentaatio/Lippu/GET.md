@@ -14,9 +14,7 @@ Näyttää kaikki liput
 
 **Sisältö** :
 ```json
-[
-[
-   {
+{
     "_embedded": {
         "lippus": []
     },
@@ -32,8 +30,7 @@ Näyttää kaikki liput
         }
     }
 }       
-]
-]
+
 ```
 
 
@@ -46,9 +43,7 @@ Näyttää kaikki liput
 **Sisältö** : Esimerkiksi 2 lippua löytyi
 
 ```json
-[
-  [
-    {
+{
     "_embedded": {
         "lippus": [
             {
@@ -61,8 +56,8 @@ Näyttää kaikki liput
                     "lippu": {
                         "href": "http://localhost:8080/api/liput/1"
                     },
-                    "tapahtumalipputyyppi": {
-                        "href": "http://localhost:8080/api/liput/1/tapahtumalipputyyppi"
+                    "tapahtuma": {
+                        "href": "http://localhost:8080/api/liput/1/tapahtuma"
                     },
                     "tila": {
                         "href": "http://localhost:8080/api/liput/1/tila"
@@ -70,8 +65,8 @@ Näyttää kaikki liput
                     "myyntitapahtuma": {
                         "href": "http://localhost:8080/api/liput/1/myyntitapahtuma"
                     },
-                    "tapahtuma": {
-                        "href": "http://localhost:8080/api/liput/1/tapahtuma"
+                    "tapahtumalipputyyppi": {
+                        "href": "http://localhost:8080/api/liput/1/tapahtumalipputyyppi"
                     }
                 }
             },
@@ -85,8 +80,8 @@ Näyttää kaikki liput
                     "lippu": {
                         "href": "http://localhost:8080/api/liput/2"
                     },
-                    "tapahtumalipputyyppi": {
-                        "href": "http://localhost:8080/api/liput/2/tapahtumalipputyyppi"
+                    "tapahtuma": {
+                        "href": "http://localhost:8080/api/liput/2/tapahtuma"
                     },
                     "tila": {
                         "href": "http://localhost:8080/api/liput/2/tila"
@@ -94,16 +89,16 @@ Näyttää kaikki liput
                     "myyntitapahtuma": {
                         "href": "http://localhost:8080/api/liput/2/myyntitapahtuma"
                     },
-                    "tapahtuma": {
-                        "href": "http://localhost:8080/api/liput/2/tapahtuma"
+                    "tapahtumalipputyyppi": {
+                        "href": "http://localhost:8080/api/liput/2/tapahtumalipputyyppi"
                     }
                 }
-            },
+            }
         ]
     },
     "_links": {
         "self": {
-            "href": "http://localhost:8080/api/liput"
+            "href": "http://localhost:8080/api/liput/"
         },
         "profile": {
             "href": "http://localhost:8080/api/profile/liput"
@@ -113,14 +108,12 @@ Näyttää kaikki liput
         }
     }
 }
-]
-]
 ```
-# Näytä kaikki liput
+# Näytä yksi lippu
 
 Näyttää yhden lipun tiedot
 
-**URL** : `/liput/{id}`
+**URL** : `api/liput/{id}`
 
 **Metodi** : `GET`
 
@@ -132,9 +125,7 @@ Näyttää yhden lipun tiedot
 
 **Sisältö** : Haettu yhden lipun (id=1) tiedot
 ```json
-[
-  [
-   {
+{
     "lippukoodi": "abc234",
     "hinta": 25,
     "_links": {
@@ -157,8 +148,6 @@ Näyttää yhden lipun tiedot
             "href": "http://localhost:8080/api/liput/1/tapahtuma"
         }
     }
-} 
-]
-]
+}
 ```
 

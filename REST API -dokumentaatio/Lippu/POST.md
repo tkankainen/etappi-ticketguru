@@ -2,30 +2,22 @@
 
 Luo uuden lipun tapahtumaan
 
-**URL** : `/liput/`
+**URL** : `api/liput/`
 
 **Metodi** : `POST`
 
 **Datan rajoitukset**
 
-Pyynnössä on tapahtuman, tapahtumalipputyypin, tilan ja myyntitapahtuman yksilöivä tunniste.
+Pyynnössä on linkit tapahtumaan, tapahtumalipputyyppiin, tilaan ja myyntitapahtumaan.
 Syötä tapahtuman tiedot
 
 ```json
 {
 {
-    "tapahtuma": {
-        "tapahtumaid": {tapahtumaid}
-    },
-    "tapahtumalipputyyppi": {
-        "lipputyyppiid": {lipputyyppiid}
-    },
-    "tila": {
-        "tilaid": {tilaid}
-    },
-    "myyntitapahtuma": {
-        "myyntiid": {myyntiid}
-    },
+    "tapahtuma": "[tapahtuma]",
+    "tapahtumalipputyyppi": "[tapahtumalipputyyppi]",
+    "tila": "[tila]",
+    "myyntitapahtuma": "[myyntitapahtuma]",
     "lippukoodi": "[unicode 50 chars max]",
     "hinta": "[unicode numerical]",
 }
@@ -35,18 +27,10 @@ Syötä tapahtuman tiedot
 
 ```json
 {
-    "tapahtuma": {
-        "tapahtumaid": 1
-    },
-    "tapahtumalipputyyppi": {
-        "lipputyyppiid": 1
-    },
-    "tila": {
-        "tilaid": 1
-    },
-    "myyntitapahtuma": {
-        "myyntiid": 1
-    },
+    "tapahtuma": "http://localhost:8080/api/tapahtumat/3",
+    "tapahtumalipputyyppi": "http://localhost:8080/api/tapahtumalipputyypit/2",
+    "tila": "http://localhost:8080/api/tilat/1",
+    "myyntitapahtuma": "http://localhost:8080/api/myyntitapahtumat/1",
     "lippukoodi": "234ty5tg6",
     "hinta": 37
 }
@@ -57,3 +41,45 @@ Syötä tapahtuman tiedot
 **Ehto** Kaikki kentät sisältävät oikeaa dataa
 
 **Code** : `201 CREATED`
+
+**Sisältö** :
+```json
+
+{
+    "lippukoodi": "234ty5tg6",
+    "hinta": 37,
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/api/liput/4"
+        },
+        "lippu": {
+            "href": "http://localhost:8080/api/liput/4"
+        },
+        "tapahtumalipputyyppi": {
+            "href": "http://localhost:8080/api/liput/4/tapahtumalipputyyppi"
+        },
+        "tila": {
+            "href": "http://localhost:8080/api/liput/4/tila"
+        },
+        "myyntitapahtuma": {
+            "href": "http://localhost:8080/api/liput/4/myyntitapahtuma"
+        },
+        "tapahtuma": {
+            "href": "http://localhost:8080/api/liput/4/tapahtuma"
+        }
+    }
+}
+
+```
+
+## Virhe vastauksia
+
+**Ehto** : 
+
+**Code** : `400 BAD REQUEST`
+
+**Esimerkki**
+ 
+ ```json
+ 
+```
