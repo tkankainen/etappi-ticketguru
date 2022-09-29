@@ -25,13 +25,9 @@ public class Myyntitapahtuma {
 	@JoinColumn(name = "kayttajaid")
 	private Kayttaja kayttaja;
 	
-
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="myyntitapahtuma")
-	
-	private List <Lippu> liput;  //monta lippua myyntitapahtumassa*/
-
-
+	private List <Lippu> liput;  //monta lippua myyntitapahtumassa
 	
 	private String timestamp;
 	
@@ -67,21 +63,17 @@ public class Myyntitapahtuma {
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
+	
 	public List<Lippu> getLiput(){
 		return liput;
 	}
 		
 	public void setLiput(List<Lippu> liput) {
 			this.liput = liput;
-		}
-
+	}
 
 	@Override
 	public String toString() {
 		return "Myyntitapahtuma [myyntiid=" + myyntiid + ", kayttaja=" + this.getKayttaja() + ", timestamp=" + timestamp + "]";
 	}
-	
-	
-	
-
 }

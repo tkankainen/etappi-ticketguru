@@ -13,8 +13,6 @@ import Etappi.TicketGuru.domain.Lippu;
 import Etappi.TicketGuru.domain.LippuRepository;
 import Etappi.TicketGuru.domain.Lipputyyppi;
 import Etappi.TicketGuru.domain.LipputyyppiRepository;
-//import Etappi.TicketGuru.domain.Lipputyyppi;
-//import Etappi.TicketGuru.domain.LipputyyppiRepository;
 import Etappi.TicketGuru.domain.Myyntitapahtuma;
 import Etappi.TicketGuru.domain.MyyntitapahtumaRepository;
 import Etappi.TicketGuru.domain.Tapahtuma;
@@ -23,9 +21,6 @@ import Etappi.TicketGuru.domain.Tapahtumalipputyyppi;
 import Etappi.TicketGuru.domain.TapahtumalipputyyppiRepository;
 import Etappi.TicketGuru.domain.Tila;
 import Etappi.TicketGuru.domain.TilaRepository;
-
-
-//jos haluaa commandline runner testiä
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,16 +31,13 @@ public class TicketGuruApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TicketGuruApplication.class, args);
 	}
-	@Bean //jos testiä
+	@Bean
 	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository, 
 			LippuRepository lrepository, LipputyyppiRepository ltrepository, TilaRepository tilarepository, KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
 		return (args) -> {
 		log.info("save a couple of tapahtuma");
 		
-//		lrepository.save(new Lipputyyppi("Aikuinen"));
-//		lrepository.save(new Lipputyyppi("Lapsi"));
-		
-		LocalDateTime aika1 = LocalDateTime.of(2022,12,21,18,00); //int (vuosi,kk,pv,tunnit,minuutit(,sekunnit)
+		LocalDateTime aika1 = LocalDateTime.of(2022,12,21,18,00); //int (vuosi,kk,pv,tunnit,minuutit,(sekunnit))
 		LocalDateTime aika2 = LocalDateTime.of(2022,10,8,20,00);
 		LocalDateTime aikanyt = LocalDateTime.now(); 
 		
@@ -87,15 +79,11 @@ public class TicketGuruApplication {
 		
 		//trepository.save( new Tapahtumalipputyyppi(30, brepository.findByNimi("Tapahtuma1").get(0),ltrepository.findByNimi("Aikuinen").get(0)));
 		
-		
-		
 		Tila vapaa = new Tila("vapaa");
 		Tila kaytetty = new Tila("käytetty");
 		
 		tilarepository.save(vapaa);
 		tilarepository.save(kaytetty);
-		
-		
 		
 		Lippu lippu1 = new Lippu(tapahtuma1, tyyppi1, vapaa, myynti1,"abc234", 25);
 		Lippu lippu2 = new Lippu(tapahtuma3, tyyppi2, kaytetty,myynti1, "iopp453f", 12);
@@ -106,8 +94,6 @@ public class TicketGuruApplication {
 		lrepository.save(lippu2);
 		lrepository.save(lippu3);
 		
-		
-		
 		log.info("fetch all tapahtuma");
 		for (Tapahtuma tapahtuma : brepository.findAll()) {
 			log.info(tapahtuma.toString());
@@ -116,10 +102,6 @@ public class TicketGuruApplication {
 		for (Tapahtumalipputyyppi tapahtumalipputyyppi : trepository.findAll()) {
 			log.info(tapahtumalipputyyppi.toString());
 		}
-//		log.info("fetch all lipputyyppi");
-//		for (Lipputyyppi lipputyyppi : lrepository.findAll()) {
-//			log.info(lipputyyppi.toString());
-//		}
 		
 		log.info("fetch all lippu");
 		for (Lippu lippu : lrepository.findAll()) {
