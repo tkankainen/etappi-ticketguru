@@ -2,7 +2,7 @@
 
 Näyttää kaikki liput
 
-**URL** : `/liput/`
+**URL** : `/api/liput/`
 
 **Metodi** : `GET`
 
@@ -12,7 +12,30 @@ Näyttää kaikki liput
 
 **Koodi** : `200 OK`
 
-**Sisältö** : `{[]}`
+**Sisältö** :
+```json
+[
+[
+   {
+    "_embedded": {
+        "lippus": []
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/api/liput"
+        },
+        "profile": {
+            "href": "http://localhost:8080/api/profile/liput"
+        },
+        "search": {
+            "href": "http://localhost:8080/api/liput/search"
+        }
+    }
+}       
+]
+]
+```
+
 
 ### TAI
 
@@ -26,45 +49,70 @@ Näyttää kaikki liput
 [
   [
     {
-        "lippuid": 1,
-        "tapahtuma": {
-            "tapahtumaid": 1,
-            "aika": "2022-12-21T18:00:00",
-            "nimi": "Tapahtuma1",
-            "osoite": "os1",
-            "kaupunki": "HKI",
-            "kpl": 5,
-            "loppupvm": "15.9.2022"
-        },
-        "tapahtumalipputyyppi": null,
-        "tila": {
-            "tilaid": 1,
-            "nimi": "vapaa"
-        },
-        "myyntitapahtuma": null,
-        "lippukoodi": "abc234",
-        "hinta": 25
+    "_embedded": {
+        "lippus": [
+            {
+                "lippukoodi": "abc234",
+                "hinta": 25,
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8080/api/liput/1"
+                    },
+                    "lippu": {
+                        "href": "http://localhost:8080/api/liput/1"
+                    },
+                    "tapahtumalipputyyppi": {
+                        "href": "http://localhost:8080/api/liput/1/tapahtumalipputyyppi"
+                    },
+                    "tila": {
+                        "href": "http://localhost:8080/api/liput/1/tila"
+                    },
+                    "myyntitapahtuma": {
+                        "href": "http://localhost:8080/api/liput/1/myyntitapahtuma"
+                    },
+                    "tapahtuma": {
+                        "href": "http://localhost:8080/api/liput/1/tapahtuma"
+                    }
+                }
+            },
+            {
+                "lippukoodi": "iopp453f",
+                "hinta": 12,
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8080/api/liput/2"
+                    },
+                    "lippu": {
+                        "href": "http://localhost:8080/api/liput/2"
+                    },
+                    "tapahtumalipputyyppi": {
+                        "href": "http://localhost:8080/api/liput/2/tapahtumalipputyyppi"
+                    },
+                    "tila": {
+                        "href": "http://localhost:8080/api/liput/2/tila"
+                    },
+                    "myyntitapahtuma": {
+                        "href": "http://localhost:8080/api/liput/2/myyntitapahtuma"
+                    },
+                    "tapahtuma": {
+                        "href": "http://localhost:8080/api/liput/2/tapahtuma"
+                    }
+                }
+            },
+        ]
     },
-    {
-        "lippuid": 2,
-        "tapahtuma": {
-            "tapahtumaid": 3,
-            "aika": "2022-09-27T14:17:45.279002",
-            "nimi": "Tapahtuma3",
-            "osoite": "Kulttuuritalo",
-            "kaupunki": "Helsinki",
-            "kpl": 500,
-            "loppupvm": "31.12.2022"
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/api/liput"
         },
-        "tapahtumalipputyyppi": null,
-        "tila": {
-            "tilaid": 2,
-            "nimi": "käytetty"
+        "profile": {
+            "href": "http://localhost:8080/api/profile/liput"
         },
-        "myyntitapahtuma": null,
-        "lippukoodi": "iopp453f",
-        "hinta": 12
+        "search": {
+            "href": "http://localhost:8080/api/liput/search"
+        }
     }
+}
 ]
 ]
 ```
@@ -82,4 +130,35 @@ Näyttää yhden lipun tiedot
 
 **Koodi** : `200 OK`
 
-**Sisältö** : Haettu yhden lipun (id=x) tiedot
+**Sisältö** : Haettu yhden lipun (id=1) tiedot
+```json
+[
+  [
+   {
+    "lippukoodi": "abc234",
+    "hinta": 25,
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/api/liput/1"
+        },
+        "lippu": {
+            "href": "http://localhost:8080/api/liput/1"
+        },
+        "tapahtumalipputyyppi": {
+            "href": "http://localhost:8080/api/liput/1/tapahtumalipputyyppi"
+        },
+        "tila": {
+            "href": "http://localhost:8080/api/liput/1/tila"
+        },
+        "myyntitapahtuma": {
+            "href": "http://localhost:8080/api/liput/1/myyntitapahtuma"
+        },
+        "tapahtuma": {
+            "href": "http://localhost:8080/api/liput/1/tapahtuma"
+        }
+    }
+} 
+]
+]
+```
+
