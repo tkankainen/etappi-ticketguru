@@ -12,8 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 
 
 @Entity
@@ -26,7 +28,9 @@ public class Tapahtuma {
 	
 	private LocalDateTime aika;
 	
+	
 	private String nimi;
+	
 	private String osoite;
 	private String kaupunki;
 	private long kpl;
