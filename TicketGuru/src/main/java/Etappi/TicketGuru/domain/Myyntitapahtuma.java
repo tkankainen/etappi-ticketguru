@@ -1,5 +1,6 @@
 package Etappi.TicketGuru.domain;
 
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -74,6 +75,7 @@ public class Myyntitapahtuma {
 
 	@Override
 	public String toString() {
-		return "Myyntitapahtuma [myyntiid=" + myyntiid + ", kayttaja=" + this.getKayttaja() + ", timestamp=" + timestamp + "]";
+		return "Myyntitapahtuma [myyntiid=" + myyntiid + ", kayttaja=" + kayttaja + ", liput=" + liput + ", timestamp="
+				+ timestamp + "]";
 	}
 }
