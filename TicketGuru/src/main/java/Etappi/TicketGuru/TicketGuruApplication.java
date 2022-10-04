@@ -19,8 +19,7 @@ import Etappi.TicketGuru.domain.Tapahtuma;
 import Etappi.TicketGuru.domain.TapahtumaRepository;
 import Etappi.TicketGuru.domain.Tapahtumalipputyyppi;
 import Etappi.TicketGuru.domain.TapahtumalipputyyppiRepository;
-import Etappi.TicketGuru.domain.Tila;
-import Etappi.TicketGuru.domain.TilaRepository;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -33,7 +32,7 @@ public class TicketGuruApplication {
 	}
 	@Bean
 	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository, 
-			LippuRepository lrepository, LipputyyppiRepository ltrepository, TilaRepository tilarepository, KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
+			LippuRepository lrepository, LipputyyppiRepository ltrepository,  KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
 		return (args) -> {
 		log.info("save a couple of tapahtuma");
 		
@@ -79,11 +78,7 @@ public class TicketGuruApplication {
 		
 		//trepository.save( new Tapahtumalipputyyppi(30, brepository.findByNimi("Tapahtuma1").get(0),ltrepository.findByNimi("Aikuinen").get(0)));
 		
-//		Tila vapaa = new Tila("vapaa");
-//		Tila kaytetty = new Tila("käytetty");
-//		
-//		tilarepository.save(vapaa);
-//		tilarepository.save(kaytetty);
+
 		
 		//Tapahtumalipputyyppi tapahtumalipputyyppi, Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta
 		
