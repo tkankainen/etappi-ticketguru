@@ -15,16 +15,8 @@ public class Lippu {
 	private long lippuid;
 	
 	@ManyToOne
-	@JoinColumn(name="tapahtumaid")
-	private Tapahtuma tapahtuma;
-	
-	@ManyToOne
 	@JoinColumn(name="lipputyyppiid")
 	private Tapahtumalipputyyppi tapahtumalipputyyppi;
-	
-	@ManyToOne
-	@JoinColumn(name="tilaid")
-	private Tila tila;
 	
 	@ManyToOne
 	@JoinColumn(name="myyntiid")
@@ -36,41 +28,19 @@ public class Lippu {
 	public Lippu() {
 	}
 
-	public Lippu(long lippuid, Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
+	public Lippu(long lippuid, Tapahtumalipputyyppi tapahtumalipputyyppi,
 			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta) {
 		this.lippuid = lippuid;
-		this.tapahtuma = tapahtuma;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
-		this.tila = tila;
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.lippukoodi = lippukoodi;
 		this.hinta = hinta;
 	}
 	
-	public Lippu(Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
+	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
 			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta) {
-		this.tapahtuma = tapahtuma;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
-		this.tila = tila;
 		this.myyntitapahtuma = myyntitapahtuma;
-		this.lippukoodi = lippukoodi;
-		this.hinta = hinta;
-	}
-	
-	//konstruktori ilman myyntitapahtumaa testailua varten, poisto myöhemmin
-	public Lippu(Tapahtuma tapahtuma, Tapahtumalipputyyppi tapahtumalipputyyppi, Tila tila,
-			String lippukoodi, long hinta) {
-		this.tapahtuma = tapahtuma;
-		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
-		this.tila = tila;
-		this.lippukoodi = lippukoodi;
-		this.hinta = hinta;
-	}
-	
-	//konstruktori ilman tapahtumalipputyyppiä ja myyntitapahtumaa testailua varten, poisto myöhemmin
-	public Lippu(Tapahtuma tapahtuma, Tila tila, String lippukoodi, long hinta) {
-		this.tapahtuma = tapahtuma;
-		this.tila = tila;
 		this.lippukoodi = lippukoodi;
 		this.hinta = hinta;
 	}
@@ -83,28 +53,12 @@ public class Lippu {
 		this.lippuid = lippuid;
 	}
 
-	public Tapahtuma getTapahtuma() {
-		return tapahtuma;
-	}
-
-	public void setTapahtuma(Tapahtuma tapahtuma) {
-		this.tapahtuma = tapahtuma;
-	}
-
 	public Tapahtumalipputyyppi getTapahtumalipputyyppi() {
 		return tapahtumalipputyyppi;
 	}
 
 	public void setTapahtumalipputyyppi(Tapahtumalipputyyppi tapahtumalipputyyppi) {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
-	}
-
-	public Tila getTila() {
-		return tila;
-	}
-
-	public void setTila(Tila tila) {
-		this.tila = tila;
 	}
 
 	public String getLippukoodi() {
@@ -133,8 +87,8 @@ public class Lippu {
 
 	@Override
 	public String toString() {
-		return "Lippu [lippuid=" + lippuid + ", tapahtuma=" + tapahtuma + ", tapahtumalipputyyppi="
-				+ tapahtumalipputyyppi + ", tila=" + tila + ", lippukoodi=" + lippukoodi + ", hinta=" + hinta + "]";
+		return "Lippu [lippuid=" + lippuid + ", tapahtumalipputyyppi="
+				+ tapahtumalipputyyppi + ", lippukoodi=" + lippukoodi + ", hinta=" + hinta + "]";
 	}
 
 }

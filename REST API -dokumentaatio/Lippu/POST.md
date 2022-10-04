@@ -13,14 +13,12 @@ Syötä tapahtuman tiedot
 
 ```json
 {
-    {
-        "tapahtuma": "[tapahtuma]",
-        "tapahtumalipputyyppi": "[tapahtumalipputyyppi]",
-        "tila": "[tila]",
-        "myyntitapahtuma": "[myyntitapahtuma]",
-        "lippukoodi": "[unicode 50 chars max]",
-        "hinta": "[unicode numerical]",
-    }
+    "tapahtuma": "[tapahtuma]",
+    "tapahtumalipputyyppi": "[tapahtumalipputyyppi]",
+    "tila": "[tila]",
+    "myyntitapahtuma": "[myyntitapahtuma]",
+    "lippukoodi": "[unicode 50 chars max]",
+    "hinta": "[unicode numerical]",
 }
 ```
 **Esimerkki** Kaikki kentät täytetty
