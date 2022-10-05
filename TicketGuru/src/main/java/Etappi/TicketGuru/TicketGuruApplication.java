@@ -1,10 +1,7 @@
 package Etappi.TicketGuru;
 
 import java.time.LocalDateTime;
-
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-
+//import java.time.format.DateTimeFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -58,16 +55,17 @@ public class TicketGuruApplication {
 		//myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("u1").get(0), "1.1.2022"));
 		//myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "1.1.2023"));
 		
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+		LocalDateTime timestamp = LocalDateTime.now();
+	//	DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 		
-		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),sdf.format(timestamp));
+		
+		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),timestamp);
 		myrepository.save(myynti1);
 		
-		Myyntitapahtuma myynti2 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),sdf.format(timestamp));
+		Myyntitapahtuma myynti2 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),timestamp);
 		myrepository.save(myynti2);
 		
-		Myyntitapahtuma myynti3 = new Myyntitapahtuma(krepository.findByTunnus("u1").get(0),sdf.format(timestamp));
+		Myyntitapahtuma myynti3 = new Myyntitapahtuma(krepository.findByTunnus("u1").get(0),timestamp);
 		myrepository.save(myynti3);
 		
 		Tapahtuma tapahtuma1= new Tapahtuma(aika1, "Tapahtuma1", "os1","HKI", 5, "15.9.2022");
