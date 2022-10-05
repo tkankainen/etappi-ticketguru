@@ -14,7 +14,7 @@ public class Lippu {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long lippuid;
 	
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@JoinColumn(name="lipputyyppiid")
 	private Tapahtumalipputyyppi tapahtumalipputyyppi;
 	
@@ -43,6 +43,13 @@ public class Lippu {
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.lippukoodi = lippukoodi;
 		this.hinta = hinta;
+	}
+	
+	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
+			Myyntitapahtuma myyntitapahtuma, String lippukoodi) {
+		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
+		this.myyntitapahtuma = myyntitapahtuma;
+		this.lippukoodi = lippukoodi;
 	}
 
 	public long getLippuid() {
