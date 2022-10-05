@@ -1,5 +1,7 @@
 package Etappi.TicketGuru.domain;
 
+import java.util.UUID;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +24,7 @@ public class Lippu {
 	@JoinColumn(name="myyntiid")
 	private Myyntitapahtuma myyntitapahtuma;
 	
-	private String lippukoodi;
+	private String lippukoodi = usingRandomUUID();
 	private long hinta;
 	
 	public Lippu() {
@@ -46,10 +48,10 @@ public class Lippu {
 	}
 	
 	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
-			Myyntitapahtuma myyntitapahtuma, String lippukoodi) {
+			Myyntitapahtuma myyntitapahtuma, long hinta) {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
-		this.lippukoodi = lippukoodi;
+		this.hinta = hinta;
 	}
 
 	public long getLippuid() {
@@ -97,5 +99,13 @@ public class Lippu {
 		return "Lippu [lippuid=" + lippuid + ", tapahtumalipputyyppi="
 				+ tapahtumalipputyyppi + ", lippukoodi=" + lippukoodi + ", hinta=" + hinta + "]";
 	}
+	
+	static String usingRandomUUID() {
+
+	    UUID randomUUID = UUID.randomUUID(); //random 32-merkkinen koodi
+
+	    return randomUUID.toString().replaceAll("_", "");
+
+	  }
 
 }

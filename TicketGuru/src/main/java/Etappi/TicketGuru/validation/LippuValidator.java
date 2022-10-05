@@ -33,4 +33,5 @@ public class LippuValidator implements Validator{
 	private boolean checkInputLong(Long input) {
         return (input == 0 || input < 0);
     }
+
 }

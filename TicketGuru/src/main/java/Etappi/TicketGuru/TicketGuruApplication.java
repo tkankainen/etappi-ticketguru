@@ -90,18 +90,18 @@ public class TicketGuruApplication {
 		
 		//trepository.save( new Tapahtumalipputyyppi(30, brepository.findByNimi("Tapahtuma1").get(0),ltrepository.findByNimi("Aikuinen").get(0)));
 		
-
-		
 		//Tapahtumalipputyyppi tapahtumalipputyyppi, Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta
 		
 		Lippu lippu1 = new Lippu(tyyppi1, myynti1, "abc234", 25);
 		Lippu lippu2 = new Lippu(tyyppi2, myynti1, "iopp453f", 12);
 		Lippu lippu3 = new Lippu(tyyppi2, myynti1, "koo4d234", 34);
+		Lippu lippu4 = new Lippu(tyyppi1, myynti1, 20);
 		//Lippu lippu3 = new Lippu(tyyppi2, myrepository.findByTimestamp("1.1.2022").get(0),"koo4d234", 34); //tapahtumalipputyyppi, myyntitapahtuma, koodi, hinta
 		
 		lrepository.save(lippu1);
 		lrepository.save(lippu2);
 		lrepository.save(lippu3);
+		lrepository.save(lippu4);
 		
 		log.info("fetch all tapahtuma");
 		for (Tapahtuma tapahtuma : brepository.findAll()) {
