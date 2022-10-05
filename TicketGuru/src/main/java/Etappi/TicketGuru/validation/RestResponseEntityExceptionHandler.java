@@ -1,6 +1,8 @@
 package Etappi.TicketGuru.validation;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.rest.core.RepositoryConstraintViolationException;
+import org.springframework.data.rest.webmvc.support.ExceptionMessage;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,19 +13,41 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.stream.Collectors;
 
+
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
-	@ExceptionHandler({ RepositoryConstraintViolationException.class })
+	@ExceptionHandler({ RepositoryConstraintViolationException.class  })
     public ResponseEntity<Object> handleAccessDeniedException(
       Exception ex, WebRequest request) {
           RepositoryConstraintViolationException nevEx = 
             (RepositoryConstraintViolationException) ex;
 
           String errors = nevEx.getErrors().getAllErrors().stream()
-            .map(p -> p.toString()).collect(Collectors.joining("\n"));
+           .map(p -> p.toString()).collect(Collectors.joining("\n"));
           
-          return new ResponseEntity<Object>(errors, new HttpHeaders(),
+        //  return new ResponseEntity<Object>( "HAHHAHAHAHAHAAH",new HttpHeaders(),
+        return new ResponseEntity<Object>( errors,new HttpHeaders(),
             HttpStatus.PARTIAL_CONTENT);
     }
+	   public ResponseEntity<Object> handleConflictException(
+			      Exception ex, WebRequest request) {
+			          RepositoryConstraintViolationException nevEx = 
+			            (RepositoryConstraintViolationException) ex;
 
+			          String errors = nevEx.getErrors().getAllErrors().stream()
+			           .map(p -> p.toString()).collect(Collectors.joining("\n"));
+			          
+			          return new ResponseEntity<Object>( errors,new HttpHeaders(),
+			            HttpStatus.CONFLICT);
+			    }
+	 
+	/*protected ResponseEntity<Object> handleConflict(
+		      RuntimeException ex, WebRequest request) {
+		        String bodyOfResponse = "This should be application specific";
+		        return handleExceptionInternal(ex, bodyOfResponse, 
+		          new HttpHeaders(), HttpStatus.CONFLICT, request);
+		    }*/
+	
+	
+	
 }

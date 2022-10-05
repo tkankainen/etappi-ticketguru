@@ -18,7 +18,7 @@ public class Lippu {
 	@JoinColumn(name="lipputyyppiid")
 	private Tapahtumalipputyyppi tapahtumalipputyyppi;
 	
-	@ManyToOne
+	@ManyToOne(optional = false)
 	@JoinColumn(name="myyntiid")
 	private Myyntitapahtuma myyntitapahtuma;
 	
