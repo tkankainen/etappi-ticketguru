@@ -1,8 +1,8 @@
 package Etappi.TicketGuru.validation;
 
-import org.springframework.dao.DataIntegrityViolationException;
+
 import org.springframework.data.rest.core.RepositoryConstraintViolationException;
-import org.springframework.data.rest.webmvc.support.ExceptionMessage;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

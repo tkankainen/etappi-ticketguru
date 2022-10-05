@@ -1,6 +1,10 @@
 package Etappi.TicketGuru.domain;
 
 
+//import java.sql.Date;
+//import java.sql.Timestamp;
+//import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -30,11 +34,11 @@ public class Myyntitapahtuma {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="myyntitapahtuma")
 	private List <Lippu> liput;  //monta lippua myyntitapahtumassa
 	
-	private String timestamp;
+	private LocalDateTime timestamp;
 	
 	public Myyntitapahtuma() {}
 	
-	public Myyntitapahtuma( Kayttaja kayttaja, String timestamp) {
+	public Myyntitapahtuma( Kayttaja kayttaja, LocalDateTime timestamp) {
 		
 		super();
 		this.kayttaja = kayttaja;
@@ -57,11 +61,11 @@ public class Myyntitapahtuma {
 		this.kayttaja = kayttaja;
 	}
 
-	public String getTimestamp() {
+	public LocalDateTime getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(String timestamp) {
+	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
 	}
 	
