@@ -1,11 +1,17 @@
 package Etappi.TicketGuru.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -27,6 +33,11 @@ public class Tapahtumalipputyyppi {
 	private Lipputyyppi lipputyyppi; //viiteavain lipputyyppi
 
 	public Tapahtumalipputyyppi(){}
+	
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="tapahtumalipputyyppi")
+	private List <Lippu> liput;  //monta lippua tapahtumalipputyypissä
+	
 	
 	public Tapahtumalipputyyppi(long hinta, Tapahtuma tapahtuma, Lipputyyppi lipputyyppi) {
 		super();
@@ -56,7 +67,13 @@ public class Tapahtumalipputyyppi {
 	public void setHinta(long hinta) {
 		this.hinta = hinta;
 	}
-	
+	public List<Lippu> getLiput(){
+		return liput;
+	}
+		
+	public void setLiput(List<Lippu> liput) {
+			this.liput = liput;
+	}
 	@Override
 	public String toString() {
 		return "Lipputyyppi [lipputyyppiid= "+ lipputyyppiid+ ", "+ ",  "+ hinta+"]";
