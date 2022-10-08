@@ -6,11 +6,11 @@ Retrospektiivissä käytettiin apuna "Appreciative Retrospective" mallia, jossa 
 
 ### Action Points:
 
-> Nro 1
+> #### Nro 1
 > Testaus ja sen dokumentointi selkeästi koko tiimin kesken.
 
-> Nro 2
+> #### Nro 2
 > Suunnitelmien ja ideoiden selkeä dokumentointi, ennen siirtoa scrum boardiin. Muunmuassa muistioiden muodossa.
 
-> Nro 3 (?)
+> #### Nro 3 (?)
 > 
