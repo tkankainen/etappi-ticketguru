@@ -35,14 +35,24 @@ public class Myyntitapahtuma {
 	private List <Lippu> liput;  //monta lippua myyntitapahtumassa
 	
 	private LocalDateTime timestamp;
+	private String toteutunut;
 	
-	public Myyntitapahtuma() {}
+	public Myyntitapahtuma(Kayttaja kayttaja, LocalDateTime timestamp) {}
 	
-	public Myyntitapahtuma( Kayttaja kayttaja, LocalDateTime timestamp) {
+	public Myyntitapahtuma( Kayttaja kayttaja, LocalDateTime timestamp, String toteutunut) {
 		
 		super();
 		this.kayttaja = kayttaja;
 		this.timestamp = timestamp;
+		this.toteutunut = toteutunut;
+	}
+
+	public String getToteutunut() {
+		return toteutunut;
+	}
+
+	public void setToteutunut(String toteutunut) {
+		this.toteutunut = toteutunut;
 	}
 
 	public long getMyyntiid() {
@@ -80,6 +90,6 @@ public class Myyntitapahtuma {
 	@Override
 	public String toString() {
 		return "Myyntitapahtuma [myyntiid=" + myyntiid + ", kayttaja=" + kayttaja + ", liput=" + liput + ", timestamp="
-				+ timestamp + "]";
+				+ timestamp + ", toteutunut=" + toteutunut + "]";
 	}
 }
