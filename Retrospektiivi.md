@@ -4,6 +4,8 @@ Tiimi: Anne Pelin, Elia Ahonen, Pertti Korhonen, Taina Kankainen
 
 Retrospektiivissä käytettiin apuna "Appreciative Retrospective" mallia, jossa keskistytään tiimin yhteisiin ja jäsenten omiin onnistumisiin epäonnistumisten ja virheiden sijaan.
 
+Tiimi kävi yhdessä läpi palaverissa omaa onnistumistaan. Kehitysideoita otettiin sitä mukaan, kun niitä keksittiin ja ne puitiin läpi konkreettisiksi pointeiksi retrospektiivin dokumentaatiota varten.
+
 ### Action Points:
 
 > #### Nro 1
