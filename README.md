@@ -67,7 +67,7 @@ prioriteetti = 2, tyyppi: toiminnallinen
 
 ## Tietokanta
 
-![Tietokantakaavio](Kuvat/tietokantakaavio4.jpeg)
+![Tietokantakaavio](Kuvat/tietokantakaavio5_new.jpeg)
 
 Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
 tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
@@ -110,20 +110,10 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 > Kenttä | Tyyppi | Kuvaus
 > ------ | ------ | ------
 > lippuid | auto PK | Taulun oma id
-> tapahtumaid | FK | Tapahtuma-taulun id
 > lipputyyppiid | FK | Tapahtumalipputyyppi-taulun id
-> tilaid | FK | Tila-taulun id
 > myyntiid | FK | Myyntitapahtuma-taulun id
 > lippukoodi | varchar(50) | Lipun luettava myyntikoodi
 > hinta | int | Lipun hinta
-
-> ### _Tila_
-> _Tila-taulu sisältää lippujen mahdolliset tilat, esim. käytetty._
->
-> Kenttä | Tyyppi | Kuvaus
-> ------ | ------ | ------
-> tilaid | auto PK | Taulun oma id
-> nimi | varchar(50) | Tilan nimi
 
 > ### _Myyntitapahtuma_
 > _Myyntitapahtuma-taulu sisältää tiedot tehdyistä myyntitapahtumista._
