@@ -7,10 +7,10 @@ Retrospektiivissä käytettiin apuna "Appreciative Retrospective" mallia, jossa 
 ### Action Points:
 
 > #### Nro 1
-> Testaus ja sen dokumentointi selkeästi koko tiimin kesken.
+> Koko ohjelman ja yksittäisten ominaisuuksien testaus ja tarkistaminen koko tiimin kesken. Lisäksi omien muutosten tarkistaminen (ja testaaminen) ennen githubiin pushaamista.
 
 > #### Nro 2
-> Suunnitelmien ja ideoiden selkeä dokumentointi, ennen siirtoa scrum boardiin. Muunmuassa muistioiden muodossa.
+> Suunnitelmien ja ideoiden selkeä dokumentointi ja ylläpitäminen (scrum boardin lisäksi). Muunmuassa muistioiden ja tiimin keskustelualustoiden muodossa. 
 
-> #### Nro 3 (?)
-> 
+> #### Nro 3
+> Ideoiden esille tuominen tiimiä varten, jos mieleen tulee tai huomaa jotain, mikä tiimin olisi hyvä tietää.
