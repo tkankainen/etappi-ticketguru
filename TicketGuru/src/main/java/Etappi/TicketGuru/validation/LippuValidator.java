@@ -21,17 +21,9 @@ public class LippuValidator implements Validator{
 		if (checkInputString(lippu.getLippukoodi())) {
             errors.rejectValue("lippukoodi", "lippukoodi.empty");
         }
-		if (checkInputLong(lippu.getHinta())) {
-            errors.rejectValue("hinta", "hinta.empty");
-        }
 	}
 	
 	private boolean checkInputString(String input) {
         return (input == null || input.trim().length() == 0);
     }
-	
-	private boolean checkInputLong(Long input) {
-        return (input == 0 || input < 0);
-    }
-
 }
