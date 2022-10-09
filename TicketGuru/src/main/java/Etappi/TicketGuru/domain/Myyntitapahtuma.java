@@ -37,7 +37,9 @@ public class Myyntitapahtuma {
 	private LocalDateTime timestamp;
 	private String toteutunut;
 	
-	public Myyntitapahtuma(Kayttaja kayttaja, LocalDateTime timestamp) {}
+	public Myyntitapahtuma() {}
+	
+	//public Myyntitapahtuma(Kayttaja kayttaja, LocalDateTime timestamp) {}
 	
 	public Myyntitapahtuma( Kayttaja kayttaja, LocalDateTime timestamp, String toteutunut) {
 		

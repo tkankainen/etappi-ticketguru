@@ -8,7 +8,7 @@ import org.springframework.validation.Validator;
 
 import Etappi.TicketGuru.domain.Myyntitapahtuma;
 
-@Component("beforeSaveTapahtumaValidator")
+@Component("beforeSaveMyyntitapahtumaValidator")
 public class MyyntitapahtumaUpdateValidator implements Validator {
 	
 	public boolean supports(Class<?> clazz) {
