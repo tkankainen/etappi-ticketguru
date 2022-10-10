@@ -18,9 +18,9 @@ public class MyyntitapahtumaValidator implements Validator {
 	public void validate(Object obj, Errors errors) {
 		
 		Myyntitapahtuma myyntitapahtuma = (Myyntitapahtuma) obj;
-		if (checkLocalDateTime(myyntitapahtuma.getTimestamp())) {
+		/*if (checkLocalDateTime(myyntitapahtuma.getTimestamp())) {  poistettu kunnes timestamp generointi toimii
             errors.rejectValue("timestamp", "timestamp.empty");
-        }
+        }*/
 		if (checkInputString(myyntitapahtuma.getToteutunut())) {
             errors.rejectValue("toteutunut", "toteutunut.empty");
         }

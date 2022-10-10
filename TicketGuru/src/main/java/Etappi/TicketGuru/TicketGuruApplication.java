@@ -59,7 +59,7 @@ public class TicketGuruApplication {
 	//	DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 		
 		
-		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),timestamp, "0");
+		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),timestamp,"0");
 		myrepository.save(myynti1);
 		
 		Myyntitapahtuma myynti2 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),timestamp,"0");

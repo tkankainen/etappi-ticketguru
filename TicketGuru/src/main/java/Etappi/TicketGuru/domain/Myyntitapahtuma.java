@@ -35,7 +35,7 @@ public class Myyntitapahtuma {
 	private List <Lippu> liput;  //monta lippua myyntitapahtumassa
 	
 	private LocalDateTime timestamp;
-	private String toteutunut;
+	private String toteutunut ="0";  //anne lisännyt 10.10 alkuarvoksi
 	
 	public Myyntitapahtuma() {}
 	
