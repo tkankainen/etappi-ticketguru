@@ -19,7 +19,8 @@ import Etappi.TicketGuru.domain.Tapahtuma;
 import Etappi.TicketGuru.domain.TapahtumaRepository;
 import Etappi.TicketGuru.domain.Tapahtumalipputyyppi;
 import Etappi.TicketGuru.domain.TapahtumalipputyyppiRepository;
-
+import Etappi.TicketGuru.domain.User;
+import Etappi.TicketGuru.domain.UserRepository;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -33,7 +34,7 @@ public class TicketGuruApplication {
 		SpringApplication.run(TicketGuruApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository, 
+	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository, UserRepository urepository,
 			LippuRepository lrepository, LipputyyppiRepository ltrepository,  KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
 		return (args) -> {
 		log.info("save a couple of tapahtuma");
@@ -49,6 +50,8 @@ public class TicketGuruApplication {
 		krepository.save(kayttaja1);
 		krepository.save(kayttaja2);
 
+		urepository.save(new User("user", "$2a$04$1.YhMIgNX/8TkCKGFUONWO1waedKhQ5KrnB30fl0Q01QKqmzLf.Zi", "USER"));
+		urepository.save(new User("admin", "$2a$04$KNLUwOWHVQZVpXyMBNc7JOzbLiBjb9Tk9bP7KNcPI12ICuvzXQQKG", "ADMIN"));
 		// lisätään muutama myyntitapahtuma
 
 		//jrepository.save( new Jasen("Jasen","Ykkönen", "os1","00520","09123456","jasen@ykkonen.fi",yrepository.findByName("Y").get(0),arepository.findByName("J").get(0)));
