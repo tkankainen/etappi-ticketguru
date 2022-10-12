@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import Etappi.TicketGuru.domain.AccountCredentials;
+import Etappi.TicketGuru.domain.Kayttaja;
 import Etappi.TicketGuru.service.JwtService;
 
 @RestController
@@ -28,11 +28,11 @@ public class LoginController {
 		    .POST)
 
 		public ResponseEntity<?> getToken(@RequestBody  
-		    AccountCredentials credentials) {
+		    Kayttaja credentials) {
 		  UsernamePasswordAuthenticationToken creds =
 		  new UsernamePasswordAuthenticationToken(
-		    credentials.getUsername(),
-		    credentials.getPassword());      		            
+		    credentials.getTunnus(),
+		    credentials.getSalasana());   		            
 
 		  Authentication auth =
 		      authenticationManager.authenticate(creds);

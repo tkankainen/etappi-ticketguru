@@ -19,8 +19,6 @@ import Etappi.TicketGuru.domain.Tapahtuma;
 import Etappi.TicketGuru.domain.TapahtumaRepository;
 import Etappi.TicketGuru.domain.Tapahtumalipputyyppi;
 import Etappi.TicketGuru.domain.TapahtumalipputyyppiRepository;
-import Etappi.TicketGuru.domain.User;
-import Etappi.TicketGuru.domain.UserRepository;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -34,7 +32,7 @@ public class TicketGuruApplication {
 		SpringApplication.run(TicketGuruApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository, UserRepository urepository,
+	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository,
 			LippuRepository lrepository, LipputyyppiRepository ltrepository,  KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
 		return (args) -> {
 		log.info("save a couple of tapahtuma");
@@ -43,18 +41,11 @@ public class TicketGuruApplication {
 		LocalDateTime aika2 = LocalDateTime.of(2022,10,8,20,00);
 		LocalDateTime aikanyt = LocalDateTime.now(); 
 		
-		//lisätään muutama käyttäjä
-		// Create kayttajat: admin/admin user/user
-		Kayttaja kayttaja1 = new Kayttaja("User1", "Snimi", "u1", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
-		Kayttaja kayttaja2 = new Kayttaja("User2", "Snimi", "a2", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "ADMIN");
+		Kayttaja kayttaja1 = new Kayttaja("User1", "Snimi", "u1", "$2a$10$UmKkO8p.15R057r8PiSpKemW6uhrcvyD2nFWnXEPZ68r5Y3GuukZW", "USER");
+		Kayttaja kayttaja2 = new Kayttaja("User2", "Snimi", "a2", "$2a$10$gfVAlVfQoENWFqEJDCN6Au/1.HRhkVa/g6KSw0wXHsg6DWpKiK8Um", "ADMIN");
 		krepository.save(kayttaja1);
 		krepository.save(kayttaja2);
 
-		urepository.save(new User("user", "$2a$04$1.YhMIgNX/8TkCKGFUONWO1waedKhQ5KrnB30fl0Q01QKqmzLf.Zi", "USER"));
-		urepository.save(new User("admin", "$2a$04$KNLUwOWHVQZVpXyMBNc7JOzbLiBjb9Tk9bP7KNcPI12ICuvzXQQKG", "ADMIN"));
-		// lisätään muutama myyntitapahtuma
-
-		//jrepository.save( new Jasen("Jasen","Ykkönen", "os1","00520","09123456","jasen@ykkonen.fi",yrepository.findByName("Y").get(0),arepository.findByName("J").get(0)));
 		//myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("u1").get(0), "1.1.2022"));
 		//myrepository.save( new Myyntitapahtuma(krepository.findByTunnus("a2").get(0), "1.1.2023"));
 		
@@ -62,13 +53,13 @@ public class TicketGuruApplication {
 	//	DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 		
 		
-		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),timestamp,"0");
+		Myyntitapahtuma myynti1 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(),timestamp,"0");
 		myrepository.save(myynti1);
 		
-		Myyntitapahtuma myynti2 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(0),timestamp,"0");
+		Myyntitapahtuma myynti2 = new Myyntitapahtuma(krepository.findByTunnus("a2").get(),timestamp,"0");
 		myrepository.save(myynti2);
 		
-		Myyntitapahtuma myynti3 = new Myyntitapahtuma(krepository.findByTunnus("u1").get(0),timestamp,"0");
+		Myyntitapahtuma myynti3 = new Myyntitapahtuma(krepository.findByTunnus("u1").get(),timestamp,"0");
 		myrepository.save(myynti3);
 		
 		Tapahtuma tapahtuma1= new Tapahtuma(aika1, "Tapahtuma1", "os1","HKI", 5, "15.9.2022");
@@ -91,7 +82,7 @@ public class TicketGuruApplication {
 		trepository.save(tyyppi1);
 		trepository.save(tyyppi2);
 		
-		//trepository.save( new Tapahtumalipputyyppi(30, brepository.findByNimi("Tapahtuma1").get(0),ltrepository.findByNimi("Aikuinen").get(0)));
+		trepository.save( new Tapahtumalipputyyppi(30, brepository.findByNimi("Tapahtuma1").get(0),ltrepository.findByNimi("Aikuinen").get(0)));
 		
 		//Tapahtumalipputyyppi tapahtumalipputyyppi, Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta
 		

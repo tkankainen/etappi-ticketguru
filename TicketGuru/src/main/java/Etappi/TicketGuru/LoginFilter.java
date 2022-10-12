@@ -17,7 +17,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import Etappi.TicketGuru.domain.AccountCredentials;
+import Etappi.TicketGuru.domain.Kayttaja;
 import Etappi.TicketGuru.service.AuthenticationService;
 
 
@@ -32,12 +32,12 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
   public Authentication attemptAuthentication(
 	HttpServletRequest req, HttpServletResponse res)
 			throws AuthenticationException, IOException, ServletException {
-	AccountCredentials creds = new ObjectMapper()
-        .readValue(req.getInputStream(), AccountCredentials.class);
+	Kayttaja creds = new ObjectMapper()
+        .readValue(req.getInputStream(), Kayttaja.class);
 	return getAuthenticationManager().authenticate(
         new UsernamePasswordAuthenticationToken(
-            creds.getUsername(),
-            creds.getPassword(),
+            creds.getTunnus(),
+            creds.getSalasana(),
             Collections.emptyList()
         )
     );
