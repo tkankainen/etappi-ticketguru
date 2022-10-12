@@ -16,6 +16,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -23,7 +25,6 @@ public class Myyntitapahtuma {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	private long myyntiid;
 	
 	@ManyToOne
@@ -32,17 +33,18 @@ public class Myyntitapahtuma {
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="myyntitapahtuma")
-	private List <Lippu> liput;  //monta lippua myyntitapahtumassa
+	private List <Lippu> liput;
 	
+	@CreationTimestamp
 	private LocalDateTime timestamp;
+	
 	private String toteutunut ="0";  //anne lisännyt 10.10 alkuarvoksi
 	
 	public Myyntitapahtuma() {}
 	
-	//public Myyntitapahtuma(Kayttaja kayttaja, LocalDateTime timestamp) {}
+	public Myyntitapahtuma(Kayttaja kayttaja) {}
 	
 	public Myyntitapahtuma( Kayttaja kayttaja, LocalDateTime timestamp, String toteutunut) {
-		
 		super();
 		this.kayttaja = kayttaja;
 		this.timestamp = timestamp;
