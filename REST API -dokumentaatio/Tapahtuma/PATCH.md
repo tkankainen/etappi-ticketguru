@@ -39,6 +39,16 @@ Päivitä tapahtuman yksittäistä tietoa
 "kaupunki" :"HKI",
 "kpl" :5,
 "loppupvm": "12.10.2022"
+"_links": {
+        "self": {
+            "href": "http://localhost:8080/api/tapahtumat/1"
+        },
+        "tapahtuma": {
+            "href": "http://localhost:8080/api/tapahtumat/1"
+        },
+        "tapahtumalipputyypit": {
+            "href": "http://localhost:8080/api/tapahtumat/1/tapahtumalipputyypit"
+        }
 }
 ```
 
