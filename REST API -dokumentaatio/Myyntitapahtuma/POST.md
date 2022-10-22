@@ -14,8 +14,7 @@ Syötä käyttäjän tiedot
 ```json
 {
     {
-        "kayttaja": "[kayttaja]",
-        "timestamp": "[unicode 50 chars max]", HUOM, vaihda kun timestamp korjattu
+        "kayttaja": "[kayttaja]"
     }
 }
 ```
@@ -24,7 +23,6 @@ Syötä käyttäjän tiedot
 ```json
 {
     "kayttaja": "http://localhost:8080/api/kayttajat/1",
-    "timestamp": "1.1.2026"
     
 }
 ```
@@ -39,19 +37,20 @@ Syötä käyttäjän tiedot
 ```json
 
 {
-    "timestamp": "1.1.2026",
+    "timestamp": "2022-10-22T22:17:42.7237358",
+    "toteutunut": "0",
     "_links": {
         "self": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/2"
+            "href": "http://localhost:8080/api/myyntitapahtumat/4"
         },
         "myyntitapahtuma": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/2"
-        },
-        "kayttaja": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/2/kayttaja"
+            "href": "http://localhost:8080/api/myyntitapahtumat/4"
         },
         "liput": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/2/liput"
+            "href": "http://localhost:8080/api/myyntitapahtumat/4/liput"
+        },
+        "kayttaja": {
+            "href": "http://localhost:8080/api/myyntitapahtumat/4/kayttaja"
         }
     }
 }
@@ -63,7 +62,7 @@ Syötä käyttäjän tiedot
 
 **Code** : `400 BAD REQUEST`
 
-**Esimerkki**
+**Esimerkki** Käyttäjä nimen sijasta on numero
  
  ```json
  
