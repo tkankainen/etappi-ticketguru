@@ -138,7 +138,7 @@ Näyttää tiettyyn myyntitapahtumaan liittyvät liput
         }
     }
 }
-
+```
 # Onnistunut pyyntö
 **Vaatimus** : Näyttää yhden myyntitapahtuman kaikki liput
 
@@ -208,3 +208,10 @@ Näyttää tiettyyn myyntitapahtumaan liittyvät liput
     }
 }
 ```
+## Epäonnistunut pyyntö
+
+**Vaatimus** Myyntitapahtumaa ei ole haetulla ID:llä
+
+**Code** `404 NOT FOUND`
+
+**Sisältö** : `{}`
