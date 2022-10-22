@@ -150,4 +150,10 @@ Näyttää yhden lipun tiedot
     }
 }
 ```
+## Epäonnistunut pyyntö
 
+**Vaatimus** Lippua ei ole haetulla ID:llä
+
+**Code** `404 NOT FOUND`
+
+**Sisältö** : `{}`
