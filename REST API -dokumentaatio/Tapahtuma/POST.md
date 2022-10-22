@@ -40,28 +40,59 @@ Syötä tapahtuman tiedot
 **Code** : `201 CREATED`
 
 ```json
+
 {
-"id" :1,
-"aika" :"2022-10-10T15:00:00",
-"nimi" :"Tapahtuma1",
-"osoite" :"os1",
-"kaupunki" :"HKI",
-"kpl" :5,
-"loppupvm": "12.10.2022",
+    "aika": "2023-12-21T18:00:00",
+    "nimi": "Tapahtuma 4",
+    "osoite": "os11",
+    "kaupunki": "HKI",
+    "kpl": 5,
+    "loppupvm": "26.9.2022",
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/api/tapahtumat/4"
+        },
+        "tapahtuma": {
+            "href": "http://localhost:8080/api/tapahtumat/4"
+        },
+        "tapahtumalipputyypit": {
+            "href": "http://localhost:8080/api/tapahtumat/4/tapahtumalipputyypit"
+        }
+    }
 }
 ```
 
 ## Virhe vastauksia
 
-**Ehto** : Kenttä on tyhjä, puutteeliinen tai sisältää väärä dataa.
+**Ehto** : Osa kentistä on tyhjiä
 
-**Code** : `400 BAD REQUEST`
+**Code** : `206 Partial Content`
 
 **Esimerkki**
  
  ```json
- 
  {
- "aika": ["Vaadittu kenttä"]
- }
+    "aika": "2023-12-21T18:00:00",
+    "nimi": "Tapahtuma 4",
+    "osoite": "os11",
+    "kaupunki": "",
+    "kpl": 5,
+    "loppupvm": ""
+}
+```
+**Ehto** : Kenttä sisältää väärää dataa
+
+**Code** : `400 Bad Request`
+
+**Esimerkki** "kpl" kentässä on luvun sijasta sana
+
+```json
+ {
+    "aika": "2023-12-21T18:00:00",
+    "nimi": "Tapahtuma 4",
+    "osoite": "os11",
+    "kaupunki": "Helsinki",
+    "kpl": "Moi",
+    "loppupvm": ""
+}
 ```
