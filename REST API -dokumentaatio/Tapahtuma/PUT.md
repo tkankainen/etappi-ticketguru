@@ -23,12 +23,11 @@ Päivitä olemassa oleva tapahtuma
 
 ```json
 {
-"aika" :"2022-10-10T15:00:00",
-"nimi" :"VehnäRock",
-"osoite" :"os1",
-"kaupunki" :"HKI",
-"kpl" :5,
-"loppupvm": "12.10.2022"
+"nimi": "Tapahtuma12",
+"osoite": "os11",
+"kaupunki": "TAMPERE",
+"kpl": 5,
+"loppupvm": "26.9.2022"
 }
 ```
 
@@ -38,27 +37,111 @@ Päivitä olemassa oleva tapahtuma
 
 **Code** : `200 OK`
 
-**Esimerkki** : "aika" kenttä on päivitetty ja lisätty kohteeseen `/api/tapahtumat/1/`
+**Esimerkki** : Kenttiä on päivitetty ja lisätty kohteeseen `/api/tapahtumat/1/`
 
 ```json
 {
-"id" :1,
-"aika" :"2022-10-10T15:00:00",
-"nimi" :"VehnäRock",
-"osoite" :"os1",
-"kaupunki" :"HKI",
-"kpl" :5,
-"loppupvm": "12.12.2022"
+
+                "nimi": "Tapahtuma12",
+                "osoite": "Porvoo",
+                "kaupunki": "TAMPERE",
+                "kpl": 5,
+                "loppupvm": "26.9.2022"
+
+}
+```
+
+```json
+{
+    "aika": null,
+    "nimi": "Tapahtuma12",
+    "osoite": "moikku",
+    "kaupunki": "TAMPERE",
+    "kpl": 5,
+    "loppupvm": "26.9.2022",
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/api/tapahtumat/1"
+        },
+        "tapahtuma": {
+            "href": "http://localhost:8080/api/tapahtumat/1"
+        },
+        "tapahtumalipputyypit": {
+            "href": "http://localhost:8080/api/tapahtumat/1/tapahtumalipputyypit"
+        }
+    }
+}
+```
+**Ehto** Tapahtumaa ei ollut olemassa vielä kyseisellä ID:llä, joten sen ID:n alle luotiin uusi käyttäjä.
+
+**Code** : `201 Created`
+
+**Esimerkki syöte** :
+```json
+            {
+               
+                "nimi": "Tapahtuma12",
+                "osoite": "moikku",
+                "kaupunki": "TAMPERE",
+                "kpl": 5,
+                "loppupvm": "26.9.2022"
+             
+            }
+```
+**Sisältö** : 
+
+```json
+{
+    "aika": null,
+    "nimi": "Tapahtuma12",
+    "osoite": "moikku",
+    "kaupunki": "TAMPERE",
+    "kpl": 5,
+    "loppupvm": "26.9.2022",
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/api/tapahtumat/7"
+        },
+        "tapahtuma": {
+            "href": "http://localhost:8080/api/tapahtumat/7"
+        },
+        "tapahtumalipputyypit": {
+            "href": "http://localhost:8080/api/tapahtumat/7/tapahtumalipputyypit"
+        }
+    }
 }
 ```
 
 ## Virhe vastaus
 
-**Ehto** : Tapahtumaa ei löydy.
+**Ehto** Kentät ovat osittain tai täysin puutteellisia
 
-**Code** `404 NOT FOUND`
+**Code** : `206 PARTIAL CONTENT`
 
-**Sisältö** : `{}`
+**Sisältö** :
+```json
+{
+"nimi": "Tapahtuma12",
+"osoite": "",
+"kaupunki": "TAMPERE",
+"kpl": 5,
+"loppupvm": "26.9.2022"
+}
+```
+**Ehto** : Kenttä sisältää väärää dataa
 
+**Code** : `400 Bad Request`
+
+**Esimerkki** "kpl" kentässä on luvun sijasta sana
+
+```json
+ {
+                "nimi": "Tapahtuma12",
+                "osoite": "moikku",
+                "kaupunki": "TAMPERE",
+                "kpl": "Testi",
+                "loppupvm": "26.9.2022"
+}
+```
 
   
