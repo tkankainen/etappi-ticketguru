@@ -65,5 +65,7 @@ Syötä käyttäjän tiedot
 **Esimerkki** Käyttäjä nimen sijasta on numero
  
  ```json
- 
+ {
+    "kayttaja": 2
+}
 ```
