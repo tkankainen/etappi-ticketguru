@@ -19,7 +19,6 @@ public class Tapahtumalipputyyppi {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	private long lipputyyppiid;
 	
 	private long hinta;
