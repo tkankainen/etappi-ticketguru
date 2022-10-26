@@ -36,16 +36,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();///KAIKKI PYYNNÖÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKIS
+/*	KOMMENTOITU TILAPÄISETI POIS ETTÄ ENDPOINTIT KÄYTETTÄVISSÄ
 		http.csrf().disable().cors().and()
 		.sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 		.authorizeRequests()
 		.antMatchers(HttpMethod.POST, "/login").permitAll()
+		.antMatchers(HttpMethod.POST, "/api/tapahtumat").permitAll()
+		.antMatchers(HttpMethod.PUT, "/api/tapahtumat").permitAll()
+		.antMatchers(HttpMethod.GET, "/api/liput").permitAll()//anne lisännyt että 2 tiimi pääsee  hakemaan
+		.antMatchers(HttpMethod.PATCH, "/api/liput").permitAll()//anne lisännyt että 2 tiimi pääsee muuttamaan
 		.anyRequest().authenticated().and()
 		.exceptionHandling()
 		.authenticationEntryPoint(exceptionHandler).and()
 		.addFilterBefore(authenticationFilter, 
-				UsernamePasswordAuthenticationFilter.class);
+				UsernamePasswordAuthenticationFilter.class);*/
 	}	
 
 	@Bean
