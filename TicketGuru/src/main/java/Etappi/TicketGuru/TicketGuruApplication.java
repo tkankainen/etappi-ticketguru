@@ -86,10 +86,10 @@ public class TicketGuruApplication {
 		
 		//Tapahtumalipputyyppi tapahtumalipputyyppi, Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta
 		
-		Lippu lippu1 = new Lippu(tyyppi1, myynti1, "abc234", 25);
-		Lippu lippu2 = new Lippu(tyyppi2, myynti1, "iopp453f", 12);
-		Lippu lippu3 = new Lippu(tyyppi2, myynti1, "koo4d234", 34);
-		Lippu lippu4 = new Lippu(tyyppi1, myynti1, 20);
+		Lippu lippu1 = new Lippu(tyyppi1, myynti1, "abc234", 25,"");
+		Lippu lippu2 = new Lippu(tyyppi2, myynti1, "iopp453f", 12,"");
+		Lippu lippu3 = new Lippu(tyyppi2, myynti1, "koo4d234", 34,"");
+		Lippu lippu4 = new Lippu(tyyppi1, myynti1, 20,"");
 		//Lippu lippu3 = new Lippu(tyyppi2, myrepository.findByTimestamp("1.1.2022").get(0),"koo4d234", 34); //tapahtumalipputyyppi, myyntitapahtuma, koodi, hinta
 		
 		lrepository.save(lippu1);

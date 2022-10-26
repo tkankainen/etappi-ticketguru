@@ -26,32 +26,36 @@ public class Lippu {
 	
 	private String lippukoodi = usingRandomUUID();
 	private long hinta;
+	private String kaytetty;
 	
 	public Lippu() {
 	}
 
 	public Lippu(long lippuid, Tapahtumalipputyyppi tapahtumalipputyyppi,
-			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta) {
+			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta,String kaytetty) {
 		this.lippuid = lippuid;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.lippukoodi = lippukoodi;
 		this.hinta = hinta;
+		this.kaytetty=kaytetty;
 	}
 	
 	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
-			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta) {
+			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta,String kaytetty) {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.lippukoodi = lippukoodi;
 		this.hinta = hinta;
+		this.kaytetty=kaytetty;
 	}
 	
 	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
-			Myyntitapahtuma myyntitapahtuma, long hinta) {
+			Myyntitapahtuma myyntitapahtuma, long hinta,String kaytetty) {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.hinta = hinta;
+		this.kaytetty=kaytetty;
 	}
 
 	public long getLippuid() {
@@ -80,6 +84,14 @@ public class Lippu {
 
 	public long getHinta() {
 		return hinta;
+	}
+
+	public String getKaytetty() {
+		return kaytetty;
+	}
+
+	public void setKaytetty(String kaytetty) {
+		this.kaytetty = kaytetty;
 	}
 
 	public void setHinta(long hinta) {
