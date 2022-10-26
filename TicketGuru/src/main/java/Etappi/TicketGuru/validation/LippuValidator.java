@@ -18,9 +18,9 @@ public class LippuValidator implements Validator{
 	public void validate(Object obj, Errors errors) {
 		Lippu lippu = (Lippu) obj;
 
-		if (checkInputString(lippu.getLippukoodi())) {
-            errors.rejectValue("lippukoodi", "lippukoodi.empty");
-        }
+//		if (checkInputString(lippu.getLippukoodi())) {
+//            errors.rejectValue("lippukoodi", "lippukoodi.empty");
+//        }
 	}
 	
 	private boolean checkInputString(String input) {
