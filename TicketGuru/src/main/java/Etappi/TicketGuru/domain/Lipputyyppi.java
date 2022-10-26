@@ -15,13 +15,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Lipputyyppi {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long tyyppiid;
+	
 	private String nimi;
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="lipputyyppi")
-	
 	private List <Tapahtumalipputyyppi> tapahtumalipputyypit;  //monta lipputyyppiä/tapahtuma*/
 	
 	public Lipputyyppi() {
