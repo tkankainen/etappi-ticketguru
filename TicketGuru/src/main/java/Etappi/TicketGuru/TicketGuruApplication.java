@@ -31,6 +31,7 @@ public class TicketGuruApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TicketGuruApplication.class, args);
 	}
+
 //	@Bean
 //	public CommandLineRunner tapahtumaDemo(TapahtumaRepository brepository, TapahtumalipputyyppiRepository trepository,
 //			LippuRepository lrepository, LipputyyppiRepository ltrepository,  KayttajaRepository krepository, MyyntitapahtumaRepository myrepository) {
