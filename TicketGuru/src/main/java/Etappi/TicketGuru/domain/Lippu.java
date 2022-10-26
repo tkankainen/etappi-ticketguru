@@ -2,12 +2,17 @@ package Etappi.TicketGuru.domain;
 
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 @Entity
 public class Lippu {
@@ -24,15 +29,25 @@ public class Lippu {
 	@JoinColumn(name="myyntiid")
 	private Myyntitapahtuma myyntitapahtuma;
 	
-	private String lippukoodi = usingRandomUUID();
 	private long hinta;
 	private String kaytetty;
+	
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	@Column(name = "lippukoodi", unique = true, nullable = false)
+	@Type(type="pg-uuid") //type=uuid-char mikäli käytössä h2
+	private UUID lippukoodi;
+	
+	@PrePersist
+    protected void onCreate() {
+        setLippukoodi(UUID.randomUUID());
+    }
 	
 	public Lippu() {
 	}
 
 	public Lippu(long lippuid, Tapahtumalipputyyppi tapahtumalipputyyppi,
-			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta,String kaytetty) {
+			Myyntitapahtuma myyntitapahtuma, UUID lippukoodi, long hinta,String kaytetty) {
 		this.lippuid = lippuid;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
@@ -42,7 +57,7 @@ public class Lippu {
 	}
 	
 	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
-			Myyntitapahtuma myyntitapahtuma, String lippukoodi, long hinta,String kaytetty) {
+			Myyntitapahtuma myyntitapahtuma, UUID lippukoodi, long hinta,String kaytetty) {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.lippukoodi = lippukoodi;
@@ -74,11 +89,11 @@ public class Lippu {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 	}
 
-	public String getLippukoodi() {
+	public UUID getLippukoodi() {
 		return lippukoodi;
 	}
 
-	public void setLippukoodi(String lippukoodi) {
+	public void setLippukoodi(UUID lippukoodi) {
 		this.lippukoodi = lippukoodi;
 	}
 
@@ -111,13 +126,5 @@ public class Lippu {
 		return "Lippu [lippuid=" + lippuid + ", tapahtumalipputyyppi="
 				+ tapahtumalipputyyppi + ", lippukoodi=" + lippukoodi + ", hinta=" + hinta + "]";
 	}
-	
-	static String usingRandomUUID() {
-
-	    UUID randomUUID = UUID.randomUUID(); //random 32-merkkinen koodi
-
-	    return randomUUID.toString().replaceAll("_", "");
-
-	  }
 
 }

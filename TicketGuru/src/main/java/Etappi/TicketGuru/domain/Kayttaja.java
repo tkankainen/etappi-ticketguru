@@ -10,11 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-//import javax.persistence.Table;
-
 
 @Entity
-//@Table(name = "\"kayttaja\"")
 public class Kayttaja {
 	
 	@Id
