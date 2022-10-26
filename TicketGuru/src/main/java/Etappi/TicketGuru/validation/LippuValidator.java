@@ -1,5 +1,7 @@
 package Etappi.TicketGuru.validation;
 
+import java.util.UUID;
+
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -18,12 +20,12 @@ public class LippuValidator implements Validator{
 	public void validate(Object obj, Errors errors) {
 		Lippu lippu = (Lippu) obj;
 
-//		if (checkInputString(lippu.getLippukoodi())) {
-//            errors.rejectValue("lippukoodi", "lippukoodi.empty");
-//        }
+		if (checkInput(lippu.getLippukoodi())) {
+            errors.rejectValue("lippukoodi", "lippukoodi.empty");
+        }
 	}
 	
-	private boolean checkInputString(String input) {
-        return (input == null || input.trim().length() == 0);
+	private boolean checkInput(UUID uuid) {
+        return (uuid == null);
     }
 }
