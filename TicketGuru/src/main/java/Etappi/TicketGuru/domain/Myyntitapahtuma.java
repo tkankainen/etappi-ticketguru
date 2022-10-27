@@ -33,7 +33,7 @@ public class Myyntitapahtuma {
 	private List <Lippu> liput;
 	
 	@CreationTimestamp
-	@Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	@Column(name="timestamp", columnDefinition="TIMESTAMP default CURRENT_TIMESTAMP")
 	private LocalDateTime timestamp;
 	
 	private String toteutunut ="0";  //anne lisännyt 10.10 alkuarvoksi
