@@ -1,13 +1,10 @@
 package Etappi.TicketGuru.domain;
 
-
-//import java.sql.Date;
-//import java.sql.Timestamp;
-//import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,6 +33,7 @@ public class Myyntitapahtuma {
 	private List <Lippu> liput;
 	
 	@CreationTimestamp
+	@Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private LocalDateTime timestamp;
 	
 	private String toteutunut ="0";  //anne lisännyt 10.10 alkuarvoksi
