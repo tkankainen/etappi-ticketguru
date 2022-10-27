@@ -34,7 +34,7 @@ public class Lippu {
 	
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
-	@Column(name = "lippukoodi", unique = true, nullable = false)
+	@Column(name = "lippukoodi", columnDefinition = "uuid", unique = true, nullable = false)
 	@Type(type="uuid-char") //type=uuid-char mikäli käytössä h2
 	private UUID lippukoodi;
 	
