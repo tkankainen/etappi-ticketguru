@@ -30,12 +30,16 @@ public class Lippu {
 	private Myyntitapahtuma myyntitapahtuma;
 	
 	private long hinta;
+	
 	private String kaytetty;
 	
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
-	@Column(name = "lippukoodi", unique = true, nullable = false)
+
 	@Type(type="uuid-char") //type=uuid-char mikäli käytössä h2
+
+	@Column(name = "lippukoodi", columnDefinition = "uuid", unique = true, nullable = false)
+
 	private UUID lippukoodi;
 	
 	@PrePersist
@@ -47,7 +51,7 @@ public class Lippu {
 	}
 
 	public Lippu(long lippuid, Tapahtumalipputyyppi tapahtumalipputyyppi,
-			Myyntitapahtuma myyntitapahtuma, UUID lippukoodi, long hinta,String kaytetty) {
+			Myyntitapahtuma myyntitapahtuma, UUID lippukoodi, long hinta, String kaytetty) {
 		this.lippuid = lippuid;
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
@@ -57,7 +61,7 @@ public class Lippu {
 	}
 	
 	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
-			Myyntitapahtuma myyntitapahtuma, UUID lippukoodi, long hinta,String kaytetty) {
+			Myyntitapahtuma myyntitapahtuma, UUID lippukoodi, long hinta, String kaytetty) {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.lippukoodi = lippukoodi;
@@ -66,7 +70,7 @@ public class Lippu {
 	}
 	
 	public Lippu(Tapahtumalipputyyppi tapahtumalipputyyppi, 
-			Myyntitapahtuma myyntitapahtuma, long hinta,String kaytetty) {
+			Myyntitapahtuma myyntitapahtuma, long hinta, String kaytetty) {
 		this.tapahtumalipputyyppi = tapahtumalipputyyppi;
 		this.myyntitapahtuma = myyntitapahtuma;
 		this.hinta = hinta;
