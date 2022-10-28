@@ -35,7 +35,11 @@ public class Lippu {
 	
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
+<<<<<<< HEAD
 
+=======
+	@Column(name = "lippukoodi", columnDefinition = "uuid", unique = true, nullable = false)
+>>>>>>> d8fb5fe9f8b71ba7256cfc44271e4abda0d32e52
 	@Type(type="uuid-char") //type=uuid-char mikäli käytössä h2
 
 	@Column(name = "lippukoodi", columnDefinition = "uuid", unique = true, nullable = false)

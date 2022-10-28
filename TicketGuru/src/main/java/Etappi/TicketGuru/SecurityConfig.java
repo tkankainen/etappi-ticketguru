@@ -37,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();///KAIKKI PYYNNÖÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKIS
-/*	KOMMENTOITU TILAPÄISETI POIS ETTÄ ENDPOINTIT KÄYTETTÄVISSÄ
+	    http.headers().frameOptions().disable(); //lisätty jotta h2-console toimii
+		/*	KOMMENTOITU TILAPÄISETI POIS ETTÄ ENDPOINTIT KÄYTETTÄVISSÄ
 		http.csrf().disable().cors().and()
 		.sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
