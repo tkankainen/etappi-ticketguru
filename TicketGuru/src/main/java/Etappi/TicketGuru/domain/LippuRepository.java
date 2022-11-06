@@ -12,6 +12,6 @@ import org.springframework.data.rest.core.annotation.RestResource;
 public interface LippuRepository extends CrudRepository<Lippu, Long> {
 	
 	//List<Lippu> findByLippukoodi(String lippukoodi);
-	 @RestResource(path = "lippu", rel = "lippu")
+	@RestResource(path = "lippu", rel = "lippu")
 	List<Lippu> findByLippukoodi(@Param("koodi") UUID lippukoodi);
 }
