@@ -9,5 +9,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface TapahtumalipputyyppiRepository extends CrudRepository<Tapahtumalipputyyppi, Long>{
 	
 		List<Tapahtumalipputyyppi> findByHinta(long hinta);
+		List<Tapahtumalipputyyppi> findByNimi(String nimi);
 		
 }

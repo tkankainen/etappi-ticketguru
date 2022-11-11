@@ -20,10 +20,10 @@ public class Lipputyyppi {
 	
 	private String nimi;
 	
-	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="lipputyyppi")
-	private List <Tapahtumalipputyyppi> tapahtumalipputyypit;  //monta lipputyyppiä/tapahtuma*/
-	
+//	@JsonIgnore
+//	@OneToMany(cascade = CascadeType.ALL, mappedBy="lipputyyppi")
+//	private List <Tapahtumalipputyyppi> tapahtumalipputyypit;  //monta lipputyyppiä/tapahtuma*/
+//	
 	public Lipputyyppi() {
 		
 	}
@@ -43,13 +43,13 @@ public class Lipputyyppi {
 		this.nimi = nimi;
 	}
 	
-	public List<Tapahtumalipputyyppi> getTapahtumalipputyypit(){
-		return tapahtumalipputyypit;
-	}
-		
-	public void setTapahtumalipputyypit(List<Tapahtumalipputyyppi> tapahtumalipputyypit) {
-		this.tapahtumalipputyypit = tapahtumalipputyypit;
-	}
+//	public List<Tapahtumalipputyyppi> getTapahtumalipputyypit(){
+//		return tapahtumalipputyypit;
+//	}
+//		
+//	public void setTapahtumalipputyypit(List<Tapahtumalipputyyppi> tapahtumalipputyypit) {
+//		this.tapahtumalipputyypit = tapahtumalipputyypit;
+//	}
 	
 	@Override
 	public String toString() {

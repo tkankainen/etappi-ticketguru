@@ -23,13 +23,15 @@ public class Tapahtumalipputyyppi {
 	
 	private long hinta;
 	
+	private String nimi;
+	
 	@ManyToOne(optional = false)
 	@JoinColumn(name="tapahtumaid")
 	private Tapahtuma tapahtuma;  //monta lipputyyppiä/tapahtuma
 	
-	@ManyToOne(optional = false)
-	@JoinColumn(name="tyyppiid")
-	private Lipputyyppi lipputyyppi; //viiteavain lipputyyppi
+//	@ManyToOne(optional = false)
+//	@JoinColumn(name="tyyppiid")
+//	private Lipputyyppi lipputyyppi; //viiteavain lipputyyppi
 	
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="tapahtumalipputyyppi")
@@ -37,14 +39,18 @@ public class Tapahtumalipputyyppi {
 
 	public Tapahtumalipputyyppi(){}
 	
-			
-	public Tapahtumalipputyyppi(long hinta, Tapahtuma tapahtuma, Lipputyyppi lipputyyppi) {
-		super();
+	public Tapahtumalipputyyppi(long hinta, String nimi, Tapahtuma tapahtuma) {
 		this.hinta = hinta;
+		this.nimi = nimi;
 		this.tapahtuma = tapahtuma;
-		this.lipputyyppi = lipputyyppi;
 	}
 
+//	public Tapahtumalipputyyppi(long hinta, Tapahtuma tapahtuma, Lipputyyppi lipputyyppi) {
+//		super();
+//		this.hinta = hinta;
+//		this.tapahtuma = tapahtuma;
+//		this.lipputyyppi = lipputyyppi;
+//	}
 	
 	/*public Tapahtumalipputyyppi(long hinta, Tapahtuma tapahtuma) {
 		this.hinta=hinta;
@@ -57,6 +63,14 @@ public class Tapahtumalipputyyppi {
 
 	public void setLipputyyppiid(long lipputyyppiid) {
 		this.lipputyyppiid = lipputyyppiid;
+	}
+
+	public String getNimi() {
+		return nimi;
+	}
+
+	public void setNimi(String nimi) {
+		this.nimi = nimi;
 	}
 
 	public long getHinta() {
@@ -76,13 +90,13 @@ public class Tapahtumalipputyyppi {
 		this.tapahtuma = tapahtuma;
 	}
 	
-	public Lipputyyppi getLipputyyppi() {
-		return lipputyyppi;
-	}
-
-	public void setLipputyyppi(Lipputyyppi lipputyyppi) {
-		this.lipputyyppi = lipputyyppi;
-	}
+//	public Lipputyyppi getLipputyyppi() {
+//		return lipputyyppi;
+//	}
+//
+//	public void setLipputyyppi(Lipputyyppi lipputyyppi) {
+//		this.lipputyyppi = lipputyyppi;
+//	}
 	
 	public List<Lippu> getLiput(){
 		return liput;
