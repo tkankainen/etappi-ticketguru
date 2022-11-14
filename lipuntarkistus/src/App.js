@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Lipputarkistus from "./components/Lipputarkistus";
 import Home from "./components/Home";
+import Lipunmyynti from "./components/Lipunmyynti"
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
                 <Link color="white" to="/">Home</Link>{' '} 
               </Typography>
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Link to="/lipunmyynti">Lipunmyynti</Link>{' '} 
+              </Typography>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 <Link to="/lipuntarkistus">Lipuntarkistus</Link>{' '} 
               </Typography>
             </Toolbar>
@@ -27,6 +31,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/lipuntarkistus" element={<Lipputarkistus />} />
+          <Route path="/lipunmyynti" element={<Lipunmyynti />} />
         </Routes>
       </BrowserRouter>
     </div>
