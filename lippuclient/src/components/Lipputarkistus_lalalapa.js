@@ -1,28 +1,22 @@
-import React, { useState,  Alert } from 'react';
+import React, { useState, useEffect, Alert } from 'react';
 
 function Lipputarkistus () {
 
     const [status, setStatus] = useState('');
-    const [id, setId] = useState('');
-    const [lippu, setLippu] = useState('');
-   const [linkki,setLinkki] = useState('');
+    const [id, setId] = useState('')
+    const [lippu, setLippu] = useState('')
 
-   const timestamp = Date.now(); // This would be the timestamp you want to format
 
-   const time= (new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp));
   const haeLippu = () => {
     console.log(id);
-   // https://etappi-ticketguru.herokuapp.com/api/liput/1
-   
-    fetch(`https://etappi-ticketguru.herokuapp.com/api/liput/${id}`)
+    fetch(`http://ticketguru-env.eba-mynjmazh.us-east-1.elasticbeanstalk.com/liput/${id}`)
     .then(response => response.json()
     .then(responseJson => setLippu(responseJson))
     .catch(error => { 
       Alert.alert('Error', error); 
     }));
     console.log(lippu);
-    setStatus('onnistui get')
-    setLinkki(lippu._links.self.href);
+    setStatus('')
   }
 
   //useEffect(() => {
@@ -35,15 +29,16 @@ function Lipputarkistus () {
   }
 
   const merkitseKaytetty = () => {
-     //fetch(`https://etappi-ticketguru.herokuapp.com/api/liput/${lippu.id}`, {
-   fetch(`${linkki}`, { 
+    fetch(`http://ticketguru-env.eba-mynjmazh.us-east-1.elasticbeanstalk.com/liput/${lippu.lipputunnus}`, {
       method: "PATCH",
-      body: JSON.stringify({"kaytetty":time}),
       headers: {
         "Content-Type": "application/json"
       },
     }).then(function(response) {
-  
+  //    response.status     //=> number 100–599
+  //    response.statusText //=> String
+  //    response.headers    //=> Headers
+  //    response.url        //=> String
     setStatus('onnistui PATCH');
       return response.text()
     }, function(error) {
@@ -56,7 +51,7 @@ function Lipputarkistus () {
     <div>
       <form onSubmit={vaihdaId}>
         <label>
-          Hae lippu id (paina get 2 krt): 
+          Hae lippu: 
           <input
             type="text"
             value={id}
@@ -68,12 +63,12 @@ function Lipputarkistus () {
       </form>
 
       <p>
-      linkki url {linkki}<br />
-        Lipputunnus {lippu.lippukoodi}<br />
-        
-        
-        Myyntihinta {lippu.hinta}<br />
-       
+        Id {lippu.id}<br />
+        Lipputunnus {lippu.lipputunnus}<br />
+        LipputyyppiId {lippu.lippuyuuppiId}<br />
+        Myyntiaika {lippu.myyntiaika}<br />
+        Myyntihinta {lippu.myyntihinta}<br />
+        TilausId {lippu.tilausId}<br />
         Käytetty {lippu.kaytetty}<br /><br />
 
         <button onClick={merkitseKaytetty}>
