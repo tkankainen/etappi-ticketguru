@@ -36,27 +36,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();///KAIKKI PYYNNÖÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKIS
-/*	KOMMENTOITU TILAPÄISETI POIS ETTÄ ENDPOINTIT KÄYTETTÄVISSÄ
+	//	http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();///KAIKKI PYYNNÖÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKIS
+//	KOMMENTOITU TILAPÄISETI POIS ETTÄ ENDPOINTIT KÄYTETTÄVISSÄ
 		http.csrf().disable().cors().and()
 		.sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 		.authorizeRequests()
 		.antMatchers(HttpMethod.POST, "/login").permitAll()
-<<<<<<< HEAD
-		.antMatchers(HttpMethod.POST, "/api/tapahtumat").permitAll()
-		.antMatchers(HttpMethod.PUT, "/api/tapahtumat").permitAll()
-		.antMatchers(HttpMethod.GET, "/api/liput").permitAll()//anne lisännyt että 2 tiimi pääsee  hakemaan
-		.antMatchers(HttpMethod.PATCH, "/api/liput").permitAll()//anne lisännyt että 2 tiimi pääsee muuttamaan
-=======
-		.antMatchers(HttpMethod.GET, "/api/*").permitAll() //testausta varten sallittu kaikki apit
-		.antMatchers(HttpMethod.POST, "/api/*").permitAll() //testausta varten sallittu kaikki apit
->>>>>>> 33b405c (heroku-testausta varten sallittu apit)
+
+		.antMatchers(HttpMethod.POST, "/api/*").permitAll()
+
+		.antMatchers(HttpMethod.GET, "/api/*").permitAll()//kaikki sallittu
+
+// (heroku-testausta varten sallittu apit)
 		.anyRequest().authenticated().and()
 		.exceptionHandling()
 		.authenticationEntryPoint(exceptionHandler).and()
 		.addFilterBefore(authenticationFilter, 
-				UsernamePasswordAuthenticationFilter.class);*/
+				UsernamePasswordAuthenticationFilter.class);
 	}	
 
 	@Bean
