@@ -97,6 +97,10 @@ function Lipunmyynti () {
     haeHinta();
   }, [lipputyyppi]);
 
+  useEffect(() => {
+    luoMyyntitapahtuma()
+  }, []);
+
   const luoMyyntitapahtuma = async () => {
     await axios.post("https://etappi-ticketguru.herokuapp.com/api/myyntitapahtumat/", {
       "kayttaja":"https://etappi-ticketguru.herokuapp.com/api/kayttajat/1"
@@ -205,15 +209,16 @@ function Lipunmyynti () {
     }
   } 
 
+  //<Button variant="outlined" onClick={luoMyyntitapahtuma}>Luo myyntitapahtuma</Button>
+
   return (
   <Paper>
     <div>
-      <Button variant="outlined" onClick={luoMyyntitapahtuma}>Luo myyntitapahtuma</Button>
-      <div style={ { color:'red'}}>{status} </div>
       <ValitseTapahtuma />
       <ValitseLippu />
       <Button variant="outlined" onClick={lisaaLippu}>Lisää liput</Button>   
-      <Button variant="outlined" onClick={fetchUrl}>Näytä liput</Button>       
+      <Button variant="outlined" onClick={fetchUrl}>Näytä liput</Button>
+      <div style={ { color:'red'}}>{status} </div>  
     </div>
    
     <div>
