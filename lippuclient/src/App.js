@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Lipputarkistus from "./components/Lipputarkistus";
 import Home from "./components/Home";
 import Lipunmyynti from "./components/Lipunmyynti"
+import Tapahtumat from "./components/Tapahtumat";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/lipuntarkistus" element={<Lipputarkistus />} />
           <Route path="/lipunmyynti" element={<Lipunmyynti />} />
+          <Route path="/tapahtumat" element={<Tapahtumat />} />
         </Routes>
       </BrowserRouter>
     </div>
