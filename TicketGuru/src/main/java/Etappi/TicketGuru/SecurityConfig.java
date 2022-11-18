@@ -36,24 +36,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-	//	http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();///KAIKKI PYYNNÖÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKIS
-//	KOMMENTOITU TILAPÄISETI POIS ETTÄ ENDPOINTIT KÄYTETTÄVISSÄ
-		http.csrf().disable().cors().and()
-		.sessionManagement()
-		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-		.authorizeRequests()
-		.antMatchers(HttpMethod.POST, "/login").permitAll()
-
-		.antMatchers(HttpMethod.POST, "/api/*").permitAll()
-
-		.antMatchers(HttpMethod.GET, "/api/*").permitAll()//kaikki sallittu
-
-// (heroku-testausta varten sallittu apit)
-		.anyRequest().authenticated().and()
-		.exceptionHandling()
-		.authenticationEntryPoint(exceptionHandler).and()
-		.addFilterBefore(authenticationFilter, 
-				UsernamePasswordAuthenticationFilter.class);
+		http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();//KAIKKI PYYNNÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKSI
+//		http.csrf().disable().cors().and()
+//		.sessionManagement()
+//		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+//		.authorizeRequests()
+//		.antMatchers(HttpMethod.POST, "/login").permitAll()
+//		.antMatchers(HttpMethod.POST, "/api/*").permitAll()
+//		.antMatchers(HttpMethod.GET, "/api/*").permitAll()
+//		.anyRequest().authenticated().and()
+//		.exceptionHandling()
+//		.authenticationEntryPoint(exceptionHandler).and()
+//		.addFilterBefore(authenticationFilter, 
+//				UsernamePasswordAuthenticationFilter.class);
 	}	
 
 	@Bean

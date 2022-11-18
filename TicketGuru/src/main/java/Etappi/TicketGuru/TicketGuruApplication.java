@@ -11,8 +11,6 @@ import Etappi.TicketGuru.domain.Kayttaja;
 import Etappi.TicketGuru.domain.KayttajaRepository;
 import Etappi.TicketGuru.domain.Lippu;
 import Etappi.TicketGuru.domain.LippuRepository;
-import Etappi.TicketGuru.domain.Lipputyyppi;
-import Etappi.TicketGuru.domain.LipputyyppiRepository;
 import Etappi.TicketGuru.domain.Myyntitapahtuma;
 import Etappi.TicketGuru.domain.MyyntitapahtumaRepository;
 import Etappi.TicketGuru.domain.Tapahtuma;

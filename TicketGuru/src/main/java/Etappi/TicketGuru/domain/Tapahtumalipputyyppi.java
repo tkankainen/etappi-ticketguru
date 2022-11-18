@@ -27,15 +27,11 @@ public class Tapahtumalipputyyppi {
 	
 	@ManyToOne(optional = false)
 	@JoinColumn(name="tapahtumaid")
-	private Tapahtuma tapahtuma;  //monta lipputyyppiä/tapahtuma
-	
-//	@ManyToOne(optional = false)
-//	@JoinColumn(name="tyyppiid")
-//	private Lipputyyppi lipputyyppi; //viiteavain lipputyyppi
-	
+	private Tapahtuma tapahtuma;
+
 	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="tapahtumalipputyyppi")
-	private List <Lippu> liput;  //monta lippua tapahtumalipputyypissä
+	private List <Lippu> liput;
 
 	public Tapahtumalipputyyppi(){}
 	
@@ -44,18 +40,6 @@ public class Tapahtumalipputyyppi {
 		this.nimi = nimi;
 		this.tapahtuma = tapahtuma;
 	}
-
-//	public Tapahtumalipputyyppi(long hinta, Tapahtuma tapahtuma, Lipputyyppi lipputyyppi) {
-//		super();
-//		this.hinta = hinta;
-//		this.tapahtuma = tapahtuma;
-//		this.lipputyyppi = lipputyyppi;
-//	}
-	
-	/*public Tapahtumalipputyyppi(long hinta, Tapahtuma tapahtuma) {
-		this.hinta=hinta;
-		this.tapahtuma = tapahtuma;
-	}	*/
 	
 	public long getLipputyyppiid() {
 		return lipputyyppiid;
@@ -89,14 +73,6 @@ public class Tapahtumalipputyyppi {
 	public void setTapahtuma(Tapahtuma tapahtuma) {
 		this.tapahtuma = tapahtuma;
 	}
-	
-//	public Lipputyyppi getLipputyyppi() {
-//		return lipputyyppi;
-//	}
-//
-//	public void setLipputyyppi(Lipputyyppi lipputyyppi) {
-//		this.lipputyyppi = lipputyyppi;
-//	}
 	
 	public List<Lippu> getLiput(){
 		return liput;
