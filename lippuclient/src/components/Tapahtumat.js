@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import Button from '@mui/material/Button';
 import LisaaTapahtuma from './LisaaTapahtuma';
+import Lipputyypit from './Lipputyypit';
 
 function Tapahtumat () {
 
@@ -47,21 +49,28 @@ function Tapahtumat () {
         { headerName: "Osoite", field: "osoite", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: "Kaupunki", field: "kaupunki", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: "Lippumäärä", field: "kpl", sortable: true, filter: true, width: 160, resizable: true },
-        { headerName: "Loppupvm", field: "loppupvm", sortable: true, filter: true, width: 160, resizable: true },
+        { headerName: "Myynti loppuu", field: "loppupvm", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: '', field: "links", sortable: false, filter: false, width: 90,
-            cellRendererFramework: params => {
+            cellRenderer: params => {
                 const url = params.data._links.self.href;
                 return (
                     <Button onClick={() => poistaTapahtuma(url)}>Poista</Button>
                 )}
         },
+        { headerName: '', field: "links", sortable: false, filter: false, width: 200,
+            cellRenderer: params => {
+                const lippuurl = params.data._links.tapahtumalipputyypit.href;
+                return (
+                    <Button><Link to="/lipputyypit" state={{ lippuurl: lippuurl }}>Lipputyypit</Link></Button>
+                )}
+        }
     ]
 
     const gridRef = useRef();
 
     return (
         <div className="ag-theme-material" style={{height: 700, margin: 'auto'}}>
-            <LisaaTapahtuma tallennaapahtuma={tallennaTapahtuma}/>
+            <LisaaTapahtuma tallennaTapahtuma={tallennaTapahtuma}/>
             <AgGridReact
                 ref={gridRef}
                 onGridReady={ params => gridRef.current= params.api }
@@ -72,5 +81,6 @@ function Tapahtumat () {
         </div>
     )
 }
+
 
 export default Tapahtumat;
