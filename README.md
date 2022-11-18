@@ -67,23 +67,76 @@ prioriteetti = 2, tyyppi: toiminnallinen
 
 ## Tietokanta
 
-Järjestelmään säilöttävä ja siinä käsiteltävät tiedot ja niiden väliset suhteet
-kuvataan käsitekaaviolla. Käsitemalliin sisältyy myös taulujen välisten viiteyhteyksien ja avainten
-määritykset. Tietokanta kuvataan käyttäen jotain kuvausmenetelmää, joko ER-kaaviota ja UML-luokkakaaviota.
+![Tietokantakaavio](Kuvat/tietokantakaavio5_new.jpeg)
 
 Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
 tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
 attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän tyyliin:
 
-> ### _Tilit_
-> _Tilit-taulu sisältää käyttäjätilit. Käyttäjällä voi olla monta tiliä. Tili kuuluu aina vain yhdelle käyttäjälle._
+> ### _Tapahtuma_
+> _Tapahtuma-taulu sisältää tapahtumat. Tapahtumia voi olla monia._
 >
 > Kenttä | Tyyppi | Kuvaus
 > ------ | ------ | ------
-> id | int PK | Tilin id
-> nimimerkki | varchar(30) |  Tilin nimimerkki
-> avatar | int FK | Tilin avatar, viittaus [avatar](#Avatar)-tauluun
-> kayttaja | int FK | Viittaus käyttäjään [käyttäjä](#Kayttaja)-taulussa
+> tapahtumaid | auto PK | Tapahtuman id
+> aika | date | Tapahtuman ajankohta (date & time)
+> nimi | varchar(100) | Tapahtuman nimi
+> osoite | varchar(100) | Tapahtuman osoite
+> kaupunki | varchar(100) | Tapahtuman kaupunki
+> kpl | int | Myytävien lippujen määrä
+> loppupvm | date | Ajankohta, jolloin lippujen ennakkomyynti päättyy
+
+> ### _Tapahtumalipputyyppi_
+> _Tapahtumalipputyyppi-taulu sisältää lippujen hinnat ja yhdistää tapahtuman, lipun ja lipputyypin._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> lipputyyppiid | auto PK | Taulun oma id
+> tapahtumaid | FK | Tapahtuma-taulun id
+> tyyppiid | FK | Lipputyyppi-taulun id
+> hinta | int | Lipun hinta (perustuu lipputyyppiin)
+
+> ### _Lipputyyppi_
+> _Lipputyyppi-taulu sisältää tapahtumien lipputyyppien nimet._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> tyyppiid | auto PK | Taulun oma id
+> nimi | varchar(50) | Lipputyypi nimi (esim. aikuinen/eläkeläinen/opiskelija)
+
+> ### _Lippu_
+> _Lippu-taulu sisältää tapahtumien lippujen tiedot. Lippuja voi olla monia._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> lippuid | auto PK | Taulun oma id
+> lipputyyppiid | FK | Tapahtumalipputyyppi-taulun id
+> myyntiid | FK | Myyntitapahtuma-taulun id
+> lippukoodi | varchar(50) | Lipun luettava myyntikoodi
+> hinta | int | Lipun hinta
+
+> ### _Myyntitapahtuma_
+> _Myyntitapahtuma-taulu sisältää tiedot tehdyistä myyntitapahtumista._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> myyntiid | auto PK | Taulun oma id
+> kayttajaid | FK | Kayttaja-taulun id
+> timestamp | timestamp | Myyntitapahtuman kellonaika ja päiväys
+
+> ### _Kayttaja_
+> _Kayttaja-taulu sisältää kaikkien järjestelmää käyttävien henkilöiden tiedot (lipunmyyjät/lipputoimiston työntekijät)._
+>
+> Kenttä | Tyyppi | Kuvaus
+> ------ | ------ | ------
+> kayttajaid | auto PK | Taulun oma id
+> etunimi | varchar(50) | Käyttäjän etunimi
+> sukunimi | varchar(50) | Käyttäjän sukunimi
+> kayttajatunnus | varchar(25) | Käyttäjätunnus
+> salasana | varchar(100) | Salasana
+> rooli | varchar(50) | Käyttäjän rooli (lipunmyyjä/lipputoimiston työntekijä)
+
+
 
 ## Tekninen kuvaus
 
