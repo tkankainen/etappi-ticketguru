@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Lipputarkistus from "./components/Lipputarkistus";
-import Home from "./components/Home";
 import Lipunmyynti from "./components/Lipunmyynti"
 import Tapahtumat from "./components/Tapahtumat";
 import NaytaLiput from "./components/NaytaLiput";
@@ -31,10 +30,10 @@ function App() {
             </Toolbar>
         </AppBar>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Tapahtumat />} />
+          <Route path="/tapahtumat" element={<Tapahtumat />} />
           <Route path="/lipuntarkistus" element={<Lipputarkistus />} />
           <Route path="/lipunmyynti" element={<Lipunmyynti />} />
-          <Route path="/tapahtumat" element={<Tapahtumat />} />
           <Route path="/liput" element={<NaytaLiput />} />
           <Route path="/lipputyypit" element={<Lipputyypit />} />
         </Routes>

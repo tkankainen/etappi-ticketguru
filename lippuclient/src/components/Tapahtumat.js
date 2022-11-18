@@ -60,8 +60,9 @@ function Tapahtumat () {
         { headerName: '', field: "links", sortable: false, filter: false, width: 200,
             cellRenderer: params => {
                 const lippuurl = params.data._links.tapahtumalipputyypit.href;
+                const tapahtumaurl = params.data._links.tapahtuma.href;
                 return (
-                    <Button><Link to="/lipputyypit" state={{ lippuurl: lippuurl }}>Lipputyypit</Link></Button>
+                    <Button><Link to="/lipputyypit" state={{ lippuurl: lippuurl, tapahtumaurl: tapahtumaurl }}>Lipputyypit</Link></Button>
                 )}
         }
     ]
