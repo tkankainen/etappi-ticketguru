@@ -27,79 +27,57 @@ Näyttää kaikki tapahtumalipputyypit
     "_embedded": {
         "tapahtumalipputyyppis": [
             {
-                "hinta": 15,
-                "_links": {
-                    "self": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/1"
-                    },
-                    "tapahtumalipputyyppi": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/1"
-                    },
-                    "lipputyyppi": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/1/lipputyyppi"
-                    },
-                    "liput": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/1/liput"
-                    },
-                    "tapahtuma": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/1/tapahtuma"
-                    }
-                }
-            },
-            {
-                "hinta": 20,
-                "_links": {
-                    "self": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/2"
-                    },
-                    "tapahtumalipputyyppi": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/2"
-                    },
-                    "lipputyyppi": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/2/lipputyyppi"
-                    },
-                    "liput": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/2/liput"
-                    },
-                    "tapahtuma": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/2/tapahtuma"
-                    }
-                }
-            },
-            {
-                "hinta": 30,
-                "_links": {
-                    "self": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/3"
-                    },
-                    "tapahtumalipputyyppi": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/3"
-                    },
-                    "lipputyyppi": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/3/lipputyyppi"
-                    },
-                    "liput": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/3/liput"
-                    },
-                    "tapahtuma": {
-                        "href": "http://localhost:8080/api/tapahtumalipputyypit/3/tapahtuma"
-                    }
-                }
-            }
-        ]
-    },
-    "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit"
+      "hinta" : 40,
+      "nimi" : "aikuinen",
+      "_links" : {
+        "self" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1"
         },
-        "profile": {
-            "href": "http://localhost:8080/api/profile/tapahtumalipputyypit"
+        "tapahtumalipputyyppi" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1"
         },
-        "search": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/search"
+        "liput" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1/liput"
+        },
+        "tapahtuma" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1/tapahtuma"
         }
+      }
+    }, {
+      "hinta" : 20,
+      "nimi" : "lapsi",
+      "_links" : {
+        "self" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2"
+        },
+        "tapahtumalipputyyppi" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2"
+        },
+        "liput" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/liput"
+        },
+        "tapahtuma" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/tapahtuma"
+        }
+      }
+    }, {
+      "hinta" : 35,
+      "nimi" : "aikuinen",
+      "_links" : {
+        "self" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/6"
+        },
+        "tapahtumalipputyyppi" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/6"
+        },
+        "liput" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/6/liput"
+        },
+        "tapahtuma" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/6/tapahtuma"
+        }
+      }
     }
-}
 ```
 # Näytä yksi tapahtuma
 
@@ -116,24 +94,22 @@ Näyttää yhden tapahtumalipputyypin tiedot
 **Sisältö** : Haettu yhden tapahtumalipputyypin (id=1) tiedot
 ```json
 {
-    "hinta": 15,
-    "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/1"
-        },
-        "tapahtumalipputyyppi": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/1"
-        },
-        "lipputyyppi": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/1/lipputyyppi"
-        },
-        "liput": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/1/liput"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/1/tapahtuma"
-        }
+  "hinta" : 40,
+  "nimi" : "aikuinen",
+  "_links" : {
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1"
+    },
+    "tapahtumalipputyyppi" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1"
+    },
+    "liput" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1/liput"
+    },
+    "tapahtuma" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1/tapahtuma"
     }
+  }
 }
 ```
 ## Epäonnistunut pyyntö
