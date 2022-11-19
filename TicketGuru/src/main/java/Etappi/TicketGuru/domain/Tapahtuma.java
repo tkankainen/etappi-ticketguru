@@ -46,6 +46,8 @@ public class Tapahtuma {
 	public Tapahtuma() {}
 	
 	
+	
+	
 	public Tapahtuma(LocalDateTime aika, String nimi, String osoite, String kaupunki, long kpl,
 			String loppupvm) {
 		super();
