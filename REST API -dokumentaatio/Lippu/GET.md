@@ -47,8 +47,9 @@ Näyttää kaikki liput
     "_embedded": {
         "lippus": [
             {
-                "lippukoodi": "abc234",
                 "hinta": 25,
+                "kaytetty" : null,
+                "lippukoodi": "abc234",
                 "_links": {
                     "self": {
                         "href": "http://localhost:8080/api/liput/1"
@@ -71,8 +72,9 @@ Näyttää kaikki liput
                 }
             },
             {
-                "lippukoodi": "iopp453f",
                 "hinta": 12,
+                "kaytetty" : "11/14/2022, 07:38:40 PM",
+                "lippukoodi": "iopp453f",
                 "_links": {
                     "self": {
                         "href": "http://localhost:8080/api/liput/2"
@@ -126,8 +128,9 @@ Näyttää yhden lipun tiedot
 **Sisältö** : Haettu yhden lipun (id=1) tiedot
 ```json
 {
-    "lippukoodi": "abc234",
     "hinta": 25,
+    "kaytetty" : "11/14/2022, 07:38:40 PM",
+    "lippukoodi": "abc234",
     "_links": {
         "self": {
             "href": "http://localhost:8080/api/liput/1"
