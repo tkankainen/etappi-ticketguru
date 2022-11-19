@@ -14,7 +14,7 @@ Päivitä tapahtuman yksittäistä tietoa
 "nimi": "[unicode 100 chars max]",
 }
 ```
-**Esimerkki** Muutetaan "aika" kenttää.
+**Esimerkki** Muutetaan "nimi" kenttää.
 
 ```json
 {
@@ -28,7 +28,7 @@ Päivitä tapahtuman yksittäistä tietoa
 
 **Code** : `200 OK`
 
-**Esimerkki** : "aika" kenttä on päivitetty kohteeseen `/api/tapahtumat/1/`
+**Esimerkki** : "nimi" kenttä on päivitetty kohteeseen `/api/tapahtumat/1/`
 
 ```json
 {
@@ -41,14 +41,15 @@ Päivitä tapahtuman yksittäistä tietoa
 "loppupvm": "12.10.2022"
 "_links": {
         "self": {
-            "href": "http://localhost:8080/api/tapahtumat/1"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/tapahtumat/1"
-        },
-        "tapahtumalipputyypit": {
-            "href": "http://localhost:8080/api/tapahtumat/1/tapahtumalipputyypit"
-        }
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/1"
+    },
+    "tapahtuma" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/1"
+    },
+    "tapahtumalipputyypit" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/1/tapahtumalipputyypit"
+    }
+  }
 }
 ```
 
