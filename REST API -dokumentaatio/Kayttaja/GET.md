@@ -133,6 +133,7 @@ Näyttää yhden käyttäjän tiedot
 ```
 ## Epäonnistunut pyyntö
 
+
 **Vaatimus** Käyttäjää ei ole haetulla ID:llä
 
 **Code** `404 NOT FOUND`
