@@ -52,22 +52,16 @@ Näyttää kaikki liput
                 "lippukoodi": "abc234",
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/api/liput/1"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1"
                     },
                     "lippu": {
-                        "href": "http://localhost:8080/api/liput/1"
-                    },
-                    "tapahtuma": {
-                        "href": "http://localhost:8080/api/liput/1/tapahtuma"
-                    },
-                    "tila": {
-                        "href": "http://localhost:8080/api/liput/1/tila"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1"
                     },
                     "myyntitapahtuma": {
-                        "href": "http://localhost:8080/api/liput/1/myyntitapahtuma"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1/myyntitapahtuma"
                     },
                     "tapahtumalipputyyppi": {
-                        "href": "http://localhost:8080/api/liput/1/tapahtumalipputyyppi"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1/tapahtumalipputyyppi"
                     }
                 }
             },
@@ -77,22 +71,16 @@ Näyttää kaikki liput
                 "lippukoodi": "iopp453f",
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/api/liput/2"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/2"
                     },
                     "lippu": {
-                        "href": "http://localhost:8080/api/liput/2"
-                    },
-                    "tapahtuma": {
-                        "href": "http://localhost:8080/api/liput/2/tapahtuma"
-                    },
-                    "tila": {
-                        "href": "http://localhost:8080/api/liput/2/tila"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/2"
                     },
                     "myyntitapahtuma": {
-                        "href": "http://localhost:8080/api/liput/2/myyntitapahtuma"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/2/myyntitapahtuma"
                     },
                     "tapahtumalipputyyppi": {
-                        "href": "http://localhost:8080/api/liput/2/tapahtumalipputyyppi"
+                        "href": "https://etappi-ticketguru.herokuapp.com/api/liput/2/tapahtumalipputyyppi"
                     }
                 }
             }
@@ -100,13 +88,13 @@ Näyttää kaikki liput
     },
     "_links": {
         "self": {
-            "href": "http://localhost:8080/api/liput/"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/"
         },
         "profile": {
-            "href": "http://localhost:8080/api/profile/liput"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/profile/liput"
         },
         "search": {
-            "href": "http://localhost:8080/api/liput/search"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/search"
         }
     }
 }
@@ -133,23 +121,18 @@ Näyttää yhden lipun tiedot
     "lippukoodi": "abc234",
     "_links": {
         "self": {
-            "href": "http://localhost:8080/api/liput/1"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1"
         },
         "lippu": {
-            "href": "http://localhost:8080/api/liput/1"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1"
         },
         "tapahtumalipputyyppi": {
-            "href": "http://localhost:8080/api/liput/1/tapahtumalipputyyppi"
-        },
-        "tila": {
-            "href": "http://localhost:8080/api/liput/1/tila"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1/tapahtumalipputyyppi"
         },
         "myyntitapahtuma": {
-            "href": "http://localhost:8080/api/liput/1/myyntitapahtuma"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/liput/1/tapahtuma"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/1/myyntitapahtuma"
         }
+
     }
 }
 ```
