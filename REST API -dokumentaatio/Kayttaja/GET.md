@@ -18,18 +18,18 @@ Näyttää kaikki käyttäjät
     "_embedded": {
         "kayttajas": []
     },
-    "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/kayttajat"
-        },
-        "profile": {
-            "href": "http://localhost:8080/api/profile/kayttajat"
-        },
-        "search": {
-            "href": "http://localhost:8080/api/kayttajat/search"
-        }
+  "_links" : {
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat"
+    },
+    "profile" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/profile/kayttajat"
+    },
+    "search" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/search"
     }
-}       
+  }
+}    
 
 ```
 
@@ -47,54 +47,53 @@ Näyttää kaikki käyttäjät
     "_embedded": {
         "kayttajas": [
             {
-                "etunimi": "User1",
-                "sukunimi": "Snimi",
-                "tunnus": "u1",
-                "salasana": "$2a$10$UmKkO8p.15R057r8PiSpKemW6uhrcvyD2nFWnXEPZ68r5Y3GuukZW",
-                "rooli": "USER",
-                "_links": {
-                    "self": {
-                        "href": "http://localhost:8080/api/kayttajat/1"
-                    },
-                    "kayttaja": {
-                        "href": "http://localhost:8080/api/kayttajat/1"
-                    },
-                    "myyntitapahtumat": {
-                        "href": "http://localhost:8080/api/kayttajat/1/myyntitapahtumat"
-                    }
-                }
-            },
-            {
-                "etunimi": "User2",
-                "sukunimi": "Snimi",
-                "tunnus": "a2",
-                "salasana": "$2a$10$gfVAlVfQoENWFqEJDCN6Au/1.HRhkVa/g6KSw0wXHsg6DWpKiK8Um",
-                "rooli": "ADMIN",
-                "_links": {
-                    "self": {
-                        "href": "http://localhost:8080/api/kayttajat/2"
-                    },
-                    "kayttaja": {
-                        "href": "http://localhost:8080/api/kayttajat/2"
-                    },
-                    "myyntitapahtumat": {
-                        "href": "http://localhost:8080/api/kayttajat/2/myyntitapahtumat"
-                    }
-                }
-            }
+      "etunimi" : "Esimerkki",
+      "sukunimi" : "Kayttaja",
+      "tunnus" : "user",
+      "salasana" : "$2a$10$UmKkO8p.15R057r8PiSpKemW6uhrcvyD2nFWnXEPZ68r5Y3GuukZW",
+      "rooli" : "user",
+      "_links" : {
+        "self" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1"
+        },
+        "kayttaja" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1"
+        },
+        "myyntitapahtumat" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1/myyntitapahtumat"
+        }
+      }
+    }, {
+      "etunimi" : "User1",
+      "sukunimi" : "Snimi",
+      "tunnus" : "u1",
+      "salasana" : "$2a$10$UmKkO8p.15R057r8PiSpKemW6uhrcvyD2nFWnXEPZ68r5Y3GuukZW",
+      "rooli" : "USER",
+      "_links" : {
+        "self" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/2"
+        },
+        "kayttaja" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/2"
+        },
+        "myyntitapahtumat" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/2/myyntitapahtumat"
+        }
+      }
+    }
         ]
     },
-    "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/kayttajat"
-        },
-        "profile": {
-            "href": "http://localhost:8080/api/profile/kayttajat"
-        },
-        "search": {
-            "href": "http://localhost:8080/api/kayttajat/search"
-        }
+  "_links" : {
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat"
+    },
+    "profile" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/profile/kayttajat"
+    },
+    "search" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/search"
     }
+  }
 }
 ```
 # Näytä yksi käyttäjä
@@ -114,22 +113,22 @@ Näyttää yhden käyttäjän tiedot
 **Sisältö** : Haettu yhden käyttäjän (id=1) tiedot
 ```json
 {
-    "etunimi": "User1",
-    "sukunimi": "Snimi",
-    "tunnus": "u1",
-    "salasana": "$2a$10$UmKkO8p.15R057r8PiSpKemW6uhrcvyD2nFWnXEPZ68r5Y3GuukZW",
-    "rooli": "USER",
-    "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/kayttajat/1"
-        },
-        "kayttaja": {
-            "href": "http://localhost:8080/api/kayttajat/1"
-        },
-        "myyntitapahtumat": {
-            "href": "http://localhost:8080/api/kayttajat/1/myyntitapahtumat"
-        }
+  "etunimi" : "Esimerkki",
+  "sukunimi" : "Kayttaja",
+  "tunnus" : "user",
+  "salasana" : "$2a$10$UmKkO8p.15R057r8PiSpKemW6uhrcvyD2nFWnXEPZ68r5Y3GuukZW",
+  "rooli" : "user",
+  "_links" : {
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1"
+    },
+    "kayttaja" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1"
+    },
+    "myyntitapahtumat" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1/myyntitapahtumat"
     }
+  }
 }
 ```
 ## Epäonnistunut pyyntö
