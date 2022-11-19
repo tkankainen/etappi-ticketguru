@@ -5,7 +5,6 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import dayjs from 'dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
@@ -13,7 +12,6 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 function LisaaTapahtuma( {tallennaTapahtuma} ) {
 
     const [open, setOpen] = useState(false);
-    const [value, setValue] = React.useState(dayjs('2022-08-13T21:11:55'));
     const [tapahtuma, setTapahtuma] = useState({
         aika: '', nimi: '', osoite: '', kaupunki: '', kpl: '', loppupvm: ''
     })
@@ -30,16 +28,8 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
         setTapahtuma({...tapahtuma, [event.target.name]: event.target.value })
     }
 
-
-    const asetaAika = () => {
-        console.log(value)
-        setTapahtuma({...tapahtuma, aika: dayjs(value).format()})
-        console.log(tapahtuma)
-    }
-
     const lisaaTapahtuma = () => {
         console.log(tapahtuma)
-        setTapahtuma({...tapahtuma, aika: dayjs(value).format()})
         tallennaTapahtuma(tapahtuma);
         handleClose();
     }
@@ -52,17 +42,16 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
         <Dialog open={open} onClose={handleClose}>
             <DialogTitle>Uusi tapahtuma</DialogTitle>
             <DialogContent>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DateTimePicker
-                        renderInput={(props) => <TextField {...props} />}
-                        label="Aika"
-                        type="datetime"
-                        value={tapahtuma.aika}
-                        onChange={(newValue) => {
-                            setValue(newValue);
-                        }}
-                    />
-                </LocalizationProvider>
+                <TextField
+                    autoFocus
+                    margin="dense"
+                    name="aika"
+                    value={tapahtuma.aika}
+                    type="datetime-local"
+                    onChange={e => handleInputChange(e)}
+                    variant="standard"
+                    fullWidth
+                />
                 <TextField
                     margin="dense"
                     name="nimi"

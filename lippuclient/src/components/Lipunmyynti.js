@@ -97,9 +97,11 @@ function Lipunmyynti () {
     haeHinta();
   }, [lipputyyppi]);
 
+  /*
   useEffect(() => {
     luoMyyntitapahtuma()
   }, []);
+  */
 
   const luoMyyntitapahtuma = async () => {
     await axios.post("https://etappi-ticketguru.herokuapp.com/api/myyntitapahtumat/", {
