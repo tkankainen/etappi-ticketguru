@@ -60,16 +60,16 @@ Päivitä olemassa oleva tapahtuma
     "kpl": 5,
     "loppupvm": "26.9.2022",
     "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/tapahtumat/1"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/tapahtumat/1"
-        },
-        "tapahtumalipputyypit": {
-            "href": "http://localhost:8080/api/tapahtumat/1/tapahtumalipputyypit"
-        }
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/1"
+    },
+    "tapahtuma" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/1"
+    },
+    "tapahtumalipputyypit" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/1/tapahtumalipputyypit"
     }
+  }
 }
 ```
 **Ehto** Tapahtumaa ei ollut olemassa vielä kyseisellä ID:llä, joten sen ID:n alle luotiin uusi käyttäjä.
@@ -99,16 +99,16 @@ Päivitä olemassa oleva tapahtuma
     "kpl": 5,
     "loppupvm": "26.9.2022",
     "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/tapahtumat/7"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/tapahtumat/7"
-        },
-        "tapahtumalipputyypit": {
-            "href": "http://localhost:8080/api/tapahtumat/7/tapahtumalipputyypit"
-        }
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/7"
+    },
+    "tapahtuma" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/7"
+    },
+    "tapahtumalipputyypit" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/7/tapahtumalipputyypit"
     }
+  }
 }
 ```
 
