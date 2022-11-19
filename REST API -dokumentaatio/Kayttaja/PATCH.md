@@ -38,16 +38,16 @@ Päivitä käyttäjän yksittäistä tietoa
     "salasana": "$2a$10$UmKkO8p.15R057r8PiSpKemW6uhrcvyD2nFWnXEPZ68r5Y3GuukZW",
     "rooli": "USER",
     "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/kayttajat/1"
-        },
-        "kayttaja": {
-            "href": "http://localhost:8080/api/kayttajat/1"
-        },
-        "myyntitapahtumat": {
-            "href": "http://localhost:8080/api/kayttajat/1/myyntitapahtumat"
-        }
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1"
+    },
+    "kayttaja" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1"
+    },
+    "myyntitapahtumat" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1/myyntitapahtumat"
     }
+  }
 }
 ```
 
