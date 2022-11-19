@@ -22,7 +22,7 @@ Syötä käyttäjän tiedot
 
 ```json
 {
-    "kayttaja": "http://localhost:8080/api/kayttajat/1",
+    "https://etappi-ticketguru.herokuapp.com/api/kayttajat/1",
     
 }
 ```
@@ -37,23 +37,21 @@ Syötä käyttäjän tiedot
 ```json
 
 {
-    "timestamp": "2022-10-22T22:17:42.7237358",
-    "toteutunut": "0",
-    "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/4"
+      "hinta" : 10,
+      "kaytetty" : "11/15/2022, 08:26:35 PM",
+      "lippukoodi" : "9c676ce0-cce3-49a3-9a87-989ea1611095",
+      "_links" : {
+        "self" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/liput/1"
         },
-        "myyntitapahtuma": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/4"
+        "lippu" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/liput/1"
         },
-        "liput": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/4/liput"
+        "myyntitapahtuma" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/liput/1/myyntitapahtuma"
         },
-        "kayttaja": {
-            "href": "http://localhost:8080/api/myyntitapahtumat/4/kayttaja"
-        }
-    }
-}
+        "tapahtumalipputyyppi" : {
+          "href" : "https://etappi-ticketguru.herokuapp.com/api/liput/1/tapahtumalipputyyppi
 ```
 
 ## Virhevastauksia
