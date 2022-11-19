@@ -3,6 +3,7 @@ import { AgGridReact } from 'ag-grid-react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
+import moment from 'moment';
 import Button from '@mui/material/Button';
 import LisaaTapahtuma from './LisaaTapahtuma';
 import Lipputyypit from './Lipputyypit';
@@ -44,7 +45,12 @@ function Tapahtumat () {
     }
 
     const columns = [
-        { headerName: "Aika", field: "aika", sortable: true, filter: true, width: 160, resizable: true },
+        { headerName: "Aika", field: "aika", sortable: true, filter: true, width: 230, resizable: true,
+            cellRenderer: params => {
+                return (
+                    moment(params.data.aika).format('LLL')
+            )}
+        },
         { headerName: "Nimi", field: "nimi", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: "Osoite", field: "osoite", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: "Kaupunki", field: "kaupunki", sortable: true, filter: true, width: 160, resizable: true },
@@ -60,8 +66,9 @@ function Tapahtumat () {
         { headerName: '', field: "links", sortable: false, filter: false, width: 200,
             cellRenderer: params => {
                 const lippuurl = params.data._links.tapahtumalipputyypit.href;
+                const tapahtumaurl = params.data._links.tapahtuma.href;
                 return (
-                    <Button><Link to="/lipputyypit" state={{ lippuurl: lippuurl }}>Lipputyypit</Link></Button>
+                    <Button><Link to="/lipputyypit" state={{ lippuurl: lippuurl, tapahtumaurl: tapahtumaurl }}>Lipputyypit</Link></Button>
                 )}
         }
     ]
