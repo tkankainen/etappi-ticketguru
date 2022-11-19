@@ -20,13 +20,13 @@ Näyttää kaikki liput
     },
     "_links": {
         "self": {
-            "href": "http://localhost:8080/api/liput"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput"
         },
         "profile": {
-            "href": "http://localhost:8080/api/profile/liput"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/profile/liput"
         },
         "search": {
-            "href": "http://localhost:8080/api/liput/search"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/search"
         }
     }
 }       
