@@ -8,29 +8,27 @@ Luo uuden lipun tapahtumaan
 
 **Datan rajoitukset**
 
-Pyynnössä on linkit tapahtumaan, tapahtumalipputyyppiin, tilaan ja myyntitapahtumaan.
+Pyynnössä on linkit tapahtumalipputyyppiin ja myyntitapahtumaan.
 Syötä tapahtuman tiedot
 
 ```json
 {
-    "tapahtuma": "[tapahtuma]",
     "tapahtumalipputyyppi": "[tapahtumalipputyyppi]",
-    "tila": "[tila]",
     "myyntitapahtuma": "[myyntitapahtuma]",
     "lippukoodi": "[unicode 50 chars max]",
     "hinta": "[unicode numerical]",
+    "kaytetty": "[unicode 50 chars max]"
 }
 ```
 **Esimerkki** Kaikki kentät täytetty
 
 ```json
 {
-    "tapahtuma": "http://localhost:8080/api/tapahtumat/3",
-    "tapahtumalipputyyppi": "http://localhost:8080/api/tapahtumalipputyypit/2",
-    "tila": "http://localhost:8080/api/tilat/1",
-    "myyntitapahtuma": "http://localhost:8080/api/myyntitapahtumat/1",
+    "tapahtumalipputyyppi": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2",
+    "myyntitapahtuma": "https://etappi-ticketguru.herokuapp.com/api/myyntitapahtumat/1",
     "lippukoodi": "234ty5tg6",
-    "hinta": 37
+    "hinta": 37,
+    "kaytetty": "null"
 }
 ```
 
@@ -44,26 +42,21 @@ Syötä tapahtuman tiedot
 ```json
 
 {
-    "lippukoodi": "234ty5tg6",
     "hinta": 37,
+    "kaytetty": "null",
+    "lippukoodi": "234ty5tg6",
     "_links": {
         "self": {
-            "href": "http://localhost:8080/api/liput/4"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/4"
         },
         "lippu": {
-            "href": "http://localhost:8080/api/liput/4"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/4"
         },
         "tapahtumalipputyyppi": {
-            "href": "http://localhost:8080/api/liput/4/tapahtumalipputyyppi"
-        },
-        "tila": {
-            "href": "http://localhost:8080/api/liput/4/tila"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/4/tapahtumalipputyyppi"
         },
         "myyntitapahtuma": {
-            "href": "http://localhost:8080/api/liput/4/myyntitapahtuma"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/liput/4/tapahtuma"
+            "href": "https://etappi-ticketguru.herokuapp.com/api/liput/4/myyntitapahtuma"
         }
     }
 }
