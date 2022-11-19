@@ -13,8 +13,8 @@ Syötä hinta ja linkit lipputyyppiin sekä tapahtumaan
 ```json
 {
     "hinta":30,
-   "lipputyyppi": "http://localhost:8080/api/lipputyypit/1",
-   "tapahtuma": "http://localhost:8080/api/tapahtumat/3"
+   "lipputyyppi": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1",
+   "tapahtuma": "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/3"
 	
 }
 ```
@@ -23,8 +23,8 @@ Syötä hinta ja linkit lipputyyppiin sekä tapahtumaan
 ```json
 {
     "hinta":30,
-   "lipputyyppi": "http://localhost:8080/api/lipputyypit/1",
-   "tapahtuma": "http://localhost:8080/api/tapahtumat/3"
+	"lipputyyppi": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1",
+  	 "tapahtuma": "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/3"
 	
 }
 ```
@@ -70,8 +70,8 @@ Syötä hinta ja linkit lipputyyppiin sekä tapahtumaan
  
  {
     "hinta":"moi",
-   "lipputyyppi": "[http://localhost:8080/api/lipputyypit/1](https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/liput)",
-   "tapahtuma": "[http://localhost:8080/api/tapahtumat/3](https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/tapahtuma)"
+   "lipputyyppi": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/liput",
+   "tapahtuma": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/tapahtuma"
 	
 }
  
