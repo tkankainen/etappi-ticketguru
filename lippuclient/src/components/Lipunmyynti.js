@@ -14,7 +14,7 @@ function Lipunmyynti () {
   const [tapahtuma, setTapahtuma] = useState('')
   const [tapahtumaoptions, setTapahtumaoptions] = useState([""]);
   const [lippuoptions, setLippuoptions] = useState([""]);
-  const [maara, setMaara] = useState(0)
+  //const [maara, setMaara] = useState(0)
   const [lipputyyppi, setLipputyyppi] = useState('')
   const [myyntitapahtuma, setMyyntitapahtuma] = useState('')
   const [status, setStatus] = useState('')
@@ -36,7 +36,7 @@ function Lipunmyynti () {
         result.map((tapahtuma) => {
           return arr.push({value: tapahtuma._links.self.href, label: tapahtuma.nimi});
         });
-       // console.log(arr);// tuo tapahtumat
+        console.log(arr);
         setTapahtumaoptions(arr)
        
       });
@@ -211,11 +211,10 @@ function Lipunmyynti () {
     }
   } 
 
-  //<Button variant="outlined" onClick={luoMyyntitapahtuma}>Luo myyntitapahtuma</Button>
-
   return (
   <Paper>
     <div>
+    <Button variant="outlined" onClick={luoMyyntitapahtuma}>Luo myyntitapahtuma</Button>
       <ValitseTapahtuma />
       <ValitseLippu />
       <Button variant="outlined" onClick={lisaaLippu}>Lisää liput</Button>   
