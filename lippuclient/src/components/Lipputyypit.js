@@ -9,6 +9,7 @@ function Lipputyypit () {
     const location = useLocation()
     const { lippuurl } = location.state
     const { tapahtumaurl } = location.state
+    const token = sessionStorage.getItem("jwt");
 
     const fetchData = () => {
         console.log(lippuurl)
@@ -27,7 +28,8 @@ function Lipputyypit () {
         fetch("https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization' : token 
             },
             body: JSON.stringify(lipputyyppi)
         })

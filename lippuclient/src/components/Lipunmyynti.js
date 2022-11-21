@@ -8,7 +8,6 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-
 function Lipunmyynti () {
 
   const [tapahtuma, setTapahtuma] = useState('')
@@ -19,13 +18,15 @@ function Lipunmyynti () {
   const [myyntitapahtuma, setMyyntitapahtuma] = useState('')
   const [status, setStatus] = useState('')
   const [hinta, setHinta] = useState('')
- 
+  
   const [taulukko, setTaulukko] = useState([]);
   const [lippulinkki,setLippulinkki] = useState('');
   
-  const [lippuTapahtuma,setLippuTapahtuma] = useState('');//LippuTapahtuma
-  const [lippuAika,setLippuAika] = useState('');//
-  const [lippuOsoite,setLippuOsoite] = useState('');//
+  const [lippuTapahtuma,setLippuTapahtuma] = useState('');
+  const [lippuAika,setLippuAika] = useState('');
+  const [lippuOsoite,setLippuOsoite] = useState('');
+
+  const token = sessionStorage.getItem("jwt");
  
   
   useEffect(() => {

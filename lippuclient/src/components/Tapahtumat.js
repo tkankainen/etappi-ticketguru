@@ -12,8 +12,12 @@ function Tapahtumat () {
 
     const [tapahtumat, setTapahtumat] = useState([]);
 
+    const token = sessionStorage.getItem("jwt");
+
     const fetchData = () => {
-        fetch("https://etappi-ticketguru.herokuapp.com/api/tapahtumat/")
+        fetch("https://etappi-ticketguru.herokuapp.com/api/tapahtumat/", {
+            headers: { 'Authorization' : token }
+        })
         .then(response => response.json())
         .then(data => setTapahtumat(data._embedded.tapahtumas))
         .catch(error => console.error(error))
@@ -27,7 +31,8 @@ function Tapahtumat () {
         fetch("https://etappi-ticketguru.herokuapp.com/api/tapahtumat/", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization' : token
             },
             body: JSON.stringify(tapahtuma)
         })
@@ -38,7 +43,12 @@ function Tapahtumat () {
     const poistaTapahtuma = (url) => {
         console.log("Delete", url)
         if (window.confirm('Haluatko varmasti poistaa tapahtuman?')) {
-            fetch(url, {method: 'DELETE'})
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization' : token
+                }
+            })
             .then(res => fetchData())
             .catch(error => console.error(error))
         }
