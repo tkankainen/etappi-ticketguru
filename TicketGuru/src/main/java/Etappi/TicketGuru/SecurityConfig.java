@@ -21,7 +21,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import Etappi.TicketGuru.service.UserDetailsServiceImpl;
 
 
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -36,19 +35,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();//KAIKKI PYYNNÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKSI
-//		http.csrf().disable().cors().and()
-//		.sessionManagement()
-//		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-//		.authorizeRequests()
-//		.antMatchers(HttpMethod.POST, "/login").permitAll()
-//		.antMatchers(HttpMethod.POST, "/api/*").permitAll()
-//		.antMatchers(HttpMethod.GET, "/api/*").permitAll()
-//		.anyRequest().authenticated().and()
-//		.exceptionHandling()
-//		.authenticationEntryPoint(exceptionHandler).and()
-//		.addFilterBefore(authenticationFilter, 
-//				UsernamePasswordAuthenticationFilter.class);
+		//http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();//KAIKKI PYYNNÖT HYVÄKSYTÄÄN TOISTAISEKSI, VAIHDA LOPUKSI
+		http.csrf().disable().cors().and()
+		.sessionManagement()
+		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+		.authorizeRequests()
+		.antMatchers(HttpMethod.POST, "/login").permitAll()
+		.anyRequest().authenticated().and()
+		.exceptionHandling()
+		.authenticationEntryPoint(exceptionHandler).and()
+		.addFilterBefore(authenticationFilter, 
+				UsernamePasswordAuthenticationFilter.class);
 	}	
 
 	@Bean

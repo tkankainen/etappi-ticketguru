@@ -1,4 +1,4 @@
-import React, { useState,  Alert } from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 
 function Lipputarkistus () {
@@ -6,8 +6,7 @@ function Lipputarkistus () {
     const [status, setStatus] = useState('');
     const [id, setId] = useState('');
     const [lippu, setLippu] = useState('');
-    const [linkki,setLinkki] = useState('');
-
+    const token = sessionStorage.getItem("jwt");
     const timestamp = Date.now();
     const time = (new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp));
     
@@ -23,7 +22,6 @@ function Lipputarkistus () {
       setStatus('')
     }
 
-
     const vaihdaId = (event) => {
       event.preventDefault();
       haeLippu(id);
@@ -34,7 +32,8 @@ function Lipputarkistus () {
           method: "PATCH",
           body: JSON.stringify({"kaytetty":time}),
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            'Authorization' : token 
           },
         }).then(function(response) {
         setStatus('Lippu käytetty');
