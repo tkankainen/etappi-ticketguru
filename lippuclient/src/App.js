@@ -9,7 +9,7 @@ import Tapahtumat from "./components/Tapahtumat";
 import NaytaLiput from "./components/NaytaLiput";
 import Lipputyypit from "./components/Lipputyypit";
 import Login from "./components/Login";
-import Logout from "./Logout";
+import Logout from "./components/Logout";
 
 function App() {
   return (

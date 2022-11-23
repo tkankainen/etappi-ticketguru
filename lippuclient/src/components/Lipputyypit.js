@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
+import Button from '@mui/material/Button';
 import LisaaLipputyyppi from './LisaaLipputyyppi';
 
 function Lipputyypit () {
@@ -39,9 +40,30 @@ function Lipputyypit () {
         .catch(error => console.error(error))
     }
 
+    const poistaLipputyyppi = (url) => {
+        console.log("Delete", url)
+        if (window.confirm('Haluatko varmasti poistaa lipputyypin?')) {
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization' : token
+                }
+            })
+            .then(res => fetchData())
+            .catch(error => console.error(error))
+        }
+    }
+
     const columns = [
         { headerName: "Nimi", field: "nimi", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: "Hinta", field: "hinta", sortable: true, filter: true, width: 160, resizable: true },
+        { headerName: '', field: "links", sortable: false, filter: false, width: 90,
+            cellRenderer: params => {
+                const url = params.data._links.self.href;
+                return (
+                    <Button onClick={() => poistaLipputyyppi(url)}>Poista</Button>
+                )}
+        },
     ]
 
     const gridRef = useRef();
