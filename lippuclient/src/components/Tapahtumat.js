@@ -6,6 +6,7 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import moment from 'moment';
 import Button from '@mui/material/Button';
 import LisaaTapahtuma from './LisaaTapahtuma';
+import MuokkaaTapahtuma from './MuokkaaTapahtuma';
 
 function Tapahtumat () {
 
@@ -59,6 +60,19 @@ function Tapahtumat () {
         }
     }
 
+    const muokkaaTapahtuma = (tapahtuma, url) => {
+        fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization' : token
+        },
+        body: JSON.stringify(tapahtuma)
+        })
+        .then(res => fetchData())
+        .catch(error => console.error(error))
+    }
+
     const columns = [
         { headerName: "Aika", field: "aika", sortable: true, filter: true, width: 230, resizable: true,
             cellRenderer: params => {
@@ -71,6 +85,14 @@ function Tapahtumat () {
         { headerName: "Kaupunki", field: "kaupunki", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: "Lippumäärä", field: "kpl", sortable: true, filter: true, width: 160, resizable: true },
         { headerName: "Myynti loppuu", field: "loppupvm", sortable: true, filter: true, width: 160, resizable: true },
+        { headerName: '', field: "links", sortable: false, filter: false, width: 120,
+            cellRenderer: params => {
+                const tapahtumaurl = params.data._links.self.href;
+                return (
+                    <MuokkaaTapahtuma muokkaaTapahtuma={muokkaaTapahtuma} tiedot={params} tapahtumaurl={tapahtumaurl} />
+                )
+            }
+        },
         { headerName: '', field: "links", sortable: false, filter: false, width: 90,
             cellRenderer: params => {
                 const url = params.data._links.self.href;
