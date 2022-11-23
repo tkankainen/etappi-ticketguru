@@ -14,7 +14,9 @@ function Lipputyypit () {
     const fetchData = () => {
         console.log(lippuurl)
         console.log(tapahtumaurl)
-        fetch(lippuurl)
+        fetch(lippuurl, {
+            headers: { 'Authorization' : token }
+        })
         .then(response => response.json())
         .then(data => setLipputyypit(data._embedded.tapahtumalipputyyppis))
         .catch(error => console.error(error))

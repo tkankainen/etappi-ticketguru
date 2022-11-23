@@ -1,18 +1,23 @@
 import { useEffect, useState, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import moment from 'moment';
 import Button from '@mui/material/Button';
 import LisaaTapahtuma from './LisaaTapahtuma';
-import Lipputyypit from './Lipputyypit';
 
 function Tapahtumat () {
 
     const [tapahtumat, setTapahtumat] = useState([]);
-
+    const navigate = useNavigate();
     const token = sessionStorage.getItem("jwt");
+
+    useEffect(() => {
+        if(!token) {
+          navigate('/login');
+        }
+    });
 
     const fetchData = () => {
         fetch("https://etappi-ticketguru.herokuapp.com/api/tapahtumat/", {

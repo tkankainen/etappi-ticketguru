@@ -31,11 +31,6 @@ function Login() {
         .catch(err => console.error(err))
     }
 
-    const logout = () => {
-        sessionStorage.removeItem("jwt");
-        setAuth(false);
-    }  
-
     const handleChange = (event) => {
         setKayttaja({...kayttaja,
             [event.target.name] : event.target.value});
