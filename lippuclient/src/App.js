@@ -9,6 +9,7 @@ import Tapahtumat from "./components/Tapahtumat";
 import NaytaLiput from "./components/NaytaLiput";
 import Lipputyypit from "./components/Lipputyypit";
 import Login from "./components/Login";
+import Logout from "./Logout";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/tapahtumat" element={<Tapahtumat />} />
           <Route path="/lipuntarkistus" element={<Lipputarkistus />} />
           <Route path="/lipunmyynti" element={<Lipunmyynti />} />

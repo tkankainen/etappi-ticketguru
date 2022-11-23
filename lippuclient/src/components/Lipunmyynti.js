@@ -7,6 +7,7 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from "react-router-dom";
 
 function Lipunmyynti () {
 
@@ -27,7 +28,13 @@ function Lipunmyynti () {
   const [lippuOsoite,setLippuOsoite] = useState('');
 
   const token = sessionStorage.getItem("jwt");
- 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!token) {
+      navigate('/login');
+    }
+  });
   
   useEffect(() => {
     const getData = async () => {

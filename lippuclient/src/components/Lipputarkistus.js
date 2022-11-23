@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 
 function Lipputarkistus () {
 
@@ -9,10 +10,21 @@ function Lipputarkistus () {
     const token = sessionStorage.getItem("jwt");
     const timestamp = Date.now();
     const time = (new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp));
-    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if(!token) {
+        navigate('/login');
+      }
+    });
+
     const haeLippu = () => {
       console.log(id);
-      fetch(`https://etappi-ticketguru.herokuapp.com/api/liput/${id}`)
+      fetch(`https://etappi-ticketguru.herokuapp.com/api/liput/${id}`, {
+        headers: {
+          'Authorization' : token 
+        },
+      })
       .then(response => response.json()
       .then(responseJson => setLippu(responseJson))
       .catch(error => { 
@@ -44,34 +56,34 @@ function Lipputarkistus () {
         })
     }
 
-  return (
-    <div>
-
-      <form onSubmit={vaihdaId}>
-        <label>
-          Hae lippu (id): 
-          <input
-            type="text"
-            value={id}
-            onChange={(e) => setId(e.target.value)}
-          />
-        </label>
-        <input type="submit" value="Hae" />
-      </form>
-
+    return (
       <div>
-        <p>
-          Lippukoodi {lippu.lippukoodi}<br />
-          Myyntihinta {lippu.hinta} €<br />
-          Käytetty {lippu.kaytetty}<br /><br />
-          <Button onClick={merkitseKaytetty}>
-            Merkitse käytetyksi
-          </Button>
-        </p>
+
+        <form onSubmit={vaihdaId}>
+          <label>
+            Hae lippu (id): 
+            <input
+              type="text"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+            />
+          </label>
+          <input type="submit" value="Hae" />
+        </form>
+
+        <div>
+          <p>
+            Lippukoodi {lippu.lippukoodi}<br />
+            Myyntihinta {lippu.hinta} €<br />
+            Käytetty {lippu.kaytetty}<br /><br />
+            <Button onClick={merkitseKaytetty}>
+              Merkitse käytetyksi
+            </Button>
+          </p>
+        </div>
+        <div><p>{status}</p></div>
       </div>
-      <div><p>{status}</p></div>
-    </div>
-  );
+    );
 }
 export default Lipputarkistus;
  
