@@ -10,6 +10,9 @@ import NaytaLiput from "./components/NaytaLiput";
 import Lipputyypit from "./components/Lipputyypit";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
+import Myyntitapahtumat from "./components/Myyntitapahtumat";
+import Liput from "./components/Liput";
+
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 <Link to="/lipuntarkistus">Lipuntarkistus</Link>{' '} 
               </Typography>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Link to="/myyntitapahtumat">Myyntitapahtumat</Link>{' '} 
+              </Typography>
             </Toolbar>
         </AppBar>
         <Routes>
@@ -40,6 +46,8 @@ function App() {
           <Route path="/lipunmyynti" element={<Lipunmyynti />} />
           <Route path="/liput" element={<NaytaLiput />} />
           <Route path="/lipputyypit" element={<Lipputyypit />} />
+          <Route path="/myyntitapahtumat" element={<Myyntitapahtumat />} />
+          <Route path="/showliput" element={<Liput />} />
         </Routes>
       </BrowserRouter>
     </div>
