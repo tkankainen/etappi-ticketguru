@@ -45,8 +45,7 @@ function Myyntitapahtumat () {
        
         { headerName: '', field: "links", sortable: false, filter: false, width: 200,
             cellRenderer: params => {
-                const lippuurl = params.data._links.liput.href;
-             //  const myyntitapahtumaurl = params.data._links.self.href;
+                const lippuurl = params.data._links.self.href;
                 return (
                     <Button><Link to="/showliput" state={{ lippuurl: lippuurl} }> Näytä liput</Link></Button>
                 )}

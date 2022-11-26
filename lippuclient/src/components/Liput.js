@@ -1,65 +1,108 @@
-import { useEffect, useState, useRef } from 'react';
-import { AgGridReact } from 'ag-grid-react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import Button from '@mui/material/Button';
-//import LisaaLipputyyppi from './LisaaLipputyyppi';
-
+import { Card, CardHeader, CardContent, Typography } from '@mui/material';
 
 function Liput () {
 
     const [liput, setLiput] = useState([]);
-    const [lipputyyppi, setLipputyyppi] = useState([]);
-    const location = useLocation()
+    const location = useLocation();
     const { lippuurl } = location.state
     const token = sessionStorage.getItem("jwt");
-   
-  
-
-    const fetchData = () => {
-        console.log(lippuurl)
-        
-        fetch(lippuurl, {
-            headers: { 'Authorization' : token }
-        })
-        .then(response => response.json())
-        .then(data => setLiput(data._embedded.lippus))
-        
-        .catch(error => console.error(error))
-    }
+    const [lipputiedot, setLipputiedot] = useState([]);
     
-  
-       
+    let lippukoodit = [];
 
     useEffect(() => {
+        const fetchData = () => {
+            fetch(`${lippuurl}/liput`, {
+                headers: { 'Authorization' : token }
+            })
+            .then(response => response.json())
+            .then(data => setLiput(data._embedded.lippus))
+            .catch(error => console.error(error))
+        }
         fetchData();
     }, []);
 
-     
+    useEffect(() => {
+        async function fetchURLs() {
+            console.log(liput)
+            let osoitteet = [];
+            for (let i = 0; i < liput.length; i++) {
+                osoitteet.push(`${liput[i]._links.self.href}/tapahtumalipputyyppi?projection=lipputyyppi`)
+                lippukoodit.push(liput[i].lippukoodi)
+            }
+            try {
+                var data = await Promise.all(osoitteet.map((osoite) => fetch(osoite, {
+                headers: { 'Authorization' : token }
+            })
+                .then((response) => response.json()),
+            ));
+            setLipputiedot(data)
+            console.log('Lipputiedot 1:', lipputiedot)
+            } catch (error) {
+              console.log(error);
+            }
+        }
+        fetchURLs();
+        koodit();
+    }, [liput]);
 
-    const columns = [
-        { headerName: "Lippukoodi", field: "lippukoodi", sortable: true, filter: true, width: 350, resizable: true },
-        { headerName: "Hinta", field: "hinta", sortable: true, filter: true, width: 160, resizable: true },
-        { headerName: '', field: "links", sortable: false, filter: false, width: 90,
-            cellRenderer: params => {
-               // const myurl = params.data._links.myyntitapahtuma.href;
+    const koodit = () => {
+        for (let i = 0; i < lipputiedot.length; i++) {
+            lipputiedot[i].koodi = lippukoodit[i];
+        }
+        console.log(lippukoodit)
+        console.log('Lipputiedot 2:', lipputiedot)
+    }
+
+    /*
+    for (let i=0; i<lipputiedot.length; i++) {
+                    Object.defineProperty(lipputiedot[i], 'koodi', {
+                        writable: true,
+                        enumerable: true,
+                        value: lippukoodit[i]
+                    })
                 }
-        },
-       
-    ]
 
-    const gridRef = useRef();
+    */
 
     return (
-        <div className="ag-theme-material" style={{height: 700, margin: 'auto'}}>
-            
-        <AgGridReact
-            ref={gridRef}
-            onGridReady={ params => gridRef.current= params.api }
-            rowSelection="single"
-            columnDefs={columns}
-            rowData={liput}>
-        </AgGridReact>
-    </div>
+        <div>
+        
+        <div>
+            {lipputiedot.map((lippu, i)=> {
+            return (
+                <Card sx={ {width: 500, margin: 2, color:'blue'}}>
+                    <CardHeader 
+                        title={lippu.tapahtuma[0].nimi}
+                    />
+                    <CardContent>
+                        <div key={i}>
+                        <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
+                            Lippukoodi: { lippu.koodi }
+                        </Typography>
+                        <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
+                            { lippu.tapahtuma[0].aika }
+                        </Typography>
+                        <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
+                            { lippu.tapahtuma[0].osoite }
+                        </Typography>
+                        <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
+                            { lippu.tapahtuma[0].kaupunki }
+                        </Typography>
+                        <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
+                            Lipputyyppi: { lippu.nimi }
+                        </Typography>
+                        <Typography  sx={{ fontSize: 15 }}color="text.secondary">
+                            Hinta: { lippu.hinta } eur
+                        </Typography>
+                        </div>
+                    </CardContent>  
+                </Card>  
+            )})}
+        </div> 
+        </div>
     )
 }
 
