@@ -43,7 +43,7 @@ function Login() {
             <Stack spacing={2} alignItems='center' mt={2}>
                 <TextField
                     name="tunnus"
-                    label="Tunnus"
+                    label="Käyttäjätunnus"
                     onChange={handleChange} />
                 <TextField
                     type="password"
