@@ -90,7 +90,7 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
                     name="loppupvm"
                     value={tapahtuma.loppupvm}
                     onChange={e => handleInputChange(e)}
-                    label="Loppupvm"
+                    label="Myynnin loppupvm"
                     type="text"
                     fullWidth
                 />
