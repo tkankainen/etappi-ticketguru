@@ -9,7 +9,7 @@ function Liput () {
     const { lippuurl } = location.state
     const token = sessionStorage.getItem("jwt");
     const [lipputiedot, setLipputiedot] = useState([]);
-    let lippukoodit = [];
+    const [naytettavat, setNaytettavat] = useState([]);
 
     useEffect(() => {
         const fetchData = () => {
@@ -20,16 +20,14 @@ function Liput () {
             .then(data => setLiput(data._embedded.lippus))
             .catch(error => console.error(error))
         }
-        fetchData();
+        fetchData()
     }, []);
 
     useEffect(() => {
         async function fetchURLs() {
-            console.log(liput)
             let osoitteet = [];
             for (let i = 0; i < liput.length; i++) {
                 osoitteet.push(`${liput[i]._links.self.href}/tapahtumalipputyyppi?projection=lipputyyppi`)
-                lippukoodit.push(liput[i].lippukoodi)
             }
             try {
                 var data = await Promise.all(osoitteet.map((osoite) => fetch(osoite, {
@@ -39,47 +37,41 @@ function Liput () {
             ));
             setLipputiedot(data)
             } catch (error) {
-              console.log(error);
+                console.log(error);
             }
         }
-        fetchURLs();
-        koodit();
+        fetchURLs()
     }, [liput]);
 
-    const koodit = () => {
-        console.log('Lipputiedot 1:', lipputiedot)
-        for (let i = 0; i < lipputiedot.length; i++) {
-            lipputiedot[i].koodi = lippukoodit[i];
-        }
-        console.log(lippukoodit)
-        console.log('Lipputiedot 2:', lipputiedot)
-    }
-
-    /*
-    for (let i=0; i<lipputiedot.length; i++) {
-                    Object.defineProperty(lipputiedot[i], 'koodi', {
-                        writable: true,
-                        enumerable: true,
-                        value: lippukoodit[i]
-                    })
+    useEffect(() => {
+        const luoLipputiedot = () => {
+            let tiedot = {}
+            let keys = [...new Set([...Object.keys(liput),...Object.keys(lipputiedot)])]
+            let merged = keys.forEach(key=>{
+                tiedot[key] = {
+                    ...liput[key],
+                    ...lipputiedot[key]
                 }
+            })
+            console.log('Päivitetty:', tiedot)
+            setNaytettavat(tiedot)
+        }
+    luoLipputiedot()
+    }, [lipputiedot]);
 
-    */
 
     return (
         <div>
-        
-        <div>
-            {lipputiedot.map((lippu)=> {
+            {Object.values(naytettavat).map((lippu)=> {
             return (
                 <Card sx={ {width: 500, margin: 2, color:'blue'}}>
                     <CardHeader 
                         title={lippu.tapahtuma[0].nimi}
                     />
                     <CardContent>
-                        <div key={lippu.koodi}>
+                        <div key={lippu.lippukoodi}>
                         <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
-                            Lippukoodi: { lippu.koodi }
+                            Lippukoodi: { lippu.lippukoodi }
                         </Typography>
                         <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
                             { lippu.tapahtuma[0].aika }
@@ -101,7 +93,6 @@ function Liput () {
                 </Card>  
             )})}
         </div> 
-        </div>
     )
 }
 
