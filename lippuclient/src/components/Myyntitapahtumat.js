@@ -5,8 +5,6 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import moment from 'moment';
 import Button from '@mui/material/Button';
-//import LisaaTapahtuma from './LisaaTapahtuma';
-//import MuokkaaTapahtuma from './MuokkaaTapahtuma';
 
 function Myyntitapahtumat () {
 
@@ -33,8 +31,6 @@ function Myyntitapahtumat () {
         fetchData();
     }, []);
 
-  
-
     const columns = [
         { headerName: "Aika", field: "aika", sortable: true, filter: true, width: 230, resizable: true,
             cellRenderer: params => {
@@ -42,7 +38,6 @@ function Myyntitapahtumat () {
                     moment(params.data.timestamp).format('LLL')
             )}
         },
-       
         { headerName: '', field: "links", sortable: false, filter: false, width: 200,
             cellRenderer: params => {
                 const lippuurl = params.data._links.self.href;

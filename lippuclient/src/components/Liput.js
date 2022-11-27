@@ -9,7 +9,6 @@ function Liput () {
     const { lippuurl } = location.state
     const token = sessionStorage.getItem("jwt");
     const [lipputiedot, setLipputiedot] = useState([]);
-    
     let lippukoodit = [];
 
     useEffect(() => {
@@ -39,7 +38,6 @@ function Liput () {
                 .then((response) => response.json()),
             ));
             setLipputiedot(data)
-            console.log('Lipputiedot 1:', lipputiedot)
             } catch (error) {
               console.log(error);
             }
@@ -49,6 +47,7 @@ function Liput () {
     }, [liput]);
 
     const koodit = () => {
+        console.log('Lipputiedot 1:', lipputiedot)
         for (let i = 0; i < lipputiedot.length; i++) {
             lipputiedot[i].koodi = lippukoodit[i];
         }
@@ -71,14 +70,14 @@ function Liput () {
         <div>
         
         <div>
-            {lipputiedot.map((lippu, i)=> {
+            {lipputiedot.map((lippu)=> {
             return (
                 <Card sx={ {width: 500, margin: 2, color:'blue'}}>
                     <CardHeader 
                         title={lippu.tapahtuma[0].nimi}
                     />
                     <CardContent>
-                        <div key={i}>
+                        <div key={lippu.koodi}>
                         <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
                             Lippukoodi: { lippu.koodi }
                         </Typography>

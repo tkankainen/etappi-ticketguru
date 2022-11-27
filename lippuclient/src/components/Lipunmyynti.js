@@ -6,15 +6,23 @@ import { useNavigate, Link } from "react-router-dom";
 
 function Lipunmyynti () {
 
-  const [tapahtuma, setTapahtuma] = useState('')
+  const [tapahtuma, setTapahtuma] = useState({
+    selectedValue: '',
+    selectedValuePlaceholder: "Valitse tapahtuma"
+  })
+  const [lipputyyppi, setLipputyyppi] = useState({
+    selectedValue: '',
+    selectedValuePlaceholder: "Valitse lipputyyppi"
+  })
+  const [maara, setMaara] = useState({
+    selectedValue: 0,
+    selectedValuePlaceholder: "Valitse määrä"
+  })
   const [tapahtumaoptions, setTapahtumaoptions] = useState([""]);
   const [lippuoptions, setLippuoptions] = useState([""]);
-  const [maara, setMaara] = useState(0)
-  const [lipputyyppi, setLipputyyppi] = useState('')
   const [myyntitapahtuma, setMyyntitapahtuma] = useState('')
   const [status, setStatus] = useState('')
   const [hinta, setHinta] = useState('')
-
   const token = sessionStorage.getItem("jwt");
   const navigate = useNavigate();
 
@@ -35,7 +43,6 @@ function Lipunmyynti () {
         result.map((tapahtuma) => {
           return arr.push({value: tapahtuma._links.self.href, label: tapahtuma.nimi});
         });
-        console.log(arr);
         setTapahtumaoptions(arr)
       });
     };
@@ -43,15 +50,12 @@ function Lipunmyynti () {
   }, []);
 
   useEffect(() => {
-    console.log(tapahtuma);
-    const url = `${tapahtuma.value}/tapahtumalipputyypit`
-    console.log(url);
+    const url = `${tapahtuma.selectedValue}/tapahtumalipputyypit`
     const getLippu = async () => {
       const arr = [];
       await axios.get(url, {
         headers: { 'Authorization' : token }
       }).then((res) => {
-        console.log(res);
         let result = res.data._embedded.tapahtumalipputyyppis;
         result.map((lippu) => {
           return arr.push({value: lippu._links.self.href, label: lippu.nimi});
@@ -71,31 +75,19 @@ function Lipunmyynti () {
     { label: 6, value: 6 }
   ]
 
-  const handleChangeMaara = (e) => {
-    console.log(e);
-    setMaara(e.value);
-  }
-
-  const handleChangeLipputyyppi = (e) => {
-    console.log(e);
-    setLipputyyppi(e.value);
-  }
-
   useEffect(() => {
-  const haeHinta = async () => {
-    console.log(lipputyyppi)
-    await axios.get(lipputyyppi, {
-      headers: { 'Authorization' : token }
-    })
-    .then(function (response) {
-      console.log(response);
-      setHinta(response.data.hinta)
-      console.log(hinta);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  };
+    const haeHinta = async () => {
+      await axios.get(lipputyyppi.selectedValue, {
+        headers: { 'Authorization' : token }
+      })
+      .then(function (response) {
+        console.log(response);
+        setHinta(response.data.hinta)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    };
     haeHinta();
   }, [lipputyyppi]);
 
@@ -112,7 +104,6 @@ function Lipunmyynti () {
       headers: { 'Authorization' : token }
     })
     .then(function (response) {
-      console.log(response);
       let res = response.data._links.self.href
       setMyyntitapahtuma(res)
       setStatus('Uusi myyntitapahtuma luotu, lisää liput')
@@ -123,13 +114,13 @@ function Lipunmyynti () {
   };
   
   const lisaaLippu = async () => {
-    console.log(lipputyyppi);
+    console.log(lipputyyppi.selectedValue);
     console.log(myyntitapahtuma);
     console.log(hinta)
-
-    for (let i=0; i<maara; i++) {
+    
+    for (let i=0; i<maara.selectedValue; i++) {
       await axios.post("https://etappi-ticketguru.herokuapp.com/api/liput/", {
-        "tapahtumalipputyyppi": `${lipputyyppi}`,
+        "tapahtumalipputyyppi": `${lipputyyppi.selectedValue}`,
         "myyntitapahtuma": `${myyntitapahtuma}`,
         "hinta": `${hinta}`
       },{
@@ -148,29 +139,31 @@ function Lipunmyynti () {
   const ValitseTapahtuma = () => (
     <Select 
       options={tapahtumaoptions}
-      placeholder="Valitse tapahtuma"
-      onChange={setTapahtuma}
+      placeholder={tapahtuma.selectedValuePlaceholder}
+      onChange={({value, label}) => setTapahtuma({selectedValue: value, selectedValuePlaceholder :
+        label})}
       />
   )
 
   const ValitseLippu = () => (
     <Select 
       options={lippuoptions}
-      placeholder="Valitse lipputyyppi"
-      onChange={handleChangeLipputyyppi}
+      placeholder={lipputyyppi.selectedValuePlaceholder}
+      onChange={({value, label}) => setLipputyyppi({selectedValue: value, selectedValuePlaceholder :
+        label})}
       />
   )
 
   const ValitseMaara = () => (
     <Select 
       options={maaraoptions}
-      placeholder="Valitse määrä"
-      onChange={handleChangeMaara}
+      placeholder={maara.selectedValuePlaceholder}
+      onChange={({value, label}) => setMaara({selectedValue: value, selectedValuePlaceholder :
+        label})}
       />
   )
  
   return (
-
     <div>
       <Button variant="outlined" onClick={luoMyyntitapahtuma}>Luo myyntitapahtuma</Button>
       <ValitseTapahtuma />
@@ -178,7 +171,7 @@ function Lipunmyynti () {
       <ValitseMaara />
       <Button variant="outlined" onClick={lisaaLippu}>Lisää liput</Button> 
       <Button variant="outlined"><Link to="/showliput" state={{ lippuurl: myyntitapahtuma} }> Näytä liput</Link></Button>
-      <div style={ { color:'red'}}>{status} </div>  
+      <div style={ { color:'blue'}}>{status} </div>  
     </div>
   );
 

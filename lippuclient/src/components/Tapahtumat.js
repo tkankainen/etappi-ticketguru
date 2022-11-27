@@ -102,7 +102,8 @@ function Tapahtumat () {
         },
         { headerName: '', field: "links", sortable: false, filter: false, width: 200,
             cellRenderer: params => {
-                const lippuurl = params.data._links.tapahtumalipputyypit.href;
+                console.log(params.data)
+                const lippuurl = `${params.data._links.tapahtuma.href}/tapahtumalipputyypit`;
                 const tapahtumaurl = params.data._links.tapahtuma.href;
                 return (
                     <Button><Link to="/lipputyypit" state={{ lippuurl: lippuurl, tapahtumaurl: tapahtumaurl }}>Lipputyypit</Link></Button>
