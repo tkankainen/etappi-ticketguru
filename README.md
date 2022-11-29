@@ -141,18 +141,18 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 ## Tekninen kuvaus
 
 Back end palvelu toteutettu Java Spring Boot sovelluskehyksellä
-Ohjelmointiympäristö:
+- Ohjelmointiympäristö:
 - Eclipse IDE for Java EE , Java-kehitysympäristö
 - Maven projekti
-Autentikointi:
+- Autentikointi:
 - JSON Web Token
-Tietokanta:
+- Tietokanta:
 - PostgreSQL
-Julkaisu, pilvipalvelu:
+- Julkaisu, pilvipalvelu:
 - Heroku
-Versionhallinta:
+- Versionhallinta:
 - Git
-Front End:
+- Front End:
 - React js.
 
 
