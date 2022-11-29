@@ -143,17 +143,17 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 Back end palvelu toteutettu Java Spring Boot sovelluskehyksellä
 #### Ohjelmointiympäristö:
 - Eclipse IDE for Java EE , Java-kehitysympäristö
-#### Maven projekti
-### Autentikointi:
-#### JSON Web Token
-### Tietokanta:
-#### PostgreSQL
-### Julkaisu, pilvipalvelu:
-#### Heroku
-### Versionhallinta:
-#### Git
-### Front End:
-#### React js.
+- Maven projekti
+#### Autentikointi:
+- JSON Web Token
+#### Tietokanta:
+- PostgreSQL
+#### Julkaisu, pilvipalvelu:
+- Heroku
+#### Versionhallinta:
+- Git
+#### Front End:
+- React js.
 
 
 ## Testaus
