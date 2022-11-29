@@ -140,7 +140,8 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 
 ## Tekninen kuvaus
 
-### Back end toteutettu Java Spring Boot sovelluskehyksellä
+#### Back end:
+- Java Spring Boot sovelluskehys
 #### Ohjelmointiympäristö:
 - Eclipse IDE for Java EE , Java-kehitysympäristö
 - Maven projekti
@@ -154,6 +155,8 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 - Git
 #### Front End:
 - React js.
+#### Api-dokumentaatio:
+![Api-dokumentaatio](https://user-images.githubusercontent.com/26714675/189474583-b87517c1-8dac-44b6-a1ca-30b5f6401ed8.jpg)
 
 
 ## Testaus
