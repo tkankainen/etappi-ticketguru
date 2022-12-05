@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
-import Tapahtumat from './Tapahtumat';
+import Home from './Home';
 
 function Login() {
 
@@ -37,7 +37,7 @@ function Login() {
     }
 
     if (isAuthenticated) {
-        return <Tapahtumat />;
+        return <Home />;
     } else {
         return (
             <Stack spacing={2} alignItems='center' mt={2}>

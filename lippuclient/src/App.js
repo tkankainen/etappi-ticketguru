@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Myyntitapahtumat from "./components/Myyntitapahtumat";
 import Liput from "./components/Liput";
+import Home from "./components/Home";
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
             </Toolbar>
         </AppBar>
         <Routes>
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/tapahtumat" element={<Tapahtumat />} />
