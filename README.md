@@ -170,23 +170,32 @@ Tänne kirjataan myös lopuksi järjestelmän tunnetut ongelmat, joita ei ole ko
 
 ## Asennustiedot
 
-Järjestelmän asennus on syytä dokumentoida kahdesta näkökulmasta:
+### Järjestelmän kehitysympäristö
 
--   järjestelmän kehitysympäristö: miten järjestelmän kehitysympäristön saisi
-    rakennettua johonkin toiseen koneeseen
+- Projektin voi kloonata Githubista tästä repositorysta (https://github.com/tkankainen/etappi-ticketguru)
 
--   järjestelmän asentaminen tuotantoympäristöön: miten järjestelmän saisi
-    asennettua johonkin uuteen ympäristöön.
+- Projektin voi avata Visual Studio Codella tai Eclipsellä
 
-Asennusohjeesta tulisi ainakin käydä ilmi, miten käytettävä tietokanta ja
-käyttäjät tulee ohjelmistoa asentaessa määritellä (käytettävä tietokanta,
-käyttäjätunnus, salasana, tietokannan luonti yms.).
+- Projekti käyttää PostgreSQL-tietokantaa (https://www.postgresql.org/). Kehitysympäristössä voi vaihtaa H2-tietokantaan vaihtamalla application.properties-tiedostossa rivien kommentointia ohjeen mukaan
+
+- CommandLineRunner sisältää testidataa, jolla H2-tietokannan voi alustaa ottamalla kommentoinnin pois
+
+- Käyttäjätunnukset ja salasanat ovat hallinnoitavissa application.properties-tiedostossa
+
+- Postmanilla pyyntöjä lähetettäessä paikalliselle sovellukselle pyynnöt täytyy autentikoida JWT-tokenilla
+
+### Järjestelmän asentaminen tuotantoympäristöön
+
+- Projekti on julkaistu Herokussa
+
+- Julkaistu projekti käyttää PostgreSQL-tietokantaa
+
+- Tietokannan tiedot löytyvät application.properties-tiedostosta
+
+- Tietokantayhteyteen tarvittavat tiedot määritellään ympäristömuuttujilla JDBC_DATABASE_URL (muodossa jdbc:postgresql://{host}:{port}/{database}), JDBC_DATABASE_USERNAME sekä JDBC_DATABASE_PASSWORD
+
+- Ohjelma generoi tietokannan taulut
 
 ## Käynnistys- ja käyttöohje
 
-Tyypillisesti tässä riittää kertoa ohjelman käynnistykseen tarvittava URL sekä
-mahdolliset kirjautumiseen tarvittavat tunnukset. Jos järjestelmän
-käynnistämiseen tai käyttöön liittyy joitain muita toimenpiteitä tai toimintajärjestykseen liittyviä asioita, nekin kerrotaan tässä yhteydessä.
-
-Usko tai älä, tulet tarvitsemaan tätä itsekin, kun tauon jälkeen palaat
-järjestelmän pariin !
+Sovelluksen käyttöliittymä on julkaistu osoitteessa https://etappi-ticketguru-client.herokuapp.com/ ja backend-sovellus osoitteessa https://etappi-ticketguru.herokuapp.com/. Kirjautumistunnukset ovat ryhmän jäsenten tiedossa.
