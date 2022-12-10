@@ -67,7 +67,7 @@ prioriteetti = 2, tyyppi: toiminnallinen
 
 ## Tietokanta
 
-![Tietokantakaavio](Kuvat/tietokantakaavio5_new.jpeg)
+![Tietokantakaavio](Kuvat/tietokantakaavio_final.jpeg)
 
 Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
 tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
@@ -95,14 +95,6 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 > tapahtumaid | FK | Tapahtuma-taulun id
 > tyyppiid | FK | Lipputyyppi-taulun id
 > hinta | int | Lipun hinta (perustuu lipputyyppiin)
-
-> ### _Lipputyyppi_
-> _Lipputyyppi-taulu sisältää tapahtumien lipputyyppien nimet._
->
-> Kenttä | Tyyppi | Kuvaus
-> ------ | ------ | ------
-> tyyppiid | auto PK | Taulun oma id
-> nimi | varchar(50) | Lipputyypi nimi (esim. aikuinen/eläkeläinen/opiskelija)
 
 > ### _Lippu_
 > _Lippu-taulu sisältää tapahtumien lippujen tiedot. Lippuja voi olla monia._
@@ -136,6 +128,26 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 > salasana | varchar(100) | Salasana
 > rooli | varchar(50) | Käyttäjän rooli (lipunmyyjä/lipputoimiston työntekijä)
 
+
+## REST API -dokumentaatio
+
+#### Käyttäjä
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Kayttaja](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Kayttaja)
+
+#### Lippu
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Lippu](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Lippu)
+
+#### Myyntitapahtuma
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Myyntitapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Myyntitapahtuma)
+
+#### Tapahtuma
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtuma)
+
+#### Tapahtumalipputyyppi
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtumalipputyyppi](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtumalipputyyppi)
+
+#### Autentikointi
+[https://github.com/tkankainen/etappi-ticketguru/blob/development/REST%20API%20-dokumentaatio/Autentikointi.md](https://github.com/tkankainen/etappi-ticketguru/blob/development/REST%20API%20-dokumentaatio/Autentikointi.md)
 
 
 ## Tekninen kuvaus
