@@ -161,12 +161,9 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 
 ## Testaus
 
-Tässä kohdin selvitetään, miten ohjelmiston oikea toiminta varmistetaan
-testaamalla projektin aikana: millaisia testauksia tehdään ja missä vaiheessa.
-Testauksen tarkemmat sisällöt ja testisuoritusten tulosten raportit kirjataan
-erillisiin dokumentteihin.
+Sovelluksessa testataan perustoimintoja, joiden avulla taataan sovelluksen haluttu vähittäis toiminnallisuus.
 
-Tänne kirjataan myös lopuksi järjestelmän tunnetut ongelmat, joita ei ole korjattu.
+Se, että tietokannasta löytyy dataa tauluista, lipun luonti sekä autentikoinnin toiminnallisuus eri tyyppisten käyttäjien välillä tulee ilmi näistä testeistä.
 
 ## Asennustiedot
 
