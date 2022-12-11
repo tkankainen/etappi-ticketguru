@@ -46,25 +46,57 @@ Tässä testataan ohjelmiston komponenttien toimintaa rajapinnan kanssa.
 
 ### TapahtumaControllerTest
 
-Testaamme, että eri käyttäjä tyypit pystyvät tai eivät pysty luomaan, hakemaan ja poistamaan tapahtumaa tietokannasta. Samalla testataan autentikoinnin toimivuus.
+Testaamme, että käyttäjät pystyvät luomaan tapahtuman tietokantaan. Samalla testataan autentikoinnin toimivuus.
 
 
 #### testiTapahtuma()
 
-Tässä luodaan testattava tapahtuma, mitä eri käyttäjät pyrkivät lisäämään tietokantaan.
+Tässä luodaan testattava tapahtuma, mitä pyritään lisäämään tietokantaan.
 
-#### testLuoJaPoista()
+#### testLuo()
 
-Ylläpitäjän oikeudet omaava käyttäjä pyrkii luomaan, hakemaan ja poistamaan tapahtuman tietokannasta. Autentikoinnin avulla tämä on sallittua toimintaa. Testi OK
-
-#### testLuoUserina()
-
-Tässä perus käyttäjä ilman ylläpitäjän oikeuksia pyrkii luomaan tapahtuman tietokantaan. Autentikointi tulisi estää tämän toiminnan. Testi OK.
+Käyttäjä pyrkii lisäämään tapahtuman tietokantaan. Autentikoinnin avulla tämä on sallittua toimintaa. Testi OK
 
 
 # end-to-end
 
-(JATKUU)
+Testaamme koko sovelluksen toimintaa vaihe vaiheelta.
+
+### Testi 1
+
+Käyttöliittymän testausta. Luodaan myyntitapahtuma.
+
+-Valitaan tapahtuma
+
+-Valitaan lipputyyppi
+
+-Valitaan lippujen määrä
+
+-Haetaan myyntitapahtuma listasta
+
+-Näytetään myyntitapahtuman liput tapahtumaan
+
+Lippujen lukumäärät ja lipputyyppi oikeaan tapahtumaan ovat oikeita. Testi OK
+
+### Testi 2
+
+Luodaan Tapahtuma
+
+-Lisätään uusi tapahtuma
+
+-Luodaan lipputyyppi
+
+-Myydään lippuja tapahtumaan
+
+-Muokataan tapahtumaa
+
+-Poistetaan tapahtuma
+
+
+Uusi tapahtuma luotiin onnistuneesti, siihen luotiin oma lipputyyppi, lippujen myynti tapahtumaan onnistui, tapahtuman muokkaaminen päivitti tietoja ja tapahtuma poistui listalta onnistuneesti. Testi OK
+
+
+
 
 
 
