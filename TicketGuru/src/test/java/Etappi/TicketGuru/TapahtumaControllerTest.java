@@ -38,7 +38,7 @@ public class TapahtumaControllerTest {
 	  // Testaa POST
 	  @Test
 	  @WithMockUser(username = "a2", password = "admin", authorities = "ADMIN")
-	  public void testLuoJaPoista() throws Exception {
+	  public void testLuo() throws Exception {
 		  
 		  JSONObject testiTapahtuma = testiTapahtuma();
 		  
