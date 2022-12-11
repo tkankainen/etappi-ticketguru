@@ -4,20 +4,20 @@ Kaikki käyttäjät pääsevät tähän endpointtiin:
 
 Login https://etappi-ticketguru.herokuapp.com/login
 
-#### tunnukset ja salasanat
+### tunnukset ja salasanat
 
 
-"tunnus":"a2"
-"tunnus":"admin"
+#### "tunnus":"a2"  "salasana":"admin"
 
-"tunnus":"user"
-"salasana":"user"
+#### "tunnus":"user" "salasana":"user"
 
+Onnistuneen pyynnön jälkeen palvelin palauttaa Authorization headerissa Bearer Tokenin. 
 
-### Ylläpitäjän (admin) endpointit
+Onnistuneen kirjautumisen jälkeen, client tallentaa tokenin ja se voidaan liittää jokaisen pyynnön  headeriin. 
 
--TÄHÄN
+headers: { 'Authorization' : token }  
 
-### Käyttäjän (user) endpointit
+ 
+Token tuhotaan clientista, kun käyttö loppuu. 
 
--TÄHÄN-
+Tokenin käyttöaika on 1 pv.  
