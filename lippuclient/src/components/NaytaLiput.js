@@ -8,7 +8,7 @@ function NaytaLiput () {
 
   const fetchUrl = async () => {
     try {
-      const response = await fetch('https://etappi-ticketguru.herokuapp.com/api/myyntitapahtumat/86/liput');
+      const response = await fetch('https://etappi-ticketguru.herokuapp.com/api/myyntitapahtumat/1/liput');
       const json = await response.json();
       //setLippukoodi(response.data._embedded.lippus[0].lippukoodi);
       setTaulukko(json._embedded.lippus);

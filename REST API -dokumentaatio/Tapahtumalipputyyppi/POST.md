@@ -13,8 +13,8 @@ Syötä hinta ja linkit lipputyyppiin sekä tapahtumaan
 ```json
 {
     "hinta":30,
-   "lipputyyppi": "http://localhost:8080/api/lipputyypit/1",
-   "tapahtuma": "http://localhost:8080/api/tapahtumat/3"
+   "lipputyyppi": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1",
+   "tapahtuma": "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/3"
 	
 }
 ```
@@ -23,8 +23,8 @@ Syötä hinta ja linkit lipputyyppiin sekä tapahtumaan
 ```json
 {
     "hinta":30,
-   "lipputyyppi": "http://localhost:8080/api/lipputyypit/1",
-   "tapahtuma": "http://localhost:8080/api/tapahtumat/3"
+	"lipputyyppi": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/1",
+  	 "tapahtuma": "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/3"
 	
 }
 ```
@@ -39,24 +39,22 @@ Syötä hinta ja linkit lipputyyppiin sekä tapahtumaan
 ```json
 
 {
-    "hinta": 30,
-    "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/4"
-        },
-        "tapahtumalipputyyppi": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/4"
-        },
-        "lipputyyppi": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/4/lipputyyppi"
-        },
-        "liput": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/4/liput"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/tapahtumalipputyypit/4/tapahtuma"
-        }
+  "hinta" : 20,
+  "nimi" : "lapsi",
+  "_links" : {
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2"
+    },
+    "tapahtumalipputyyppi" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2"
+    },
+    "liput" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/liput"
+    },
+    "tapahtuma" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/tapahtuma"
     }
+  }
 }
 ```
 
@@ -72,8 +70,8 @@ Syötä hinta ja linkit lipputyyppiin sekä tapahtumaan
  
  {
     "hinta":"moi",
-   "lipputyyppi": "http://localhost:8080/api/lipputyypit/1",
-   "tapahtuma": "http://localhost:8080/api/tapahtumat/3"
+   "lipputyyppi": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/liput",
+   "tapahtuma": "https://etappi-ticketguru.herokuapp.com/api/tapahtumalipputyypit/2/tapahtuma"
 	
 }
  

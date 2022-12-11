@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
-function LisaaTapahtuma( {tallennaTapahtuma} ) {
+function MuokkaaTapahtuma( {muokkaaTapahtuma, tiedot, tapahtumaurl} ) {
 
     const [open, setOpen] = useState(false);
     const [tapahtuma, setTapahtuma] = useState({
@@ -14,6 +14,9 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
     })
 
     const handleClickOpen = () => {
+        setTapahtuma({aika: tiedot.data.aika, nimi: tiedot.data.nimi, osoite: tiedot.data.osoite, 
+            kaupunki: tiedot.data.kaupunki, kpl: tiedot.data.kpl, loppupvm: tiedot.data.loppupvm
+        })
         setOpen(true);
     };
 
@@ -25,19 +28,18 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
         setTapahtuma({...tapahtuma, [event.target.name]: event.target.value })
     }
 
-    const lisaaTapahtuma = () => {
+    const muokkaaTapahtumaa = () => {
         console.log(tapahtuma)
-        tallennaTapahtuma(tapahtuma);
-        handleClose();
+        muokkaaTapahtuma(tapahtuma, tapahtumaurl);
     }
 
     return(
         <div>
-        <Button style={{margin: 10}} variant="outlined" onClick={handleClickOpen}>
-            Lisää tapahtuma
+        <Button onClick={handleClickOpen}>
+            Muokkaa
         </Button>
         <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>Uusi tapahtuma</DialogTitle>
+            <DialogTitle>Muokkaa tapahtumaa</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
@@ -90,7 +92,7 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
                     name="loppupvm"
                     value={tapahtuma.loppupvm}
                     onChange={e => handleInputChange(e)}
-                    label="Myynnin loppupvm"
+                    label="Loppupvm"
                     type="text"
                     fullWidth
                 />
@@ -99,7 +101,7 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
                 <Button onClick={handleClose}>
                     Peruuta
                 </Button>
-                <Button onClick={lisaaTapahtuma}>
+                <Button onClick={muokkaaTapahtumaa}>
                     Tallenna
                 </Button>
             </DialogActions>
@@ -108,4 +110,4 @@ function LisaaTapahtuma( {tallennaTapahtuma} ) {
     );
 }
 
-export default LisaaTapahtuma;
+export default MuokkaaTapahtuma;

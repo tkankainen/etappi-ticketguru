@@ -49,16 +49,16 @@ Syötä tapahtuman tiedot
     "kpl": 5,
     "loppupvm": "26.9.2022",
     "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/tapahtumat/4"
-        },
-        "tapahtuma": {
-            "href": "http://localhost:8080/api/tapahtumat/4"
-        },
-        "tapahtumalipputyypit": {
-            "href": "http://localhost:8080/api/tapahtumat/4/tapahtumalipputyypit"
-        }
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/4"
+    },
+    "tapahtuma" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/4"
+    },
+    "tapahtumalipputyypit" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/tapahtumat/4/tapahtumalipputyypit"
     }
+  }
 }
 ```
 

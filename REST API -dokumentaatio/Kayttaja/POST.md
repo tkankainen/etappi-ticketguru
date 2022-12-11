@@ -2,7 +2,7 @@
 
 Luo uuden käyttäjän
 
-**URL** : `/api/tapahtumat/`
+**URL** : `/api/kayttajat/`
 
 **Metodi** : `POST`
 
@@ -44,16 +44,16 @@ Syötä käyttäjän tiedot
     "salasana": "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
     "rooli": "USER",
     "_links": {
-        "self": {
-            "href": "http://localhost:8080/api/kayttajat/3"
-        },
-        "kayttaja": {
-            "href": "http://localhost:8080/api/kayttajat/3"
-        },
-        "myyntitapahtumat": {
-            "href": "http://localhost:8080/api/kayttajat/3/myyntitapahtumat"
-        }
+    "self" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/3"
+    },
+    "kayttaja" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/3"
+    },
+    "myyntitapahtumat" : {
+      "href" : "https://etappi-ticketguru.herokuapp.com/api/kayttajat/3/myyntitapahtumat"
     }
+  }
 }
 ```
 

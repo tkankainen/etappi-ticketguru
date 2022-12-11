@@ -67,7 +67,7 @@ prioriteetti = 2, tyyppi: toiminnallinen
 
 ## Tietokanta
 
-![Tietokantakaavio](Kuvat/tietokantakaavio5_new.jpeg)
+![Tietokantakaavio](Kuvat/tietokantakaavio_final.jpeg)
 
 Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
 tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
@@ -95,14 +95,6 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 > tapahtumaid | FK | Tapahtuma-taulun id
 > tyyppiid | FK | Lipputyyppi-taulun id
 > hinta | int | Lipun hinta (perustuu lipputyyppiin)
-
-> ### _Lipputyyppi_
-> _Lipputyyppi-taulu sisältää tapahtumien lipputyyppien nimet._
->
-> Kenttä | Tyyppi | Kuvaus
-> ------ | ------ | ------
-> tyyppiid | auto PK | Taulun oma id
-> nimi | varchar(50) | Lipputyypi nimi (esim. aikuinen/eläkeläinen/opiskelija)
 
 > ### _Lippu_
 > _Lippu-taulu sisältää tapahtumien lippujen tiedot. Lippuja voi olla monia._
@@ -137,56 +129,82 @@ attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän t
 > rooli | varchar(50) | Käyttäjän rooli (lipunmyyjä/lipputoimiston työntekijä)
 
 
+## REST API -dokumentaatio
+
+#### Käyttäjä
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Kayttaja](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Kayttaja)
+
+#### Lippu
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Lippu](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Lippu)
+
+#### Myyntitapahtuma
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Myyntitapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Myyntitapahtuma)
+
+#### Tapahtuma
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtuma)
+
+#### Tapahtumalipputyyppi
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtumalipputyyppi](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtumalipputyyppi)
+
+#### Autentikointi
+[https://github.com/tkankainen/etappi-ticketguru/blob/development/REST%20API%20-dokumentaatio/Autentikointi.md](https://github.com/tkankainen/etappi-ticketguru/blob/development/REST%20API%20-dokumentaatio/Autentikointi.md)
+
 
 ## Tekninen kuvaus
 
-Teknisessä kuvauksessa esitetään järjestelmän toteutuksen suunnittelussa tehdyt tekniset
-ratkaisut, esim.
+#### Back end:
+- Java Spring Boot sovelluskehys
+#### Ohjelmointiympäristö:
+- Eclipse IDE for Java EE , Java-kehitysympäristö
+- Maven projekti
+#### Autentikointi:
+- JSON Web Token
+#### Tietokanta:
+- PostgreSQL
+#### Julkaisu, pilvipalvelu:
+- Heroku
+#### Versionhallinta:
+- Git
+#### Front End:
+- React js.
+#### Api-dokumentaatio:
+[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio)
 
--   Missä mikäkin järjestelmän komponentti ajetaan (tietokone, palvelinohjelma)
-    ja komponenttien väliset yhteydet (vaikkapa tähän tyyliin:
-    https://security.ufl.edu/it-workers/risk-assessment/creating-an-information-systemdata-flow-diagram/)
--   Palvelintoteutuksen yleiskuvaus: teknologiat, deployment-ratkaisut yms.
--   Keskeisten rajapintojen kuvaukset, esimerkit REST-rajapinta. Tarvittaessa voidaan rajapinnan käyttöä täsmentää
-    UML-sekvenssikaavioilla.
--   Toteutuksen yleisiä ratkaisuja, esim. turvallisuus.
-
-Tämän lisäksi
-
--   ohjelmakoodin tulee olla kommentoitua
--   luokkien, metodien ja muuttujien tulee olla kuvaavasti nimettyjä ja noudattaa
-    johdonmukaisia nimeämiskäytäntöjä
--   ohjelmiston pitää olla organisoitu komponentteihin niin, että turhalta toistolta
-    vältytään
 
 ## Testaus
 
-Tässä kohdin selvitetään, miten ohjelmiston oikea toiminta varmistetaan
-testaamalla projektin aikana: millaisia testauksia tehdään ja missä vaiheessa.
-Testauksen tarkemmat sisällöt ja testisuoritusten tulosten raportit kirjataan
-erillisiin dokumentteihin.
+Sovelluksessa testataan perustoimintoja, joiden avulla taataan sovelluksen haluttu vähittäis toiminnallisuus.
 
-Tänne kirjataan myös lopuksi järjestelmän tunnetut ongelmat, joita ei ole korjattu.
+Se, että tietokannasta löytyy dataa tauluista, lipun luonti sekä autentikoinnin toiminnallisuus eri tyyppisten käyttäjien välillä tulee ilmi näistä testeistä.
 
 ## Asennustiedot
 
-Järjestelmän asennus on syytä dokumentoida kahdesta näkökulmasta:
+### Järjestelmän kehitysympäristö
 
--   järjestelmän kehitysympäristö: miten järjestelmän kehitysympäristön saisi
-    rakennettua johonkin toiseen koneeseen
+- Projektin voi kloonata Githubista tästä repositorysta (https://github.com/tkankainen/etappi-ticketguru)
 
--   järjestelmän asentaminen tuotantoympäristöön: miten järjestelmän saisi
-    asennettua johonkin uuteen ympäristöön.
+- Projektin voi avata Visual Studio Codella tai Eclipsellä
 
-Asennusohjeesta tulisi ainakin käydä ilmi, miten käytettävä tietokanta ja
-käyttäjät tulee ohjelmistoa asentaessa määritellä (käytettävä tietokanta,
-käyttäjätunnus, salasana, tietokannan luonti yms.).
+- Projekti käyttää PostgreSQL-tietokantaa (https://www.postgresql.org/). Kehitysympäristössä voi vaihtaa H2-tietokantaan vaihtamalla application.properties-tiedostossa rivien kommentointia ohjeen mukaan
+
+- CommandLineRunner sisältää testidataa, jolla H2-tietokannan voi alustaa ottamalla kommentoinnin pois
+
+- Käyttäjätunnukset ja salasanat ovat hallinnoitavissa application.properties-tiedostossa
+
+- Postmanilla pyyntöjä lähetettäessä paikalliselle sovellukselle pyynnöt täytyy autentikoida JWT-tokenilla
+
+### Järjestelmän asentaminen tuotantoympäristöön
+
+- Projekti on julkaistu Herokussa
+
+- Julkaistu projekti käyttää PostgreSQL-tietokantaa
+
+- Tietokannan tiedot löytyvät application.properties-tiedostosta
+
+- Tietokantayhteyteen tarvittavat tiedot määritellään ympäristömuuttujilla JDBC_DATABASE_URL (muodossa jdbc:postgresql://{host}:{port}/{database}), JDBC_DATABASE_USERNAME sekä JDBC_DATABASE_PASSWORD
+
+- Ohjelma generoi tietokannan taulut
 
 ## Käynnistys- ja käyttöohje
 
-Tyypillisesti tässä riittää kertoa ohjelman käynnistykseen tarvittava URL sekä
-mahdolliset kirjautumiseen tarvittavat tunnukset. Jos järjestelmän
-käynnistämiseen tai käyttöön liittyy joitain muita toimenpiteitä tai toimintajärjestykseen liittyviä asioita, nekin kerrotaan tässä yhteydessä.
-
-Usko tai älä, tulet tarvitsemaan tätä itsekin, kun tauon jälkeen palaat
-järjestelmän pariin !
+Sovelluksen käyttöliittymä on julkaistu osoitteessa https://etappi-ticketguru-client.herokuapp.com/ ja backend-sovellus osoitteessa https://etappi-ticketguru.herokuapp.com/. Kirjautumistunnukset ovat ryhmän jäsenten tiedossa.
