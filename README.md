@@ -27,38 +27,32 @@ Lipputoimiston työntekijänä haluan, että voin luoda myynnissä olevat tapaht
 koska lipunmyyntipisteen myyjän pitää pystyä myymään lippuja tiettyyn tapahtumaan.
 prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K2
-Lipputoimiston työntekijänä haluan pystyä muuttamaan tapahtuman tietoja, koska on mahdollista, että ohjelmassa olevaa tietoa pitää ajantasaistaa
+Lipputoimiston työntekijänä haluan pystyä muuttamaan tapahtuman tietoja, koska on mahdollista, että ohjelmassa olevaa tietoa pitää ajantasaistaa.
 prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K3 
-Lipputoimiston työntekijänä haluan, että voin määritellä tapahtuman lipputyypit, 
-koska tapahtumaan pitää pystyä myymään lippuja eri asiakastyypeille.
+Lipputoimiston työntekijänä haluan, että voin määritellä tapahtuman lipputyypit ja hinnat, koska tapahtumaan pitää pystyä myymään lippuja eri asiakastyypeille.
 prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K4 
-Lipputoimiston työntekijänä haluan, että voin määritellä lipputyyppien hinnan tapahtumittain, 
-koska pitää pystyä myymään eri hintaisia lippuja eri asiakastyypeille.
+Lipputoimiston työntekijänä haluan, että voin vaihtaa hintaa tietylle lipulle.
 prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K5
-Lipunmyyjänä haluan, että voin hakea tapahtumia eri hakusanoilla, koska asiakkaalle pitää voida myydä lippu hänen haluamaansa tapahtumaan
+Lipunmyyjänä haluan, että voin hakea tapahtumia eri hakusanoilla, koska asiakkaalle pitää voida myydä lippu hänen haluamaansa tapahtumaan.
 prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K6
-Lipunmyyjänä haluan, että voin myydä lipun tiettyyn tapahtumaan, koska asiakkaalle pitää voida myydä lippu hänen haluamaansa tapahtumaan
+Lipunmyyjänä haluan, että voin myydä lipun tiettyyn tapahtumaan, koska asiakkaalle pitää voida myydä lippu hänen haluamaansa tapahtumaan.
 prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K7
-Lipunmyyjänä haluan nähdä tapahtuman jäljellä olevien lippujen määrän, jotta lippuja ei myydä tapahtumaan liikaa
+Lipunmyyjänä haluan nähdä tapahtuman jäljellä olevien lippujen määrän, jotta lippuja ei myydä tapahtumaan liikaa.
 prioriteetti = 1, tyyppi: toiminnallinen
-###### Tunnus: K8
-Lipunmyyjänä haluan pystyä myymään useita lippuja samalla tilauksella, jotta jokaista lippua ei tarvitse myydä erikseen
+##### Tunnus: K8
+Lipunmyyjänä haluan pystyä myymään useita lippuja samalla tilauksella, jotta jokaista lippua ei tarvitse myydä erikseen.
 prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K9
-Lipunmyyjänä haluan, että voin tulostaa lippuja, koska asiakkaalle pitää tulostaa ostettu lippu 
+Lipunmyyjänä haluan, että voin tulostaa lippuja, koska asiakkaalle pitää tulostaa ostettu lippu.
 prioriteetti = 1, Tyyppi: toiminnallinen
 ##### Tunnus: K10
-Lipunmyyjänä haluan, että voin tulostaa myymättä jääneet liput, koska liput pitää olla myytävissä tapahtuman ovella.
+Ovimikkona haluan, että voin tarkistaa lipun lippukoodin perusteella.
 prioriteetti = 1, tyyppi: toiminnallinen
-##### Tunnus: K11
-Käyttäjätarina:
-Lipputoimiston työntekijänä haluan nähdä raportin tapahtumaan myydyistä ja myymättömistä lipuista, jotta voin seurata myyntiä
-prioriteetti = 2, tyyppi: toiminnallinen
 
 
 ## Käyttöliittymä
@@ -68,10 +62,6 @@ prioriteetti = 2, tyyppi: toiminnallinen
 ## Tietokanta
 
 ![Tietokantakaavio](Kuvat/tietokantakaavio_final.jpeg)
-
-Lisäksi kukin järjestelmän tietoelementti ja sen attribuutit kuvataan
-tietohakemistossa. Tietohakemisto tarkoittaa yksinkertaisesti vain jokaisen elementin (taulun) ja niiden
-attribuuttien (kentät/sarakkeet) listausta ja lyhyttä kuvausta esim. tähän tyyliin:
 
 > ### _Tapahtuma_
 > _Tapahtuma-taulu sisältää tapahtumat. Tapahtumia voi olla monia._
