@@ -44,13 +44,13 @@ prioriteetti = 1, tyyppi: toiminnallinen
 ##### Tunnus: K7
 Lipunmyyjänä haluan nähdä tapahtuman jäljellä olevien lippujen määrän, jotta lippuja ei myydä tapahtumaan liikaa.
 prioriteetti = 1, tyyppi: toiminnallinen
-###### Tunnus: K8
+##### Tunnus: K8
 Lipunmyyjänä haluan pystyä myymään useita lippuja samalla tilauksella, jotta jokaista lippua ei tarvitse myydä erikseen.
 prioriteetti = 1, tyyppi: toiminnallinen
-###### Tunnus: K9
+##### Tunnus: K9
 Lipunmyyjänä haluan, että voin tulostaa lippuja, koska asiakkaalle pitää tulostaa ostettu lippu.
 prioriteetti = 1, Tyyppi: toiminnallinen
-###### Tunnus: K10
+##### Tunnus: K10
 Ovimikkona haluan, että voin tarkistaa lipun lippukoodin perusteella.
 prioriteetti = 1, tyyppi: toiminnallinen
 
