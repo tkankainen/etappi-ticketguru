@@ -84,6 +84,7 @@ prioriteetti = 1, tyyppi: toiminnallinen
 > lipputyyppiid | auto PK | Taulun oma id
 > tapahtumaid | FK | Tapahtuma-taulun id
 > hinta | int | Lipun hinta
+> nimi | varchar(50) | Lipputyypin nimi
 
 > ### _Lippu_
 > _Lippu-taulu sisältää tapahtumien lippujen tiedot. Lippuja voi olla monia._
