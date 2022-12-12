@@ -83,8 +83,7 @@ prioriteetti = 1, tyyppi: toiminnallinen
 > ------ | ------ | ------
 > lipputyyppiid | auto PK | Taulun oma id
 > tapahtumaid | FK | Tapahtuma-taulun id
-> tyyppiid | FK | Lipputyyppi-taulun id
-> hinta | int | Lipun hinta (perustuu lipputyyppiin)
+> hinta | int | Lipun hinta
 
 > ### _Lippu_
 > _Lippu-taulu sisältää tapahtumien lippujen tiedot. Lippuja voi olla monia._
@@ -94,7 +93,7 @@ prioriteetti = 1, tyyppi: toiminnallinen
 > lippuid | auto PK | Taulun oma id
 > lipputyyppiid | FK | Tapahtumalipputyyppi-taulun id
 > myyntiid | FK | Myyntitapahtuma-taulun id
-> lippukoodi | varchar(50) | Lipun luettava myyntikoodi
+> lippukoodi | uuid | Lipun luettava myyntikoodi
 > hinta | int | Lipun hinta
 
 > ### _Myyntitapahtuma_
