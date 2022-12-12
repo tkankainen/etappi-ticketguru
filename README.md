@@ -2,7 +2,7 @@
 
 Tiimi: Anne Pelin, Elia Ahonen, Pertti Korhonen, Taina Kankainen
 
-Lähde dokumentaatiopohjalle: [https://github.com/mruonavaara/projektikurssi/blob/master/README.md](https://github.com/mruonavaara/projektikurssi/blob/master/README.md)
+Haaga-Helian Ohjelmistoprojekti I -kurssin projektityö
 
 ## Johdanto
 
@@ -121,23 +121,17 @@ prioriteetti = 1, tyyppi: toiminnallinen
 
 ## REST API -dokumentaatio
 
-#### Käyttäjä
-[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Kayttaja](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Kayttaja)
+#### [Käyttäjä](https://github.com/tkankainen/etappi-ticketguru/tree/main/REST%20API%20-dokumentaatio/Kayttaja)
 
-#### Lippu
-[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Lippu](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Lippu)
+#### [Lippu](https://github.com/tkankainen/etappi-ticketguru/tree/main/REST%20API%20-dokumentaatio/Lippu)
 
-#### Myyntitapahtuma
-[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Myyntitapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Myyntitapahtuma)
+#### [Myyntitapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/main/REST%20API%20-dokumentaatio/Myyntitapahtuma)
 
-#### Tapahtuma
-[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtuma)
+#### [Tapahtuma](https://github.com/tkankainen/etappi-ticketguru/tree/main/REST%20API%20-dokumentaatio/Tapahtuma)
 
-#### Tapahtumalipputyyppi
-[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtumalipputyyppi](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio/Tapahtumalipputyyppi)
+#### [Tapahtumalipputyyppi](https://github.com/tkankainen/etappi-ticketguru/tree/main/REST%20API%20-dokumentaatio/Tapahtumalipputyyppi)
 
-#### Autentikointi
-[https://github.com/tkankainen/etappi-ticketguru/blob/development/REST%20API%20-dokumentaatio/Autentikointi.md](https://github.com/tkankainen/etappi-ticketguru/blob/development/REST%20API%20-dokumentaatio/Autentikointi.md)
+#### [Autentikointi](https://github.com/tkankainen/etappi-ticketguru/blob/main/REST%20API%20-dokumentaatio/Autentikointi.md)
 
 
 ## Tekninen kuvaus
@@ -158,14 +152,16 @@ prioriteetti = 1, tyyppi: toiminnallinen
 #### Front End:
 - React js.
 #### Api-dokumentaatio:
-[https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio](https://github.com/tkankainen/etappi-ticketguru/tree/development/REST%20API%20-dokumentaatio)
+[https://github.com/tkankainen/etappi-ticketguru/tree/main/REST%20API%20-dokumentaatio](https://github.com/tkankainen/etappi-ticketguru/tree/main/REST%20API%20-dokumentaatio)
 
 
 ## Testaus
 
-Sovelluksessa testataan perustoimintoja, joiden avulla taataan sovelluksen haluttu vähittäis toiminnallisuus.
+Sovelluksesta testataan perustoimintoja, joiden avulla taataan sovelluksen haluttu vähittäistoiminnallisuus.
 
 Se, että tietokannasta löytyy dataa tauluista, lipun luonti sekä autentikoinnin toiminnallisuus eri tyyppisten käyttäjien välillä tulee ilmi näistä testeistä.
+
+Tarkempi [testausdokumentaatio](https://github.com/tkankainen/etappi-ticketguru/blob/main/Testaus/Testaus.md) löytyy Testaus-kansiosta.
 
 ## Asennustiedot
 
