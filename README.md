@@ -61,7 +61,7 @@ prioriteetti = 1, tyyppi: toiminnallinen
 
 ## Tietokanta
 
-![Tietokantakaavio](Kuvat/tietokantakaavio_final.jpeg)
+![Tietokantakaavio](Kuvat/tietokantakaavio.jpeg)
 
 > ### _Tapahtuma_
 > _Tapahtuma-taulu sisältää tapahtumat. Tapahtumia voi olla monia._
