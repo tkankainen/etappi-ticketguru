@@ -1,23 +1,36 @@
 ## JSON Web Token autentikointi
 
-Kaikki käyttäjät pääsevät tähän endpointtiin:
+Endpoint ilman autentikointia:
 
 Login https://etappi-ticketguru.herokuapp.com/login
 
-### tunnukset ja salasanat
+jossa annetaan bodyssä JSON muotoisena arvot: 
 
-
-#### "tunnus":"a2"  "salasana":"admin"
-
-#### "tunnus":"user" "salasana":"user"
+```json
+{
+    "tunnus":"user", 
+    "salasana":"user"
+} 
+```
+tai 
+```json
+{
+    "tunnus":"a2", 
+    "salasana":"admin"
+} 
+```
 
 Onnistuneen pyynnön jälkeen palvelin palauttaa Authorization headerissa Bearer Tokenin. 
 
-Onnistuneen kirjautumisen jälkeen, client tallentaa tokenin ja se voidaan liittää jokaisen pyynnön  headeriin. 
+### Käyttöliittymässä
 
-headers: { 'Authorization' : token }  
+https://etappi-ticketguru-client.herokuapp.com/
 
- 
-Token tuhotaan clientista, kun käyttö loppuu. 
+annetaan rajapintaan tunnistetiedot, palvelu tarkistaa ne ja palauttaa Bearer tokenin. 
 
-Tokenin käyttöaika on 1 pv.  
+#### tunnus: a2   salasana: admin
+tai
+#### tunnus: user   salasana: user
+
+Onnistuneen kirjautumisen jälkeen, client tallentaa tokenin ja liittää sen jokaisen pyynnön headeriin. 
+Tokenin käyttöaika on 1 pv. Token tuhotaan clientista, kun käyttöaika loppuu, tai käyttäjä kirjautuu ulos.
